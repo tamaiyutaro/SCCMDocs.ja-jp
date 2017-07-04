@@ -37,8 +37,8 @@ Configuration Manager バージョン 1610 より、Office 365 クライアン�
 
 - Office 365 クライアントの数
 - Office 365 クライアントのバージョン
-- Office 365 クライアントのバージョン
-- Office 365 クライアントのチャネル     
+- Office 365 クライアントの言語
+- Office 365 クライアントのチャネル     
 詳細については、「[Office 365 ProPlus 更新プログラム チャネルの概要](https://technet.microsoft.com/library/mt455210.aspx)」をご覧ください。
 <!--- - Automatic deployment rules with Office 365 apps (have Office 365 Client selected in the set of available products). --->
 
