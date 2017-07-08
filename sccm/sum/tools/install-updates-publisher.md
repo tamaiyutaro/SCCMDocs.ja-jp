@@ -2,7 +2,7 @@
 title: "Updates Publisher のインストール | Microsoft Docs"
 description: "環境に System Center Updates Publisher をインストールする"
 ms.custom: na
-ms.date: 4/29/2017
+ms.date: 07/03/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -17,10 +17,10 @@ ms.author: brenduns
 manager: angrobe
 robots: NOINDEX, NOFOLLOW
 ms.translationtype: Human Translation
-ms.sourcegitcommit: 90775fcf2549080a43e9c1606caa79d9eb90a89c
-ms.openlocfilehash: 996766d0bd9ab2a3acb1970414f0ae511d97fbff
+ms.sourcegitcommit: 70772ba7d08560aa66abcce29dc6cc6334aa2032
+ms.openlocfilehash: 63ea0383497a3f06870c0907c732010259d1a809
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/20/2017
+ms.lasthandoff: 07/03/2017
 
 ---
 # <a name="install-updates-publisher"></a>Updates Publisher のインストール
@@ -119,7 +119,7 @@ Updates Publisher をインストールするには、上記の*前提条件*を
 インストールが完了したら、*UpdatesPublisher* フォルダーにある **UpdatesPublisher.exe** を実行して、Updates Publisher を開始します。
 
 ## <a name="next-steps"></a>次のステップ
- Updates Publisher のインストールが完了したら、Updates Publisher の[オプションを構成する](/tools/updates-publisher-options)ことをお勧めします。 Updates Publisher の一部の機能を使用するためには、オプションを構成する必要があります。
+ Updates Publisher のインストールが完了したら、Updates Publisher の[オプションを構成する](updates-publisher-options.md)ことをお勧めします。 Updates Publisher の一部の機能を使用するためには、オプションを構成する必要があります。
 
- ただし、更新サーバーや管理対象デバイスに更新プログラムを展開するつもりがなく、既定のままで使用する場合は、[ソフトウェア更新カタログの管理](/tools/updates-publisher-catalogs)または[ソフトウェア更新プログラムの作成](/tools/create-updates-with-updates-publisher)に進んで、ご自身の更新カタログを作成できます。
+ ただし、更新サーバーや管理対象デバイスに更新プログラムを展開するつもりがなく、既定のままで使用する場合は、[ソフトウェア更新カタログの管理](updates-publisher-catalogs.md)または[ソフトウェア更新プログラムの作成](create-updates-with-updates-publisher.md)に進んで、ご自身の更新カタログを作成できます。
 
