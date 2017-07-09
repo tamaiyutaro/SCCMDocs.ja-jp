@@ -16,10 +16,10 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 ms.translationtype: Human Translation
-ms.sourcegitcommit: f809c9327db9f298168674add2d09820fdecd1b8
-ms.openlocfilehash: ec33d5febcbf7b57e220f7fe27db9671080fecff
+ms.sourcegitcommit: b0ba955aa7f854c3fa2c06ccf9ccd8ed354758b0
+ms.openlocfilehash: 31bddee83b2365cfa903077ffaa1d7116b194378
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/17/2017
+ms.lasthandoff: 06/12/2017
 
 
 ---
@@ -40,7 +40,7 @@ ms.lasthandoff: 05/17/2017
 **Windows:**
 - Windows の品質更新プログラムおよびセキュリティ更新プログラムのみがサポートされます。
 - Current Branches (CB)、Current Branch for Business (CBB)、または Windows 10 の LTSB に対してのサポートは追加されません。
--    Windows Server の新しいメジャー バージョンはサポートされていません。
+-   Windows Server の新しいメジャー バージョンはサポートされていません。
 
 **SQL Server:**
 - SQL Server では、品質更新プログラムおよびセキュリティ更新プログラム、または Service Pack のようなマイナー アップグレードのみがサポートされる予定です。
@@ -51,6 +51,7 @@ LTSB では、サイト システムとして次の Windows コンピュータ�
 
 **サポートされるオペレーティング システム:**
 - Windows Server 2016
+- Windows Server 2012 R2 (x64): Standard、Datacenter
 - Windows Server 2012 (x64): Standard、Datacenter
 - Windows Server 2008 R2 SP1 (x64): Standard、Enterprise、Datacenter
 - Windows Server 2008 SP2 (x86、x64): Standard、Enterprise、Datacenter *(注 1 を参照)*
