@@ -99,6 +99,8 @@
 ###  [ラボのセットアップ](get-started/set-up-your-lab.md)
 
 ##   [Technical Preview](get-started/technical-preview.md)
+###  [1706 の機能](get-started/capabilities-in-technical-preview-1706.md)
+###  [1705 の機能](get-started/capabilities-in-technical-preview-1705.md)
 ###  [1704 の機能](get-started/capabilities-in-technical-preview-1704.md)
 ###  [1703 の機能](get-started/capabilities-in-technical-preview-1703.md)
 ###  [1702 の機能](get-started/capabilities-in-technical-preview-1702.md)
@@ -111,9 +113,10 @@
 ###  [1607 の機能](get-started/capabilities-in-technical-preview-1607.md)
 ###  [1606 の機能](get-started/capabilities-in-technical-preview-1606.md)
 ###  [1605 の機能](get-started/capabilities-in-technical-preview-1605.md)
-###  [1604 の機能](get-started/capabilities-in-technical-preview-1604.md)
-###  [1603 の機能](get-started/capabilities-in-technical-preview-1603.md)
-<!--
+
+<!-- No longer in support, and all features are in the Current Branch
+###  [Capabilities in 1604](get-started/capabilities-in-technical-preview-1604.md)
+###  [Capabilities in 1603](get-started/capabilities-in-technical-preview-1603.md)
 ###  [Capabilities in 1602](get-started/capabilities-in-technical-preview-1602.md)
 ###  [Capabilities in 1601](get-started/capabilities-in-technical-preview-1601.md)
 ###  [Capabilities in 1512](get-started/capabilities-in-technical-preview-1512.md)
@@ -178,7 +181,8 @@
 #### [境界](servers/deploy/configure/boundaries.md)
 #### [境界グループ](servers/deploy/configure/boundary-groups.md)
 #### [1610 より前のバージョンの境界グループ](servers/deploy/configure/boundary-groups-for-1511-1602-and-1606.md)
-###  [SQL Server AlwaysOn の使用](servers/deploy/configure/sql-server-alwayson-for-a-highly-available-site-database.md)
+###  [SQL Server Always On を使用するための準備](servers/deploy/configure/sql-server-alwayson-for-a-highly-available-site-database.md)
+###  [SQL Server Always On の構成](servers/deploy/configure/configure-aoag.md)
 ###  [SQL Server クラスターの使用](servers/deploy/configure/use-a-sql-server-cluster-for-the-site-database.md)
 ###  [データベース ファイルのカスタムの場所](servers/deploy/configure/custom-locations-for-site-database-files.md)
 ###  [ロール ベース管理の構成](servers/deploy/configure/configure-role-based-administration.md)
@@ -204,6 +208,7 @@
 ##   [オンプレミス インフラストラクチャのアップグレード](servers/manage/upgrade-on-premises-infrastructure.md)
 ##   [Configuration Manager の更新プログラム](servers/manage/updates.md)
 ###  [コンソール内の更新プログラムのインストール](servers/manage/install-in-console-updates.md)
+#### [データベース アップグレードのテスト](servers/manage/test-database-upgrade.md)
 #### [フローチャート - 更新プログラムのダウンロード](servers/manage/download-updates-flowchart.md)
 #### [フローチャート - レプリケーションの更新](servers/manage/update-replication-flowchart.md)
 ###  [プレリリース機能](servers/manage/pre-release-features.md)
