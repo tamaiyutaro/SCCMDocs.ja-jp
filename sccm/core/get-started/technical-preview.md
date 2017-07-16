@@ -1,8 +1,8 @@
 ---
-title: "System Center Configuration Manager の Technical Preview | Microsoft Docs"
+title: "Configuration Manager の Technical Preview | Microsoft Docs"
 description: "System Center Configuration Manager の新機能を体験できるテクニカル プレビュー リリースについて説明します。"
 ms.custom: na
-ms.date: 4/3/2017
+ms.date: 06/23/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,14 +16,15 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 ms.translationtype: Human Translation
-ms.sourcegitcommit: f809c9327db9f298168674add2d09820fdecd1b8
-ms.openlocfilehash: 3a7370fedee417588d219dc7bff46205faf42929
+ms.sourcegitcommit: 6f9e6e93fce95666503907010a5c253158c5de7c
+ms.openlocfilehash: 736e5a04d3d5f2a3825ed4e801308fd5699ea86e
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/17/2017
+ms.lasthandoff: 07/07/2017
 
 
 ---
-# <a name="technical-preview-for-system-center-configuration-manager"></a>System Center Configuration Manager の Technical Preview
+# System Center Configuration Manager の Technical Preview
+<a id="technical-preview-for-system-center-configuration-manager" class="xliff"></a>
 
 *適用対象: System Center Configuration Manager (Technical Preview)*
 
@@ -94,7 +95,7 @@ ms.lasthandoff: 05/17/2017
 
 **Technical Preview のアクティブ ベースライン バージョン:**  
 リリース後、最長 1 年間、ベースライン バージョンをインストールできます。 ただし、新しい Technical Preview サイトをインストールする場合は、利用可能な最新のベースライン バージョンを使用することをお勧めします。
--  **Technical Preview 1703** - Configuration Manager Technical Preview 1703 は、Configuration Manager Technical Preview のコンソール内更新と、TechNet Evaluation Center Web サイトから入手できる新しいベースライン バージョンの両方として使用できます。
+-  **Technical Preview 1703** - Configuration Manager Technical Preview 1703 は、Configuration Manager Technical Preview のコンソール内更新と、[TechNet Evaluation Center Web サイトから入手できる](http://www.microsoft.com/evalcenter/evaluate-system-center-configuration-manager-and-endpoint-protection-technical-preview)新しいベースライン バージョンの両方として使用できます。
 
 -  **Technical Preview 1610** - Configuration Manager Technical Preview 1610 は、Configuration Manager Technical Preview のコンソール内更新と、ベースライン バージョンの両方として使用できました。 1610 をインストールするためのメディアがある場合は、バージョン 1703 をダウンロードし、そのバージョンを代わりにインストールすることをお勧めします。
 
@@ -111,11 +112,46 @@ ms.lasthandoff: 05/17/2017
 
 
 
-##  <a name="bkmk_tpCaps"></a> Technical Preview で提供される機能  
+##  <a name="bkmk_tpCaps"></a> 最新の Technical Preview で提供される機能  
  以下は、それぞれの Configuration Manager Technical Preview リリースで提供される機能です。  Technical Preview のバージョンで利用できるようになった機能は、以降のバージョンでも利用できます。 同様に、System Center Configuration Manager リリース (Current Branch) に追加された機能は、後続の Technical Preview でも引き続き利用できます。  特定の機能の詳細については、各プレビュー バージョンのコンテンツをクリックします。  
 
  |機能 |Technical Preview バージョン |Current Branch バージョン|  
-|----------------|---------------------|--------------------|
+ |----------------|---------------------|--------------------|
+ |新しいモバイル アプリケーション管理ポリシーの設定|[Tech Preview 1706](capabilities-in-technical-preview-1706.md#new-mobile-application-management-policy-settings)|![追加されていません](media/Red_X.gif)|
+ |ソフトウェアの更新ポイントのための境界グループの改善|[Tech Preview 1706](capabilities-in-technical-preview-1706.md#improved-boundary-groups-for-software-update-points)|![追加されていません](media/Red_X.gif)|
+ |サイト サーバーの役割の高可用性|[Tech Preview 1706](capabilities-in-technical-preview-1706.md#site-server-role-high-availability) |![追加されていません](media/Red_X.gif)|
+ |Device Guard ポリシーに特定のファイルとフォルダーの信頼を含める|[Tech Preview 1706](capabilities-in-technical-preview-1706.md#include-trust-for-specific-files-and-folders-in-a-device-guard-policy)|![追加されていません](media/Red_X.gif)|
+ |タスク シーケンスの進行状況の非表示|[Tech Preview 1706](capabilities-in-technical-preview-1706.md#hide-task-sequence-progress)|![追加されていません](media/Red_X.gif)|
+ |コンテンツのインストールとコンテンツのアンインストール用に別のコンテンツの場所を指定する|[Tech Preview 1706](capabilities-in-technical-preview-1706.md#specify-a-different-content-location-for-install-content-and-uninstall-content)|![追加されていません](media/Red_X.gif)|
+ |アクセシビリティの機能強化 |[Tech Preview 1706](capabilities-in-technical-preview-1706.md#accessibility-improvements)|![追加されていません](media/Red_X.gif)|
+ |Azure サービス ウィザードでの Upgrade Readiness のサポート |[Tech Preview 1706](capabilities-in-technical-preview-1706.md#changes-to-the-azure-services-wizard-to-support-upgrade-readiness)|![追加されていません](media/Red_X.gif)|
+ |クラウド サービスの新しいクライアント設定|[Tech Preview 1706](capabilities-in-technical-preview-1706.md#new-client-settings-for-cloud-services)|![追加されていません](media/Red_X.gif)|
+ |Configuration Manager コンソールから PowerShell スクリプトを作成して実行する|[Tech Preview 1706](capabilities-in-technical-preview-1706.md#create-and-run-powershell-scripts-from-the-configuration-manager-console)|![追加されていません](media/Red_X.gif)|
+ |PXE ネットワーク ブートでの IPv6 のサポート |[Tech Preview 1706](capabilities-in-technical-preview-1706.md#pxe-network-boot-support-for-ipv6)|![追加されていません](media/Red_X.gif)|
+ |Microsoft Surface ドライバーの更新プログラムの管理 |[Tech Preview 1706](capabilities-in-technical-preview-1706.md#manage-microsoft-surface-driver-updates)|![追加されていません](media/Red_X.gif)|
+ |Windows Update for Business 遅延ポリシーの構成 |[Tech Preview 1706](capabilities-in-technical-preview-1706.md#configure-windows-update-for-business-deferral-policies)|![追加されていません](media/Red_X.gif)|
+ |Android および iOS の登録制限|[Tech Preview 1706](capabilities-in-technical-preview-1706.md#android-and-ios-enrollment-restrictions)|![追加されていません](media/Red_X.gif)|
+ |コピー/貼り付け用の Android for Work アプリケーション管理ポリシー|[Tech Preview 1706](capabilities-in-technical-preview-1706.md#android-for-work-application-management-policy-for-copy-paste)|![追加されていません](media/Red_X.gif)|
+ |新しい Windows 構成アイテムの設定|[Tech Preview 1706](capabilities-in-technical-preview-1706.md#new-windows-configuration-item-settings)|![追加されていません](media/Red_X.gif)|
+ |新しいデバイス コンプライアンス ポリシー ルール|[Tech Preview 1706](capabilities-in-technical-preview-1706.md#new-device-compliance-policy-rules)|![追加されていません](media/Red_X.gif)|
+ |条件付きアクセスのコンプライアンス ポリシーに対するデバイス正常性構成証明の評価|[Tech Preview 1706](capabilities-in-technical-preview-1706.md#device-health-attestation-assessment-for-compliance-policies-for-conditional-access)|![追加されていません](media/Red_X.gif)|
+ |Entrust 証明機関のサポート|[Tech Preview 1706](capabilities-in-technical-preview-1706.md#support-for-entrust-certification-authorities)|![追加されていません](media/Red_X.gif)|
+ |macOS VPN プロファイルの Cisco (IPsec) のサポート|[Tech Preview 1706](capabilities-in-technical-preview-1706.md#cisco-ipsec-support-for-macos-vpn-profiles)|![追加されていません](media/Red_X.gif)|
+
+## 以前の Technical Preview で提供される機能
+<a id="capabilities-delivered-in-previous-technical-previews" class="xliff"></a>
+ Technical Preview リリースのすべての機能が Current Branch でサポートされる最小バージョンで使用可能になると、そのプレビュー バージョンの詳細は次の表から削除されます。  
+
+ |機能 |Technical Preview バージョン |Current Branch バージョン|  
+ |----------------|---------------------|--------------------|
+  |Azure AD の新機能とクラウド管理|[Tech Preview 1705](capabilities-in-technical-preview-1705.md#new-capabilities-for-azure-ad-and-cloud-management)|![追加されていません](media/Red_X.gif)|
+ |Windows Defender Application Guard ポリシーの構成と展開|[Tech Preview 1705](capabilities-in-technical-preview-1705.md#configure-and-deploy-windows-defender-application-guard-policies)|![追加されていません](media/Red_X.gif)|
+ |更新のリセット ツール  |[Tech Preview 1705](capabilities-in-technical-preview-1705.md#update-reset-tool)|![追加されていません](media/Red_X.gif)|
+ |高 DPI コンソールのサポート  |[Tech Preview 1705](capabilities-in-technical-preview-1705.md#high-dpi-console-support)|![追加されていません](media/Red_X.gif)|
+ |ピア キャッシュの改善  |[Tech Preview 1705](capabilities-in-technical-preview-1705.md#peer-cache-improvements) |![追加されていません](media/Red_X.gif)|
+ |SQL Server Always On 可用性グループの機能強化 |[Tech Preview 1705](capabilities-in-technical-preview-1705.md#improvements-for-sql-server-always-on-availability-groups) |![追加されていません](media/Red_X.gif)|
+ |Office 365 更新プログラムのユーザーへの通知の改善|[Tech Preview 1705](capabilities-in-technical-preview-1705.md#improved-user-notifications-for-office-365-updates) |![追加されていません](media/Red_X.gif)|
+ |Azure サービス ウィザードを使用して、OMS への接続を構成する|[Tech Preview 1705](capabilities-in-technical-preview-1705.md#use-azure-services-wizard-to-configure-a-connection-to-oms) |![追加されていません](media/Red_X.gif)|
  |アプリ構成ポリシーを使用した Android アプリの構成  |[Tech Preview 1704](capabilities-in-technical-preview-1704.md#configure-android-apps-with-app-configuration-policies)|![追加されていません](media/Red_X.gif)|
  |ハードウェア インベントリでのセキュア ブート情報の収集 |[Tech Preview 1704](capabilities-in-technical-preview-1704.md#hardware-inventory-collects-secure-boot-information)|![追加されていません](media/Red_X.gif)|
  |子タスク シーケンスをタスク シーケンスに追加する|[Tech Preview 1704](capabilities-in-technical-preview-1704.md#add-child-task-sequences-to-a-task-sequence)|![追加されていません](media/Red_X.gif)|
@@ -208,22 +244,24 @@ ms.lasthandoff: 05/17/2017
  |Windows 10 クライアントにおけるソフトウェア更新プログラムのインストール後の新しい再起動オプション|[Tech Preview 1605](capabilities-in-technical-preview-1605.md#BKMK_RestartOptions)|[バージョン 1606](/sccm/sum/plan-design/plan-for-software-updates#restart-options-for-Windows-10-clients-after-software-update-installation)|  
  |オンプレミスのデバイス正常性構成証明書 |[Tech Preview 1605](capabilities-in-technical-preview-1605.md#BKMK_DHA)|[バージョン 1606](/sccm/core/servers/manage/health-attestation)|  
  |IMEI または iOS シリアル番号を持つ会社所有のデバイスの事前宣言|[Tech Preview 1605](capabilities-in-technical-preview-1605.md#BKMK_IMEI)|[バージョン 1606](/sccm/mdm/deploy-use/predeclare-devices-with-hardware-id)|  
- |ビジネス向け Windows ストアからの一括購入アプリの管理| [Tech Preview 1604](capabilities-in-technical-preview-1604.md#BKMK_WindowsVPP)|[バージョン 1606](/sccm/apps/deploy-use/manage-apps-from-the-windows-store-for-business)|  
- |Microsoft Passport for Work 管理の機能強化|[Tech Preview 1604](capabilities-in-technical-preview-1604.md#BKMK_PFW)|[バージョン 1606](/sccm/core/plan-design/changes/whats-new-in-version-1606#device-configuration-and-protection)|  
- |クライアントが新しいソフトウェア更新ポイントに切り替えるためのオプション|[Tech Preview 1604](capabilities-in-technical-preview-1604.md#bkmk_switchsup)|[バージョン 1606](/sccm/sum/plan-design/plan-for-software-updates#BKMK_ManuallySwitchSUPs)|  
- |クライアント キャッシュ設定とクライアント ピア キャッシュを管理するためのクライアント設定 |[Tech Preview 1604](capabilities-in-technical-preview-1604.md#bkmk_peercache)|クライアント設定: [バージョン 1606](/sccm/core/plan-design/changes/whats-new-in-version-1606#administration)<br/>ピア キャッシュ: [バージョン 1610](/sccm/core/plan-design/hierarchy/client-peer-cache)|  
- |KSP としての Passport for Work のサポート |[Tech Preview 1604](capabilities-in-technical-preview-1604.md#bkmk_passport)|[バージョン 1606](/sccm/protect/deploy-use/create-certificate-profiles)|  
- |オンプレミスのデバイス正常性構成証明書|[Tech Preview 1604](capabilities-in-technical-preview-1604.md#bkmk_onpremdha)|[バージョン 1606](/sccm/core/servers/manage/health-attestation)|  
- |Android デバイスの SmartLock 設定|[Tech Preview 1604](capabilities-in-technical-preview-1604.md#BKMK_Smart)|[バージョン 1606](/sccm/compliance/deploy-use/create-configuration-items-for-android-and-samsung-knox-devices-managed-without-the-client#android-and-samsung-knox-configuration-item-settings-reference)|  
- <!--  TP 1603 Aged out of support and all features in Current Branch Builds:
+
+ <!--  TP 1604 and earlier has aged out of support and all features are in Current Branch builds:
+ |Manage volume-purchased apps from the Windows Store for Business| [Tech Preview 1604](capabilities-in-technical-preview-1604.md#BKMK_WindowsVPP)|[Version 1606](/sccm/apps/deploy-use/manage-apps-from-the-windows-store-for-business)|  
+ |Improvements to Microsoft Passport for Work management|[Tech Preview 1604](capabilities-in-technical-preview-1604.md#BKMK_PFW)|[Version 1606](/sccm/core/plan-design/changes/whats-new-in-version-1606#device-configuration-and-protection)|  
+ |Option for clients to switch to a new software update point|[Tech Preview 1604](capabilities-in-technical-preview-1604.md#bkmk_switchsup)|[Version 1606](/sccm/sum/plan-design/plan-for-software-updates#BKMK_ManuallySwitchSUPs)|  
+ |Client settings to manage Client Cache Settings and client Peer Cache |[Tech Preview 1604](capabilities-in-technical-preview-1604.md#bkmk_peercache)|Client Settings: [Version 1606](/sccm/core/plan-design/changes/whats-new-in-version-1606#administration)<br/>Peer Cache: [Version 1610](/sccm/core/plan-design/hierarchy/client-peer-cache)|  
+ |Support for Passport for Work as a KSP |[Tech Preview 1604](capabilities-in-technical-preview-1604.md#bkmk_passport)|[Version 1606](/sccm/protect/deploy-use/create-certificate-profiles)|  
+ |On-premises Device Health Attestation|[Tech Preview 1604](capabilities-in-technical-preview-1604.md#bkmk_onpremdha)|[Version 1606](/sccm/core/servers/manage/health-attestation)|  
+ |SmartLock setting for Android devices|[Tech Preview 1604](capabilities-in-technical-preview-1604.md#BKMK_Smart)|[Version 1606](/sccm/compliance/deploy-use/create-configuration-items-for-android-and-samsung-knox-devices-managed-without-the-client#android-and-samsung-knox-configuration-item-settings-reference)|  
  |Improvements to Software Center|[Tech Preview 1603](capabilities-in-technical-preview-1603.md#BKMK_SC1603)|[Version 1606](/sccm/core/plan-design/changes/whats-new-in-version-1606#application-management)|  
  |Improvements to remote control|[Tech Preview 1603](capabilities-in-technical-preview-1603.md#BKMK_RC1603)|[Version 1606](/sccm/core/plan-design/changes/whats-new-in-version-1606#remote-control)|  
  |Customize the RamDisk TFTP block size and window size on PXE-enabled distribution points|[Tech Preview 1603](capabilities-in-technical-preview-1603.md#BKMK_RamDiskTFTP)|[Version 1606](/sccm/core/plan-design/changes/whats-new-in-version-1606#operating-system-deployment)|  
 -->
- Technical Preview リリースのすべての機能が Current Branch でサポートされる最小バージョンで使用可能になると、そのプレビュー バージョンの詳細がこのテーブルから削除されます。
 
 
-## <a name="see-also"></a>関連項目  
+
+## 関連項目
+<a id="see-also" class="xliff"></a>  
 [System Center Configuration Manager の新機能](/sccm/core/plan-design/changes/whats-new-incremental-versions)  
  [System Center Configuration Manager の概要](../../core/understand/introduction.md)
 

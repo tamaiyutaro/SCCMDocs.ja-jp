@@ -2,7 +2,7 @@
 title: "ハイブリッド MDM の新機能のアーカイブ | Microsoft Docs"
 description: "System Center Configuration Manager と Intune のハイブリッド展開で使用できる過去のモバイル デバイス管理機能のアーカイブです。"
 ms.custom: na
-ms.date: 03/05/2017
+ms.date: 06/30/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,19 +16,21 @@ ms.author: mtillman
 manager: angrobe
 ROBOTS: NOINDEX, NOFOLLOW
 ms.translationtype: Human Translation
-ms.sourcegitcommit: 2c723fe7137a95df271c3612c88805efd8fb9a77
-ms.openlocfilehash: 623a30eddebcae196ff345ef5debc8183ecd6ae6
+ms.sourcegitcommit: ed6b65a1a5aabc0970cd0333cb033405cf6d2aea
+ms.openlocfilehash: 0abd1cdcf44e778c91bacb8011efd711818ce2e9
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/17/2017
+ms.lasthandoff: 07/03/2017
 
 ---
-# <a name="past-hybrid-features-with-system-center-configuration-manager-and-microsoft-intune"></a>System Center Configuration Manager と Microsoft Intune での過去のハイブリッド機能
+# System Center Configuration Manager と Microsoft Intune での過去のハイブリッド機能
+<a id="past-hybrid-features-with-system-center-configuration-manager-and-microsoft-intune" class="xliff"></a>
 
 *適用対象: System Center Configuration Manager (Current Branch)*
 
 この記事では、System Center Configuration Manager と Intune のハイブリッド展開で使用できる過去のモバイル デバイス管理 (MDM) 機能の詳細について説明します。  
 
-##  <a name="compatibility-with-configuration-manager-versions"></a>Configuration Manager のバージョンとの互換性  
+##  Configuration Manager のバージョンとの互換性
+<a id="compatibility-with-configuration-manager-versions" class="xliff"></a>  
 
  この記事の各セクションでは、3 つの異なるカテゴリにあるハイブリッド機能を一覧表示します。 次のガイダンスを使用すると、各カテゴリの機能とさまざまなバージョンの Configuration Manager との互換性を判断できます。  
 
@@ -36,9 +38,96 @@ ms.lasthandoff: 05/17/2017
 |-|  
 |**Microsoft Intune の新機能** - 通常、このカテゴリに一覧表示されたすべての機能は、System Center 2012 R2 Configuration Manager リリースを含むすべての Configuration Manager のリリースで動作します。これらの機能は Intune サービスのみを必要とし、Configuration Manager の追加機能は必要ないためです。<br /><br /> **Configuration Manager Technical Preview の新機能** - このカテゴリに一覧表示されたすべての機能は、指定されたバージョンの Technical Preview リリースでのみ動作します。 これらの機能を試すには、機能の説明で指定されたバージョンの Technical Preview をインストールする必要があります。 詳細については、「[System Center Configuration Manager の Technical Preview](../../core/get-started/technical-preview.md)」を参照してください。<br /><br /> **Configuration Manager (現在のブランチ) の新機能** - このカテゴリに一覧表示されたすべての機能は、バージョン 1511 や 1602 など、指定されたバージョンの Configuration Manager (現在のブランチ) でのみ動作します。 ハイブリッド展開に旧バージョンの Configuration Manager を使用している場合は、機能の説明で指定されたバージョンの Configuration Manager (現在の分岐) にアップグレードする必要があります。 詳細については、「[System Center Configuration Manager へのアップグレード](../../core/servers/deploy/install/upgrade-to-configuration-manager.md)」を参照してください。|  
 
-## <a name="new-hybrid-features-in-october-2016"></a>2016 年 10 月のハイブリッド新機能
+## 2016 年 12 月
+<a id="december-2016" class="xliff"></a>
 
-### <a name="new-in-microsoft-intune"></a>Microsoft Intune の新機能
+### Microsoft Intune の新機能
+<a id="new-in-microsoft-intune" class="xliff"></a>
+
+- **登録での Multi-Factor Authentication (MFA) が Azure Portal に移動する**
+
+  これまで、Intune の登録に MFA を設定するには、Intune コンソールまたは構成マネージャー コンソールを使用していました。 この機能更新により、Intune の資格情報で Microsoft Azure Portal (https://manage.windowsazure.com) にログインし、Azure AD を使用して MFA の設定を構成するようになりました。 詳細については、「Microsoft Intune のMulti-Factor Authentication」 (https://aka.ms/mfa_ad) を参照してください。
+
+- **Android 用ポータル サイト アプリが中国で利用可能になる**
+
+  Android 用ポータル サイト アプリが中国で利用できるようになりました。 中国には Google Play ストアがないため、Android デバイスでは中国のアプリ マーケットプレースからアプリを入手する必要があります。 Android 用ポータル サイト アプリは、次のストアからダウンロードできます。
+
+  - [Baidu](https://go.microsoft.com/fwlink/?linkid=836946)
+  - [Huawei](https://go.microsoft.com/fwlink/?linkid=836948)
+  - [Tencent](https://go.microsoft.com/fwlink/?linkid=836949)
+  - [Wandoujia](https://go.microsoft.com/fwlink/?linkid=836950)
+  - [Xiaomi](https://go.microsoft.com/fwlink/?linkid=836947)
+
+  Android 用ポータル サイト アプリは、Google Play サービスを使って Microsoft Intune サービスと通信します。 中国では Google Play サービスをまだ利用できないので、次のタスクが完了するまで最大 8 時間かかることがあります。
+
+  | Configuration Manager 管理コンソール | Android 用 Intune ポータル サイト アプリ | Intune ポータル サイト Web サイト |
+  |----|----|----|      
+  | 削除/ワイプ (すべてのデータの削除)   | リモート デバイスの削除 | デバイスの削除 (ローカルおよびリモート) |
+  | 削除/ワイプ (会社データの削除)   | デバイスのリセット | デバイスのリセット|
+  | 新規アプリまたは更新アプリの展開 | 使用可能な基幹業務アプリのインストール | デバイスのパスコードのリセット|
+  | リモート ロック | | |
+  | パスコードのリセット | | |        
+
+
+## 2016 年 11 月
+<a id="november-2016" class="xliff"></a>
+
+### Microsoft Intune の新機能
+<a id="new-in-microsoft-intune" class="xliff"></a>
+
+- **新しい Microsoft Intune ポータル サイトが Windows 10 デバイスで利用可能になる**
+
+  Microsoft は、新しい [Windows 10 デバイス用のポータル サイト アプリ](https://www.microsoft.com/store/apps/9wzdncrfj3pz)をリリースしました。 このアプリでは新しい Windows 10 ユニバーサル形式を利用し、PC やモバイルなどすべての Windows 10 デバイスで同じ更新されたユーザー エクスペリエンスが提供されますが、以前のポータル サイトアプリで提供されている同じ機能はすべて引き続き利用できます。
+
+  この新しいアプリでは、Windows 10 デバイスでのシングル サインオン (SSO) や証明書ベースの認証など、プラットフォーム機能も利用します。 アプリは、既存の Windows 8.1 ポータル サイトおよび Windows Phone 8.1 ポータル サイトのインストールのアップグレードとして Windows ストアから入手できるようになります。 詳細については、[Intune サポート チームのブログ](http://aka.ms/intunecp_universalapp)を参照してください。
+
+  新しいポータル サイト アプリでは、Configuration Manager コンソールで**使用可能**とマークされたビジネス アプリケーションの Windows ストアも表示されます。
+
+
+### Configuration Manager (現在のブランチ) の新機能
+<a id="new-in-configuration-manager-current-branch" class="xliff"></a>
+
+Configuration Manager Technical Preview リリースで以前に提供されていた次の機能は、Intune と Configuration Manager (Current Branch) バージョン 1610 のハイブリッド展開で使用できるようになりました。
+
+* [構成項目の追加設定とエクスペリエンス向上](/sccm/core/plan-design/changes/whats-new-in-version-1610#new-compliance-settings-for-configuration-items)
+* [DEP プロファイルの追加設定](whats-new-hybrid-archive.md#new-in-configuration-manager-technical-preview-1609)
+* [ビジネス向け Windows ストアの有料アプリ](/sccm/apps/deploy-use/manage-apps-from-the-windows-store-for-business)
+* [Windows 10 VPN プロファイルのネイティブ接続の種類](whats-new-hybrid-archive.md#new-in-configuration-manager-technical-preview-1609)
+* [Intune コンプライアンス チャート](/sccm/protect/deploy-use/create-compliance-policy#monitor-the-compliance-policy)
+* [コンソールからのポリシー同期の要求](/sccm/mdm/deploy-use/sync-intune-device)
+* [Windows Defender の構成設定](/sccm/compliance/deploy-use/create-configuration-items-for-windows-8.1-and-windows-10-devices-managed-without-the-client#windows-defender)
+
+次の追加のハイブリッド機能も、 Configuration Manager (Current Branch) のバージョン 1610 に含まれます。
+
+- **登録されるデバイス数の増加**
+
+  ユーザーが最大 15 台のデバイスを登録できるようになりました。 以前の制限はユーザーあたり 5 台のデバイスでした。
+
+
+- **追加のセキュリティのサポート**
+
+  完全な権限を持つ管理者に加えて、次の組み込みのセキュリティ ロールが、事前に宣言されたデバイス、iOS 登録プロファイル、および Windows 登録プロファイルを含むすべての企業所有のデバイス ノードの項目にフル アクセスできるようになりました。
+
+    - 資産マネージャー
+    - 会社リソース アクセス マネージャー
+
+  Configuration Manager コンソールのこれらの領域への読み取り専用アクセスは、引き続き読み取り専用アナリスト ロールに与えられます。
+
+- **Windows 情報保護アプリからの VPN アクセスの自動トリガー**
+
+  Windows 10 VPN プロファイルに Windows 情報保護プライマリ ドメインを追加して、関連付けられたすべてのアプリがデバイスで実行されるときに、それらに VPN 接続を自動的にトリガーさせることができます。 このオプションは、ネイティブ接続の種類を選択した場合のみ使用できます。
+
+- **Windows 10 VPN プロファイルの条件付きアクセス**
+
+    Configuration Manager コンソールで作成した Windows 10 VPN プロファイル経由で VPN アクセスできるようにするためには、Azure Active Directory に登録された Windows 10 デバイスを対応させる必要があります。 これは、VPN プロファイル ウィザードの [認証方法] ページの新しい **[この VPN 接続の条件付きアクセスを有効にする]** チェックボックスおよび Windows 10 VPN プロファイルの VPN プロファイルのプロパティによって可能です。 このオプションは、ネイティブ接続の種類を選択した場合のみ使用できます。
+
+    プロファイルの条件付きアクセスを有効にした場合、シングル サインオン認証用の別の証明書を指定することもできます。
+
+## 2016 年 10 月
+<a id="october-2016" class="xliff"></a>
+
+### Microsoft Intune の新機能
+<a id="new-in-microsoft-intune" class="xliff"></a>
 
 2016 年 10 月に導入された次の Intune 機能は、ハイブリッド展開で動作します。
 
@@ -46,7 +135,7 @@ ms.lasthandoff: 05/17/2017
 
   Outlook など、Intune モバイル アプリケーション管理ポリシーをサポートするアプリからのアクセスのみを許可するように、Exchange Online へのアクセスを制限することができます。 [この新機能](/intune/deploy-use/allow-policy-managed-apps-access-to-o365)は、組み込みのメール クライアントや Intune MAM ポリシーが構成されていない他のアプリへのアクセスをブロックできるため、Intune のモバイル アプリ管理 (MAM) ポリシーと組み合わせると効果的です。 これにより、ユーザーが組織のデータにアクセスする際に、Intune MAM を使用して保護できるアプリを使用するようになります。 Intune モバイル アプリ管理は、Azure Portal から使用することができます。 [設定] ブレードの新しい [条件付きアクセス] セクションを探してください。
 
--    **Android 用 Intune アプリ ラッピング ツール**
+-   **Android 用 Intune アプリ ラッピング ツール**
 
   アプリで Intune モバイル アプリケーション管理 (MAM) ポリシーを使用できるようにするには、Intune アプリ ラッピング ツールを使用します。
 
@@ -57,14 +146,15 @@ ms.lasthandoff: 05/17/2017
   この影響を受けるモデル番号は次のとおりです。
 
   - SM-G313HU
-  -    SM-G313HY
-  -    SM-G313M
-  -    SM-G313MY
-  -    SM-G313U
+  - SM-G313HY
+  - SM-G313M
+  - SM-G313MY
+  - SM-G313U
 
   管理者とエンドユーザーは、これ以上操作を行う必要はありません。 詳細については、Samsung KNOX の Web サイトを参照してください。
 
-### <a name="new-in-configuration-manager-technical-preview-1610"></a>Configuration Manager Technical Preview 1610 の新機能
+### Configuration Manager Technical Preview 1610 の新機能
+<a id="new-in-configuration-manager-technical-preview-1610" class="xliff"></a>
 
 2016 年 10 月の Configuration Manager Technical Preview 1610 では、次のハイブリッド新機能が導入されました。
 
@@ -77,13 +167,16 @@ ms.lasthandoff: 05/17/2017
   Configuration Manager コンソールの構成項目を使用して、Intune に登録されている Windows 10 コンピューターで Windows Defender クライアント設定を構成できるようになりました。 構成項目ウィザードには、**Windows Defender** と呼ばれる新しい設定グループがあります。 この機能は、Windows 10 バージョン 1511 以降でのみサポートされています。
 
 
-### <a name="new-in-configuration-manager-current-branch"></a>Configuration Manager (現在のブランチ) の新機能
+### Configuration Manager (現在のブランチ) の新機能
+<a id="new-in-configuration-manager-current-branch" class="xliff"></a>
 
 2016 年 8 月の Configuration Manager (現在のブランチ) では、ハイブリッド新機能は導入されていません。
 
-## <a name="new-hybrid-features-in-september-2016"></a>2016 年 9 月のハイブリッド新機能
+## 2016 年 9 月
+<a id="september-2016" class="xliff"></a>
 
-### <a name="new-in-microsoft-intune"></a>Microsoft Intune の新機能
+### Microsoft Intune の新機能
+<a id="new-in-microsoft-intune" class="xliff"></a>
 
 2016 年 9 月に導入された次の Intune 機能は、ハイブリッド展開で動作します。
 
@@ -99,7 +192,8 @@ ms.lasthandoff: 05/17/2017
 
   Windows Phone 8.1 ポータル サイト アプリでは、エンドユーザーが新しい [フィードバックの送信] ボタンを使用してアプリに関するフィードバックを送ることができます。 フィードバックを送信するには、ポータル サイト アプリの画面の右下にある "..." メニューをタップし、**[フィードバックの送信]** をタップします。 フィードバックは匿名化して収集され、ポータル サイト アプリのユーザー エクスペリエンス向上に役立てられます。
 
-### <a name="new-in-configuration-manager-technical-preview-1609"></a>Configuration Manager Technical Preview 1609 の新機能
+### Configuration Manager Technical Preview 1609 の新機能
+<a id="new-in-configuration-manager-technical-preview-1609" class="xliff"></a>
 
 2016 年 9 月の Configuration Manager Technical Preview 1609 では、次のハイブリッド新機能が導入されました。
 
@@ -123,7 +217,8 @@ ms.lasthandoff: 05/17/2017
 
   [監視] ワークスペースの新しいチャートを使用して、全体的なデバイス コンプライアンスの簡易ビュー、および非準拠の主な理由を取得できます。 詳細については、「[Intune compliance charts in TP 1609](/sccm/core/get-started/capabilities-in-technical-preview-1609#intune-compliance-charts)」 (TP 1609 の Intune コンプライアンス チャート) を参照してください。
 
-### <a name="new-in-configuration-manager-current-branch"></a>Configuration Manager (現在のブランチ) の新機能
+### Configuration Manager (現在のブランチ) の新機能
+<a id="new-in-configuration-manager-current-branch" class="xliff"></a>
 
 2016 年 9 月に導入された次の新機能は、Microsoft Intune と Configuration Manager パージョン 1606 (現在のブランチ) のハイブリッド展開で使用できます。
 
@@ -131,9 +226,11 @@ ms.lasthandoff: 05/17/2017
 
   すべての iOS プラットフォームを対象にしたプロファイルまたは構成項目がある場合は、これらも iOS 10 にプッシュできます。 iOS 10 を含む個々 の iOS プラットフォームをプロファイルおよび構成項目の対象にできるように、Configuration Manager バージョン 1606 への更新プログラムもリリースしました。 更新プログラムをインストールするには、Configuration Manager 管理者コンソールで **[管理] > [概要] > [Cloud Services] > [更新とサービス]** を選択します。 更新プログラムの詳細については、[http://support.microsoft.com/kb/3192616](http://support.microsoft.com/kb/3192616) を参照してください。
 
-## <a name="new-hybrid-features-in-august-2016"></a>2016 年 8 月のハイブリッド新機能
+## 2016 年 8 月
+<a id="august-2016" class="xliff"></a>
 
-### <a name="new-in-microsoft-intune"></a>Microsoft Intune の新機能
+### Microsoft Intune の新機能
+<a id="new-in-microsoft-intune" class="xliff"></a>
 
 2016 年 8 月に導入された次の Intune 機能は、ハイブリッド展開で動作します。
 
@@ -162,17 +259,21 @@ ms.lasthandoff: 05/17/2017
 
   iOS 用 Microsoft Intune Managed Browser アプリが、iOS 8.0 以降を実行しているデバイスをサポートするように更新されました。 iOS 7.1 デバイスは既存の Managed Browser アプリをまだ使用できますが、Managed Browser の新機能にアクセスして最大限に活用するために、iOS 8.0 以降に更新することをユーザーにお勧めしてください。
 
-### <a name="new-in-configuration-manager-technical-preview"></a>Configuration Manager Technical Preview の新機能
+### Configuration Manager Technical Preview の新機能
+<a id="new-in-configuration-manager-technical-preview" class="xliff"></a>
 
 2016 年 8 月の Configuration Manager Technical Preview では、ハイブリッド新機能は導入されていません。
 
-### <a name="new-in-configuration-manager-current-branch"></a>Configuration Manager (現在のブランチ) の新機能
+### Configuration Manager (現在のブランチ) の新機能
+<a id="new-in-configuration-manager-current-branch" class="xliff"></a>
 
 2016 年 8 月の Configuration Manager (現在のブランチ) では、ハイブリッド新機能は導入されていません。
 
-## <a name="new-hybrid-features-in-july-2016"></a>2016 年 7 月のハイブリッド新機能
+## 2016 年 7 月
+<a id="july-2016" class="xliff"></a>
 
-### <a name="new-in-microsoft-intune"></a>Microsoft Intune の新機能
+### Microsoft Intune の新機能
+<a id="new-in-microsoft-intune" class="xliff"></a>
 
 2016 年 7 月に導入された次の Intune 機能は、ハイブリッド展開で動作します。
 
@@ -205,29 +306,33 @@ ms.lasthandoff: 05/17/2017
   Android 用 Intune ポータル サイト アプリを使用して Intune にデバイスを登録している場合を除き、Android デバイスは、ポータル Web サイトを介してアプリケーションをインストールできなくなりました。
 
 
-### <a name="new-in-configuration-manager-technical-preview"></a>Configuration Manager Technical Preview の新機能
+### Configuration Manager Technical Preview の新機能
+<a id="new-in-configuration-manager-technical-preview" class="xliff"></a>
 
 2016 年 7 月の Configuration Manager Technical Preview では、ハイブリッド新機能は導入されていません。
 
-### <a name="new-in-configuration-manager-current-branch"></a>Configuration Manager (現在のブランチ) の新機能
+### Configuration Manager (現在のブランチ) の新機能
+<a id="new-in-configuration-manager-current-branch" class="xliff"></a>
 
 Configuration Manager Technical Preview リリースで以前提供されていた次の機能は、Intune と Configuration Manager (現在のブランチ) バージョン 1606 のハイブリッド展開で使用できるようになりました。
 
 * Configuration Manager コンソールから Windows 10 デバイスに対してビジネス向け Windows ストアのアプリを検索、管理、配布する ([1604](#new-in-1604-technical-preview))
-*     Android デバイス用の SmartLock 設定 ([1604](#new-in-1604-technical-preview))
-*    Windows 10 デバイス用のアプリトリガー VPN ([1605](#new-in-1605-technical-preview))
-*    リモート デバイスの操作の新しいエクスペリエンス ([1605](#new-in-1605-technical-preview))
-*    ビジネス向け Windows ストアのアプリ ([1605](#new-in-1605-technical-preview))
-*    ボリューム購入アプリの全般的な向上 ([1605](#new-in-1605-technical-preview))
-*    Windows 情報保護 (WIP) ([1605](#new-in-1605-technical-preview))
-*    IMEI または iOS シリアル番号を持つ会社所有のデバイスの事前宣言 ([1605](#new-in-1605-technical-preview))
-*    デバイスを自動的にコレクションごとに分類 ([1606](#new-in-1606-technical-preview))
+*   Android デバイス用の SmartLock 設定 ([1604](#new-in-1604-technical-preview))
+*   Windows 10 デバイス用のアプリトリガー VPN ([1605](#new-in-1605-technical-preview))
+*   リモート デバイスの操作の新しいエクスペリエンス ([1605](#new-in-1605-technical-preview))
+*   ビジネス向け Windows ストアのアプリ ([1605](#new-in-1605-technical-preview))
+*   ボリューム購入アプリの全般的な向上 ([1605](#new-in-1605-technical-preview))
+*   Windows 情報保護 (WIP) ([1605](#new-in-1605-technical-preview))
+*   IMEI または iOS シリアル番号を持つ会社所有のデバイスの事前宣言 ([1605](#new-in-1605-technical-preview))
+*   デバイスを自動的にコレクションごとに分類 ([1606](#new-in-1606-technical-preview))
 
 新機能については、特定の Technical Preview リリースに関するドキュメントを参照してください。
 
-## <a name="new-hybrid-features-in-june-2016"></a>2016 年 6 月のハイブリッド新機能
+## 2016 年 6 月
+<a id="june-2016" class="xliff"></a>
 
-### <a name="new-in-microsoft-intune"></a>Microsoft Intune の新機能
+### Microsoft Intune の新機能
+<a id="new-in-microsoft-intune" class="xliff"></a>
 2016 年 6 月に導入された次の Intune 機能は、ハイブリッド展開で動作します。
 
 - **Intune のサービス正常性** Intune のサービス正常性情報は、他の Microsoft サービスと共に中央の場所に移動されました。 この情報は、Office 365 管理ポータルの [サービス正常性] に表示されるようになりました。 詳細については、この[ブログ記事](https://blogs.technet.microsoft.com/enterprisemobility/2016/04/28/intune-service-health-is-now-available-in-the-office-365-portal/)を参照してください。
@@ -273,7 +378,8 @@ Configuration Manager Technical Preview リリースで以前提供されてい�
   * iOS 用 Microsoft Intune ポータル サイト アプリが更新され、iOS Version 8.0 以降をサポートするようになりました。 この更新は、デバイスで iOS Version 8.0 以降が実行されている場合にのみ、エンドユーザーがポータル サイト アプリをインストールし、Intune に新しいデバイスを登録できることを意味します。 サポートされていないバージョンの iOS が実行されているデバイスを登録済みの場合、ユーザーはそのデバイス上のポータル サイト アプリを引き続き使用できます。
 
 
-### <a name="new-in-1606-technical-preview"></a>1606 Technical Preview の新機能
+### 1606 Technical Preview の新機能
+<a id="new-in-1606-technical-preview" class="xliff"></a>
 2016 年 6 月に導入された次の新機能は、Intune と Configuration Manager Technical Preview 1606 のハイブリッド展開で使用できます。
 
 - **デバイスを自動的にコレクションごとに分類**
@@ -283,12 +389,15 @@ Configuration Manager Technical Preview リリースで以前提供されてい�
   > [!IMPORTANT]
   > この機能は、Microsoft Intune の 2016 年 6 月のリリースで動作します。 これらの手順を実行する前に、今回のリリースに更新していることを確認してください。
 
-### <a name="new-in-configuration-manager-current-branch"></a>Configuration Manager (現在のブランチ) の新機能
+### Configuration Manager (現在のブランチ) の新機能
+<a id="new-in-configuration-manager-current-branch" class="xliff"></a>
 2016 年 6 月の Configuration Manager (現在のブランチ) では、ハイブリッド新機能は導入されていません。
 
-##  <a name="new-hybrid-features-in-may-2016"></a>2016 年 5 月のハイブリッド新機能  
+##  2016 年 5 月
+<a id="may-2016" class="xliff"></a>  
 
-### <a name="new-in-microsoft-intune"></a>Microsoft Intune の新機能  
+### Microsoft Intune の新機能
+<a id="new-in-microsoft-intune" class="xliff"></a>  
  2016 年 5 月に導入された次の Intune 機能は、ハイブリッド展開で動作します。
 
 - **MAM SDK: PIN の長さの構成のサポート**
@@ -312,7 +421,8 @@ Configuration Manager Technical Preview リリースで以前提供されてい�
   エンドユーザーは、ポータル Web サイトを使用しているときに、選択したデバイスをより簡単に識別できるようになりました。 不正なデバイスが選択されている場合は、ホーム ページ バナーの **[Tap here]** (ここをタップ) リンクをタップして、適切なデバイスを選択できます。  
 
 
-### <a name="new-in-1605-technical-preview"></a>1605 Technical Preview の新機能  
+### 1605 Technical Preview の新機能
+<a id="new-in-1605-technical-preview" class="xliff"></a>  
  2016 年 5 月に導入された次の新機能は、Intune と Configuration Manager Technical Preview 1605 のハイブリッド展開で使用できます。 これらの機能は、Configuration Manager コンソールを使用して構成および管理する必要があります。  
 
 - **Windows 10 デバイス用のアプリトリガー VPN**
@@ -347,12 +457,15 @@ Configuration Manager Technical Preview リリースで以前提供されてい�
 
   -   [System Center Configuration Manager を使用した Windows 情報保護 (WIP) ポリシーの作成と展開](https://technet.microsoft.com/itpro/windows/keep-secure/create-wip-policy-using-sccm)  
 
-### <a name="new-in-configuration-manager-current-branch"></a>Configuration Manager (現在のブランチ) の新機能  
+### Configuration Manager (現在のブランチ) の新機能
+<a id="new-in-configuration-manager-current-branch" class="xliff"></a>  
  2016 年 5 月の Configuration Manager (現在のブランチ) では、ハイブリッド新機能は導入されていません。  
 
-##  <a name="new-hybrid-features-in-april-2016"></a>2016 年 4 月のハイブリッド新機能  
+##  2016 年 4 月
+<a id="april-2016" class="xliff"></a>  
 
-### <a name="new-in-microsoft-intune"></a>Microsoft Intune の新機能  
+### Microsoft Intune の新機能
+<a id="new-in-microsoft-intune" class="xliff"></a>  
  2016 年 4 月に導入された次の Intune 機能は、ハイブリッド展開で動作します。  
 
 - **MAM ユーザー コンプライアンス**
@@ -383,7 +496,8 @@ Configuration Manager Technical Preview リリースで以前提供されてい�
 
   エンドユーザーが基幹業務アプリをインストールする際に、強化されたアプリ インストール エクスペリエンスが得られるようになりました。 アプリのインストールに長い時間がかかる場合、そのデバイスを手動で同期して、同期プロセスを強制的に再開できます。 エンドユーザーの手順を確認するには、Intune ライブラリの「[Sync your device manually to speed up app installations](/intune/enduser/using-your-windows-device-with-intune)」 (アプリ インストールを高速化するための手動でのデバイスの同期) を参照してください。  
 
-###  <a name="new-in-1604-technical-preview"></a>1604 Technical Preview の新機能
+###  1604 Technical Preview の新機能
+<a id="new-in-1604-technical-preview" class="xliff"></a>
  2016 年 4 月に導入された次の新機能は、Intune と Configuration Manager Technical Preview 1604 のハイブリッド展開で使用できます。 これらの機能は、Configuration Manager コンソールを使用して構成および管理する必要があります。  
 
 - **Configuration Manager コンソールから Windows 10 デバイスに対してビジネス向け Windows ストアのアプリを検索、管理、配布する**
@@ -395,12 +509,15 @@ Configuration Manager Technical Preview リリースで以前提供されてい�
 
   新しい設定が Android および Samsung KNOX Standard 構成項目に追加され、互換性のある Android デバイスで SmartLock 機能を制御することができます。  この設定を使用して、エンドユーザーが SmartLock を構成することを禁止できます。 詳細については、「[Capabilities in Technical Preview 1604 for System Center Configuration Manage](/sccm/core/get-started/capabilities-in-technical-preview-1604.md)」 (System Center Configuration Manager の Technical Preview 1604 の機能) の「[SmartLock setting for Android devices](/sccm/get-started/capabilities-in-technical-preview-1604#smartlock-setting-for-android-devices)」 (Android デバイスの SmartLock 設定) を参照してください。  
 
-### <a name="new-in-configuration-manager-current-branch"></a>Configuration Manager (現在のブランチ) の新機能  
+### Configuration Manager (現在のブランチ) の新機能
+<a id="new-in-configuration-manager-current-branch" class="xliff"></a>  
  2016 年 4 月の Configuration Manager (現在のブランチ) では、ハイブリッド新機能は導入されませんでした。  
 
-##  <a name="new-hybrid-features-in-march-2016"></a>2016 年 3 月のハイブリッド新機能  
+##  2016 年 3 月
+<a id="march-2016" class="xliff"></a>  
 
-### <a name="new-in-microsoft-intune"></a>Microsoft Intune の新機能  
+### Microsoft Intune の新機能
+<a id="new-in-microsoft-intune" class="xliff"></a>  
  2016 年 3 月に導入された次の Intune 機能は、ハイブリッド展開で動作します。  
 
 - **Outlook 連絡先の同期を防ぐための MAM コントロール (iOS)**
@@ -447,10 +564,12 @@ Configuration Manager Technical Preview リリースで以前提供されてい�
 
   -   登録エラー メッセージが、ポータル サイト アプリに表示されるようになりました。  
 
-### <a name="new-in-configuration-manager-technical-preview"></a>Configuration Manager Technical Preview の新機能  
+### Configuration Manager Technical Preview の新機能
+<a id="new-in-configuration-manager-technical-preview" class="xliff"></a>  
  2016 年 3 月の Configuration Manager Technical Preview では、ハイブリッド新機能は導入されませんでした。  
 
-### <a name="new-in-configuration-manager-current-branch"></a>Configuration Manager (現在のブランチ) の新機能  
+### Configuration Manager (現在のブランチ) の新機能
+<a id="new-in-configuration-manager-current-branch" class="xliff"></a>  
  2016 年 3 月に導入された次の新機能は、Intune と Configuration Manager (現在のブランチ) バージョン 1602 のハイブリッド展開で使用できます。 これらの機能は、Configuration Manager コンソールを使用して構成および管理する必要があります。  
 
 - **iOS アプリ構成ポリシー**

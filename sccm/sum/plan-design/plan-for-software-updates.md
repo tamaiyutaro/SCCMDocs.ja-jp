@@ -6,7 +6,7 @@ keywords:
 author: dougeby
 ms.author: dougeby
 manager: angrobe
-ms.date: 03/28/2017
+ms.date: 06/27/2017
 ms.topic: article
 ms.prod: configuration-manager
 ms.service: 
@@ -14,21 +14,23 @@ ms.technology:
 - configmgr-sum
 ms.assetid: d071b0ec-e070-40a9-b7d4-564b92a5465f
 ms.translationtype: Human Translation
-ms.sourcegitcommit: 690d03d9c8c49a815bd318df549d7401a855bc5d
-ms.openlocfilehash: 703adc87b9498e39a1db71b94f1bc1a05a4889ec
+ms.sourcegitcommit: f4c46bfab9b40b29654f4e883817a5508ab25b74
+ms.openlocfilehash: b5a2fd9f15992c9e5ef8aede64af5446b6852b1a
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/17/2017
+ms.lasthandoff: 06/28/2017
 
 
 ---
 
-# <a name="plan-for-software-updates-in-system-center-configuration-manager"></a>System Center Configuration Manager でのソフトウェア更新プログラムの計画
+# System Center Configuration Manager でのソフトウェア更新プログラムの計画
+<a id="plan-for-software-updates-in-system-center-configuration-manager" class="xliff"></a>
 
 *適用対象: System Center Configuration Manager (Current Branch)*
 
 System Center Configuration Manager の実稼働環境でソフトウェア更新プログラムを使用する前に、計画の段階を経ることが重要です。 ソフトウェアの更新プログラムの実装を成功させるには、適切なソフトウェアの更新ポイント インフラストラクチャの計画があることが不可欠です。
 
-## <a name="capacity-planning-recommendations-for-software-updates"></a>ソフトウェア更新プログラムの容量計画に関する推奨事項  
+## ソフトウェア更新プログラムの容量計画に関する推奨事項
+<a id="capacity-planning-recommendations-for-software-updates" class="xliff"></a>  
  組織に適したソフトウェア更新プログラムの容量計画に必要な情報を特定する基準として、次の推奨事項を使用できます。 実際の容量要件は、個々のネットワーク環境、ソフトウェアの更新ポイント サイト システムのホストに使用するハードウェア、インストールされるクライアントの数、およびサーバーにインストールされるサイト システムの役割といった条件によって、このトピックに記載されている推奨事項とは異なる場合があります。  
 
 ###  <a name="BKMK_SUMCapacity"></a> ソフトウェアの更新ポイントの容量計画  
@@ -46,7 +48,8 @@ System Center Configuration Manager の実稼働環境でソフトウェア更�
 
 -   既定で、Configuration Manager はソフトウェアの更新ポイントを NLB クラスターとして構成することはサポートされていません。 Configuration Manager バージョン 1702 より前のバージョンでは、Configuration Manager SDK を使用して、NLB クラスターに最大 4 つのソフトウェアの更新ポイントを構成できました。 しかし、Configuration Manager バージョン 1702 以降では、ソフトウェアの更新ポイントは NLB クラスターとしてサポートされず、この構成が検出された場合は Configuration Manager バージョン 1702 へのアップグレードがブロックされます。
 
-### <a name="capacity-planning-for-software-updates-objects"></a>ソフトウェア更新オブジェクトの容量計画  
+### ソフトウェア更新オブジェクトの容量計画
+<a id="capacity-planning-for-software-updates-objects" class="xliff"></a>  
  次の容量情報を参照して、ソフトウェア更新オブジェクトの計画を立てます。  
 
 -   **展開内のソフトウェア更新プログラムの数を 1000 以下にする**  
@@ -113,7 +116,8 @@ Configuration Manager バージョン 1606 から、アクティブなソフト�
 
 デバイス コレクションまたは選択したデバイスのセットでこのオプションを有効にします。 有効にすると、クライアントは次のスキャンにおいて他のソフトウェア更新ポイントを探します。 WSUS の構成設定に応じて (更新プログラムの分類、製品、ソフトウェアの更新ポイントが WSUS データベースを共有するかどうかなど)、新しいソフトウェアの更新ポイントへの切り替えにより、追加のネットワーク トラフィックが発生します。 したがって、必要な場合に、このオプションのみを使用する必要があります。  
 
-#### <a name="to-enable-the-option-to-switch-software-update-points"></a>ソフトウェア更新ポイントを切り替えるオプションを有効にするには  
+#### ソフトウェア更新ポイントを切り替えるオプションを有効にするには
+<a id="to-enable-the-option-to-switch-software-update-points" class="xliff"></a>  
 
 1.  Configuration Manager コンソールで、**[資産とコンプライアンス] > [概要] > [デバイス コレクション]** に移動します。  
 
@@ -183,7 +187,8 @@ Configuration Manager バージョン 1606 から、アクティブなソフト�
 
  Configuration Manager のソフトウェアの更新ポイントとインターネット間の企業ファイアウォールがある場合、ソフトウェアの更新ポイントとそのアップストリーム更新ソースがある場合、追加のソフトウェアの更新ポイントがある場合には、ファイアウォールは WSUS で使う HTTP や HTTPS ポートを許可するように構成する必要があります。 Microsoft Update への接続は、ポート 80 を HTTP に、ポート 443 を HTTPS を使用するように常に構成されます。 子サイトのソフトウェアの更新ポイントで実行されている WSUS から親サイトのソフトウェアの更新ポイントで実行されている WSUS への接続には、カスタム ポートを使用することができます。 セキュリティ ポリシーによって接続が許可されない場合は、同期の手段としてエクスポートとインポートを使う必要があります。 詳細については、このトピックの「 [同期ソース](#BKMK_SyncSource) 」セクションを参照してください。 WSUS で使用されるポートの詳細については、「[System Center Configuration Manager において、WSUS で使用するポート設定を特定する方法](../get-started/install-a-software-update-point.md#wsus-settings)」を参照してください。  
 
-#### <a name="restrict-access-to-specific-domains"></a>特定のドメインに対するアクセスを制限する  
+#### 特定のドメインに対するアクセスを制限する
+<a id="restrict-access-to-specific-domains" class="xliff"></a>  
  アクティブなソフトウェアの更新ポイントとインターネットの間のファイアウォールで、これらのポートとプロトコルをすべてのアドレスに対して開放できない場合は、WSUS と自動更新で Microsoft Update と通信できるようにするため、アクセスを次のドメインに限定することができます。  
 
 -   http://windowsupdate.microsoft.com
@@ -294,15 +299,20 @@ Configuration Manager バージョン 1606 から、アクティブなソフト�
 
 -   置き換える方のソフトウェア更新プログラムが稼動環境での展開に承認されていない場合。  
 
+    > [!NOTE]  
+    >  Configuration Manager で置き換えられたソフトウェアの更新プログラムが**期限切れ**に設定されたときに、WSUS でその更新プログラムが**期限切れ**に設定されることはありません。 ただし、WSUS クリーンアップ タスクが実行されると、Configuration Manager で**期限切れ**に設定されている更新プログラムは、WSUS サーバー上で**拒否済み**の状態に設定され、コンピューター上の Windows Update Agent が、これらの更新プログラムをスキャンすることはなくなります。 つまり、クライアントは、クリーンアップ タスクが実行されるまでスキャンを続けるということです。 WSUS クリーンアップ タスクの詳細については、「[ソフトウェア更新プログラムのメンテナンス](/sccm/sum/deploy-use/software-updates-maintenance)」を参照してください。
+    
 ###  <a name="BKMK_UpdateLanguages"></a> 言語  
  ソフトウェアの更新ポイントの言語設定を使用すると、ソフトウェア更新プログラムに同期される概要詳細 (ソフトウェア更新プログラムのメタデータ) の言語、およびソフトウェア更新プログラムにダウンロードされるソフトウェア更新ファイルの言語を構成できます。  
 
-#### <a name="software-update-file"></a>ソフトウェア更新ファイル  
+#### ソフトウェア更新ファイル
+<a id="software-update-file" class="xliff"></a>  
  ソフトウェアの更新ポイントのプロパティの [ **ソフトウェア更新ファイル** ] 設定で構成した言語は、サイトでソフトウェア更新プログラムをダウンロードするときに使用可能な既定の言語セットを提供します。 ソフトウェア更新プログラムがダウンロードまたは展開されるたびに既定で選択される言語を変更できます。 ソフトウェア更新プログラム ファイルが選択した言語で使用できる場合、ダウンロード プロセスで、構成した言語のソフトウェア更新プログラム ファイルが展開パッケージのソース場所にダウンロードされます。 ダウンロードしたファイルはサイト サーバーのコンテンツ ライブラリにコピーされ、パッケージ用に構成される配布ポイントにコピーされます。  
 
  ソフトウェア更新ファイルの言語設定は、環境で最も使用される言語に設定してください。 たとえば、サイト内のクライアント コンピューターのオペレーティング システムまたはアプリケーションで主に英語と日本語を使用し、サイト内で他の言語をほとんど使用しない場合は、ソフトウェア更新プログラムのダウンロードまたは展開時に [ **ソフトウェア更新ファイル** ] 列で英語と日本語を選択して他の言語をクリアします。 展開の [ **言語の選択** ] ページで既定の設定を使用して、ウィザードをダウンロードすることができます。 また、これによって、不要な更新プログラム ファイルがダウンロードされなくなります。 この設定は、Configuration Manager 階層内の各ソフトウェアの更新ポイントで構成されます。  
 
-#### <a name="summary-details"></a>概要詳細  
+#### 概要詳細
+<a id="summary-details" class="xliff"></a>  
  同期プロセス中、概要詳細の情報 (ソフトウェア更新プログラムのメタデータ) が、指定された言語のソフトウェアの更新プログラムに対して更新されます。 メタデータは、ソフトウェア更新プログラムに関する情報を提供します。たとえば、名前、説明、更新によってサポートされる製品、更新分類、アーティクル ID、ダウンロード URL、適用規則などです。  
 
  概要情報設定は、最上位サイトでのみ構成します。 概要情報は、子サイトのソフトウェアの更新ポイントでは構成されません。これは、ファイルベースのレプリケーションを使用して、ソフトウェア更新プログラムのメタデータが中央管理サイトから子サイトにレプリケートされるためです。 概要詳細の言語を選択するときは、環境内で必要な言語のみを選択します。 選択する言語が多いほど、ソフトウェア更新プログラムのメタデータの同期に必要な時間が長くなります。 Configuration Manager では、Configuration Manager コンソールが実行されているオペレーティング システムのロケールのソフトウェア更新プログラムのメタデータが表示されます。 ソフトウェア更新プログラムのローカライズされたプロパティがオペレーティング システムのロケールで使用できない場合、ソフトウェア更新情報が英語で表示されます。  
@@ -320,6 +330,7 @@ Configuration Manager バージョン 1606 から、Configuration Manager ソフ
 
 Configuration Manager の以前のバージョンでは、Windows 8 およびそれ以降のコンピューターにおいて再起動が保留中となっているときに、(再起動ダイアログから行う代わりに) Windows 電源オプションを使用してコンピューターをシャットダウンまたは再起動する場合、再起動ダイアログはコンピューターの再起動後もそのまま表示され、コンピューターも構成された期限までに再起動が必要なままとなります。
 
-## <a name="next-steps"></a>次のステップ
+## 次のステップ
+<a id="next-steps" class="xliff"></a>
 ソフトウェアの更新プログラムを計画する場合、「[Prepare for software updates management](../get-started/prepare-for-software-updates-management.md)」 (ソフトウェア更新プログラムの管理の準備) を参照してください。
 

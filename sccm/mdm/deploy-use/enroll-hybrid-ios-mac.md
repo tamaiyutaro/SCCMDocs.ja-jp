@@ -17,43 +17,46 @@ author: nathbarn
 ms.author: nathbarn
 manager: angrobe
 ms.translationtype: Human Translation
-ms.sourcegitcommit: 2c723fe7137a95df271c3612c88805efd8fb9a77
-ms.openlocfilehash: 2288be606d7d586de5dc18d640f295e823daf266
+ms.sourcegitcommit: ed6b65a1a5aabc0970cd0333cb033405cf6d2aea
+ms.openlocfilehash: 52596b211acb1182cb38259cba267bdd0846de80
 ms.contentlocale: ja-jp
-ms.lasthandoff: 03/06/2017
+ms.lasthandoff: 07/03/2017
 
 
 ---
-# <a name="set-up-ios-hybrid-device-management-with-system-center-configuration-manager-and-microsoft-intune"></a>System Center Configuration Manager と Microsoft Intune で iOS ハイブリッド デバイス管理の設定します
+# System Center Configuration Manager と Microsoft Intune で iOS ハイブリッド デバイス管理の設定します
+<a id="set-up-ios-hybrid-device-management-with-system-center-configuration-manager-and-microsoft-intune" class="xliff"></a>
 
 *適用対象: System Center Configuration Manager (Current Branch)*
 
-Configuration Manager と Intune を使用して、BYOD ("Bring Your Own Device") の iOS および Mac OS X デバイスの登録を有効にし、iPhone、iPad、Mac のユーザーが会社の電子メールとリソースにアクセスできるようにします。 ユーザーが Intune の会社のポータル アプリをインストールすると、そのデバイスをポリシーの対象にできます。 iOS および Mac デバイスを管理するには、Apple Push Notification サービス (APNs) 証明書を Apple からインポートする必要があります。 この証明書を取得することで、Intune が iOS および Mac デバイスを管理し、モバイル デバイス管理機関サービスとの間に認可された暗号化 IP 接続を確立できるようになります。  
+Configuration Manager と Intune を使用して、iOS および Mac OS デバイスの登録を有効にし、iPhone、iPad、Mac のユーザーが会社の電子メールとリソースにアクセスできるようにします。 ユーザーが Intune の会社のポータル アプリをインストールすると、そのデバイスをポリシーの対象にできます。 iOS および Mac デバイスを管理するには、Apple Push Notification サービス (APNs) 証明書を Apple からインポートする必要があります。 この証明書で、Intune が Apple のデバイス管理サービスと接続を確立して、iOS と Mac デバイスを管理できるようになります。  
 
  企業所有の iOS デバイスを登録することもできます。  「[Enroll company-owned devices](enroll-company-owned-devices.md)」 (会社所有のデバイスの登録) をご覧ください。  
 
-## <a name="enable-ios-device-enrollment"></a>iOS デバイス登録の有効化  
+## iOS デバイス登録の有効化
+<a id="enable-ios-device-enrollment" class="xliff"></a>  
  iOS デバイス登録を準備するには、次の手順に従います。  
 
-#### <a name="set-up-ios-device-enrollment-in-configuration-manager"></a>Configuration Manager での iOS デバイス登録のセットアップ  
+#### Configuration Manager での iOS デバイス登録のセットアップ
+<a id="set-up-ios-device-enrollment-in-configuration-manager" class="xliff"></a>  
 
 1.  **前提条件** - 任意のプラットフォームの登録をセットアップする前に、「[ハイブリッド MDM をセットアップする](setup-hybrid-mdm.md)」の前提条件と手順を完了しておく必要があります。    
 
-2.  **証明書署名要求をダウンロード** - Apple からの APNs 証明書を要求するには、証明書署名要求ファイル (.csr) が必要です。  
+2.  **証明書署名要求をダウンロード** - Apple からの APNs 証明書を要求するには、証明書署名要求ファイルが必要です。  
 
     1.  Configuration Manager コンソールの **[管理]** ワークスペースで、**[クラウド サービス]** >  **[Microsoft Intune サブスクリプション]** に移動します。  
 
     2.  **[ホーム]** タブで、 **[APNs 証明書要求の作成]**をクリックします。 **[Apple Push Notification サービス証明書署名要求の要求]** ダイアログ ボックスが開きます。  
 
-    3.  **[参照]** をクリックして、新しい証明書署名要求 (.csr) ファイルの保存先のパスを指定します。 証明書署名要求 (.csr) ファイルをローカルに保存します。  
+    3.  **[参照]** をクリックして、新しい証明書署名要求ファイルの保存先のパスを指定します。 証明書署名要求ファイルをローカルに保存します。  
 
-    4.  **[ダウンロード]**をクリックします。 新しい Microsoft Intune .csr ファイルがダウンロードされ、Configuration Manager によって保存されます。 .csr ファイルは、Apple Push Certificates Portal からの信頼関係証明書を要求するために使用します。  
+    4.  **[ダウンロード]**をクリックします。 新しい Microsoft Intune 証明書署名要求ファイルがダウンロードされ、Configuration Manager によって保存されます。 証明書署名要求ファイルは、Apple Push Certificates Portal からの信頼関係証明書を要求するために使用します。  
 
 3.  **Apple からの APNs 証明書の要求** - Apple Push Notification サービス (APNs) 証明書は、管理サービス、Intune、および登録済み iOS モバイル デバイスの間に信頼関係を確立するために使用されます。  
 
     1.  ブラウザーで [Apple Push Certificates Portal](http://go.microsoft.com/fwlink/?LinkId=269844) に接続し、会社の Apple ID でサインインします。 この Apple ID は、将来 APNs 証明書を更新するときにも使用する必要があります。  
 
-    2.  証明書署名要求 (.csr) ファイルを使用してウィザードを完了します。 APNs 証明書をダウンロードして、.pem ファイルをローカルに保存します。 この APNs 証明書 (.pem) ファイルは、Apple Push Notification サーバーと Intune のモバイル デバイス管理機関との間に信頼関係を確立するために使用されます。  
+    2.  証明書署名要求 (.csr) ファイルを使用してウィザードを完了します。 APNs 証明書をダウンロードして、pem ファイルをローカルに保存します。 この APNs 証明書 (.pem) ファイルは、Apple Push Notification サーバーと Intune のモバイル デバイス管理機関との間に信頼関係を確立するために使用されます。  
 
 4.  **登録を有効にし、APNs 証明書をアップロード** - iOS の登録を有効にするには、APNs 証明書をアップロードします。  
 
@@ -68,7 +71,7 @@ Configuration Manager と Intune を使用して、BYOD ("Bring Your Own Device"
 
     4.  **[参照]**をクリックし、Apple からダウンロードした APNs 証明書 (.cer) ファイルに移動します。 Configuration Manager に APNs 証明書情報が表示されます。 **[OK]** をクリックして、APNs 証明書を Intune に保存します。  
 
- セットアップが完了したら、デバイスを登録する方法をユーザーに知らせる必要があります。 「[デバイスの登録についてユーザーに通知する事柄](https://docs.microsoft.com/intune/deploy-use/what-to-tell-your-end-users-about-using-microsoft-intune)」に関する記事をご覧ください。 この情報は、Microsoft Intune と Configuration Manager の両方によって管理されるモバイル デバイスに適用されます。
+ セットアップが完了したら、デバイスを登録する方法をユーザーに知らせる必要があります。 「[デバイスの登録についてユーザーに通知する事柄](https://docs.microsoft.com/intune/end-user-educate)」に関する記事をご覧ください。 この情報は、Microsoft Intune と Configuration Manager の両方によって管理されるモバイル デバイスに適用されます。
 
 > [!div class="button"]
 [< 前のステップ](create-service-connection-point.md)  [次のステップ >](set-up-additional-management.md)

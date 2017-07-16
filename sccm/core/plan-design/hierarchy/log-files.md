@@ -2,7 +2,7 @@
 title: "Configuration Manager のログ ファイル | Microsoft Docs"
 description: "System Center Configuration Manager 階層内での問題に対してトラブルシューティングを行うには、ログ ファイルを使用します。"
 ms.custom: na
-ms.date: 3/28/2017
+ms.date: 7/03/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -17,14 +17,15 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 ms.translationtype: Human Translation
-ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
-ms.openlocfilehash: b991b4ea27e66c233b04f8e65a412404521d89a6
+ms.sourcegitcommit: 5e1bc0063ab3d34410f7dbc773a5eacdd5eb6d2f
+ms.openlocfilehash: 28597cf1cb269fff0872c7f79ef961496aea32ab
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/17/2017
+ms.lasthandoff: 07/05/2017
 
 
 ---
-# <a name="log-files-in-system-center-configuration-manager"></a>System Center Configuration Manager のログ ファイル
+# System Center Configuration Manager のログ ファイル
+<a id="log-files-in-system-center-configuration-manager" class="xliff"></a>
 
 *適用対象: System Center Configuration Manager (Current Branch)*
 
@@ -126,7 +127,8 @@ System Center Configuration Manager では、クライアント コンポーネ�
 
  ログ ファイルのサイズを変更するには、ログ ファイルの名前と場所を変更します。また、1 つのログ ファイルに対して複数のコンポーネントを強制的に書き込むには、次の手順を実行します。  
 
-#### <a name="to-modify-logging-for-a-component"></a>コンポーネントのログの記録オプションを変更するには  
+#### コンポーネントのログの記録オプションを変更するには
+<a id="to-modify-logging-for-a-component" class="xliff"></a>  
 
 1.  Configuration Manager コンソールで **[監視]**、**[システムのステータス]** の順に選択し、**[サイトのステータス]** か **[コンポーネントのステータス]** を選択します。  
 2.  **[ホーム]** タブの **[コンポーネント]** グループで **[起動]** を選択して、**[Configuration Manager サービス マネージャー]** を選択します。  
@@ -272,7 +274,7 @@ Mac コンピューター用の Configuration Manager クライアントでは�
 |CCMNotifications-&lt;*date_time*>.log|Mac コンピューターに表示された Configuration Manager の通知に関連する処理を記録します。<br /><br /> このログ ファイルは、Mac コンピューターの ~/Library/Logs フォルダーに配置されます。|  
 |CCMPrefPane-&lt;*date_time*>.log|全般的なステータスやエラー記録などの、Mac コンピューターの Configuration Manager の設定ダイアログ ボックスに関連する処理を記録します。<br /><br /> このログ ファイルは、Mac コンピューターの ~/Library/Logs フォルダーに配置されます。|  
 
-サイト システム サーバーのログ ファイル SMS_DM.log には、モバイル デバイスおよび Mac コンピューター用に設定された管理ポイントと Mac コンピューター間の通信が記録されます。  
+サイト システム サーバーのログ ファイル SMS_DM.log には、モバイル デバイスおよび Mac コンピューター用に設定された管理ポイントと Mac コンピューター間の通信も記録されます。  
 
 ##  <a name="BKMK_ServerLogs"></a> Configuration Manager サイト サーバーのログ ファイル  
  次のセクションでは、サイト サーバーにあるログ ファイルと、各種サイト システムの役割に関係のあるログ ファイルについて説明します。  
@@ -500,14 +502,15 @@ Mac コンピューター用の Configuration Manager クライアントでは�
 |BgbHttpProxy.log|HTTP を使用して通知サーバーとの間でクライアントのメッセージをリレーしたときに、通知 HTTP プロキシの処理を記録します。|クライアント|  
 |CCMNotificationAgent.log|クライアントとサーバー間の通信などの通知エージェントの処理、および受信して他のクライアント エージェントにディスパッチされたタスクに関する情報を記録します。|クライアント|  
 
-### <a name="cloud-management-gateway"></a>クラウド管理ゲートウェイ
+### クラウド管理ゲートウェイ
+<a id="cloud-management-gateway" class="xliff"></a>
 
 次の表に、クラウド管理ゲートウェイに関係のある情報を含むログ ファイルを示します。
 
 ||||
 |-|-|-|
 |ログの名前|説明|ログ ファイルのあるコンピューター|
-|CloudMgr.log|クラウド管理ゲートウェイ サービスの展開、進行中のサービスの状態、およびサービスに関連する使用状況データについての情報を記録します。<br>レジストリ **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\SMS\COMPONENTS\SMS_CLOUD_SERVICES_MANAGER\Logging level** を編集することで、ログ レベルを構成することができます|サイト システム サーバーの **[SMS/ログ]** フォルダー|
+|CloudMgr.log|クラウド管理ゲートウェイ サービスの展開、進行中のサービスの状態、およびサービスに関連する使用状況データについての情報を記録します。<br>レジストリ **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\SMS\COMPONENTS\SMS_CLOUD_SERVICES_MANAGER\Logging level** を編集することで、ログ レベルを構成することができます|プライマリ サイト サーバーまたは CAS の *installdir* フォルダー。|
 |CMGSetup.log または CMG-*RoleInstanceID*-CMGSetup.log<sup>1</sup>|クラウド管理ゲートウェイ展開 (Azure のローカル展開) の 2 番目のフェーズに関する詳細を記録します<br>**[Azure portal\Cloud services configuration (Azure Portal\クラウド サービス構成)]** タブで **[トレース レベル]** (**[情報]** (既定)、**[詳細]**、**[エラー]**) の設定を使用してログ レベルを構成できます。|Azure サーバーの **[%approot%\logs]**、またはサイト システム サーバーの [SMS/ログ] フォルダー|
 |CMGHttpHandler.log または CMG-*RoleInstanceID*- CMGHttpHandler.log<sup>1</sup>|Azure でのインターネット インフォメーション サービスに含まれるクラウド管理ゲートウェイの http ハンドラーに関する詳細を記録します<br>**[Azure portal\Cloud services configuration (Azure Portal\クラウド サービス構成)]** タブで **[トレース レベル]** (**[情報]** (既定)、**[詳細]**、**[エラー]**) の設定を使用してログ レベルを構成できます。|Azure サーバーの **[%approot%\logs]**、またはサイト システム サーバーの [SMS/ログ] フォルダー|
 |CMGService.log または CMG-*RoleInstanceID*- CMGService.log<sup>1</sup>|Azure のクラウド管理ゲートウェイ サービスのコア コンポーネントの詳細を記録します<br>**[Azure portal\Cloud services configuration (Azure Portal\クラウド サービス構成)]** タブで **[トレース レベル]** (**[情報]** (既定)、**[詳細]**、**[エラー]**) の設定を使用してログ レベルを構成できます。|Azure サーバーの **[%approot%\logs]**、またはサイト システム サーバーの [SMS/ログ] フォルダー|

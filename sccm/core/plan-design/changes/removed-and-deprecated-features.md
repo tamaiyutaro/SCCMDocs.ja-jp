@@ -2,7 +2,7 @@
 title: "非推奨の機能 |Microsoft Docs"
 description: "System Center Configuration Manager でサポートされなくなった機能、製品、およびオペレーティング システムについて説明します。"
 ms.custom: na
-ms.date: 3/27/2017
+ms.date: 06/27/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -17,14 +17,15 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 ms.translationtype: Human Translation
-ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
-ms.openlocfilehash: 57b9ab13bda0bb5fa5139e52a4c55ef9524e4097
+ms.sourcegitcommit: 0ec241d07f51b80b84d65676ef1207b31a9a9983
+ms.openlocfilehash: e23acf743d8f73afd213c44c3728d1b66d7e558f
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/17/2017
+ms.lasthandoff: 06/28/2017
 
 
 ---
-# <a name="removed-and-deprecated-features-for-system-center-configuration-manager"></a>System Center Configuration Manager から削除された機能と非推奨の機能
+# System Center Configuration Manager から削除された機能と非推奨の機能
+<a id="removed-and-deprecated-features-for-system-center-configuration-manager" class="xliff"></a>
 
 *適用対象: System Center Configuration Manager (Current Branch)*
 
@@ -32,7 +33,8 @@ ms.lasthandoff: 05/17/2017
 
 この情報は、今後のリリースで変更される可能性があります。また、非推奨の機能、製品、またはオペレーティング システムをすべて記載しているわけではありません。  
 
-## <a name="how-to-use-this-information"></a>この情報の使用方法  
+## この情報の使用方法
+<a id="how-to-use-this-information" class="xliff"></a>  
 機能またはオペレーティング システムが非推奨と最初に示されるとき、それは今後の Configuration Manager のバージョンで、それの Configuration Manager での使用がサポートされなくなることを意味します。 この情報は、その機能またはオペレーティング システムの代わりとなるものを計画できるよう、提供しています。 それがサポート対象外となる Configuration Manager の最初のバージョンがリリースされると、その特定のバージョンを示すよう、このトピックは更新されます。  
 
 機能またはオペレーティング システムがサポート対象外となった場合でも、前のバージョンのサポート対象の Configuration Manager を使用する場合、その機能またはオペレーティング システムはサポートされます。 ただし、それ以降の日付にリリースされたまたは記載されているバージョンの Configuration Manager を使用する場合、そのバージョンの Configuration Manager ではサポートされません。
@@ -49,8 +51,10 @@ ms.lasthandoff: 05/17/2017
 
 
 
-## <a name="deprecated-operating-systems"></a>非推奨オペレーティング システム
-### <a name="server-operating-systems"></a>サーバー オペレーティング システム  
+## 非推奨オペレーティング システム
+<a id="deprecated-operating-systems" class="xliff"></a>
+### サーバー オペレーティング システム
+<a id="server-operating-systems" class="xliff"></a>  
 
 |**オペレーティング システム**|**最初に非推奨と発表**|**サポートの削除** |  
 |-|-|-|  
@@ -59,13 +63,14 @@ ms.lasthandoff: 05/17/2017
 
 -   注 1: このオペレーティング システムは、サイト サーバーとして、または配布ポイントとプル配布ポイントを除くサイト システムの役割としてはサポートされていません。 このサポートの廃止が発表されるまで、またはこのオペレーティング システムの拡張サポート期間が終了するまでは、このオペレーティング システムを配布ポイントとして使用し続けることができます。 詳細については、「[Installation of System Center Configuration Manager CB and LTSB fails on Windows Server 2008](https://support.microsoft.com/help/4015095)」 (Windows Server 2008 で System Center Configuration Manager CB および LTSB のインストールに失敗する) を参照してください。
 
--   注 2: バージョン 1702 以降では、このオペレーティング システムはサイト サーバーやほとんどのサイト システムの役割でサポートされていません。ただし、1702 より前のバージョンで引き続き使用することはできます。 このサポートの廃止が発表されるまで、またはこのオペレーティング システムの延長サポート期間が終了するまで、状態移行ポイントおよび配布ポイントのサイト システムの役割 (プル配布ポイント、PXE およびマルチキャストの場合を含む) に対してこのオペレーティング システムは引き続きサポートされます。 バージョン 1602 より、サイト サーバーのオペレーティング システムを Windows Server 2008 R2 から Windows Server 2012 R2 にインプレース アップグレードできます。  
+-   注 2: バージョン 1702 以降では、このオペレーティング システムはサイト サーバーやほとんどのサイト システムの役割でサポートされていません。ただし、1702 より前のバージョンで引き続き使用することはできます。 このサポートの廃止が発表されるまで、またはこのオペレーティング システムの延長サポート期間が終了するまで、配布ポイントのサイト システムの役割 (プル配布ポイント、PXE およびマルチキャストの場合を含む) に対してこのオペレーティング システムは引き続きサポートされます。 バージョン 1602 より、サイト サーバーのオペレーティング システムを Windows Server 2008 R2 から Windows Server 2012 R2 にインプレース アップグレードできます。  
 
      サイト サーバーのオペレーティング システムのインプレース アップグレードに関する詳細については、「[System Center Configuration Manager の変更点](../../../core/plan-design/changes/what-has-changed-from-configuration-manager-2012.md)」の「[Windows Server 2008 R2 を実行するサイト サーバーのオペレーティング システムのインプレース アップグレード](../../../core/plan-design/changes/whats-new-in-version-1602.md#bkmk_UpgradeOS)」セクションを参照してください。
 
 
 
-### <a name="client-operating-systems"></a>クライアント オペレーティング システム  
+### クライアント オペレーティング システム
+<a id="client-operating-systems" class="xliff"></a>  
 
  特に明記されていない限り、Configuration Manager クライアントとしてサポートされている各オペレーティング システムは、オペレーティングシステムの延長サポート終了日までサポートされます。 延長サポート終了日の詳細については、「[Microsoft サポート ライフ サイクル](https://support.microsoft.com/lifecycle)」を参照してください。 延長サポート終了日より前にオペレーティング システムの Configuration Manager のサポートが終了する場合は、そのオペレーティング システムの廃止日とサポート削除日がここに表示されます。  
 
@@ -82,7 +87,8 @@ ms.lasthandoff: 05/17/2017
 |Windows CE 5.0 - 6.0|2015 年 7 月 10 日|バージョン 1511|  
 
 
-## <a name="deprecated-support-for-sql-server-versions-as-a-site-database"></a>サイト データベースとしてのサポートが廃止された SQL Server バージョン  
+## サイト データベースとしてのサポートが廃止された SQL Server バージョン
+<a id="deprecated-support-for-sql-server-versions-as-a-site-database" class="xliff"></a>  
 
 |**SQL Server バージョン**|**最初に非推奨と発表**|**サポートの削除**|   
 |-|-|-|  
@@ -95,7 +101,8 @@ ms.lasthandoff: 05/17/2017
 3. [バックアップと回復](/sccm/protect/understand/backup-and-recovery)を使用します。
 
 
-## <a name="deprecated-features"></a>非推奨の機能  
+## 非推奨の機能
+<a id="deprecated-features" class="xliff"></a>  
 
 |**機能**|**最初に非推奨と発表**|**サポートの削除**|  
 |-|-|-|  
@@ -103,7 +110,7 @@ ms.lasthandoff: 05/17/2017
 |帯域外管理 - System Center 2012 Configuration Manager の機能|2015 年 10 月 16 日|バージョン 1511|
 |タスク シーケンス: <br /> - OSDPreserveDriveLetter  <br /><br /> 既定で、オペレーティング システムの展開中に、Windows セットアップが使用する最適なドライブ文字を決定するようになりました (通常は C:)。 別のドライブを使用するように指定する場合は、オペレーティング システムの適用タスク シーケンスのステップで場所を変更できます。 [**このオペレーティング システムの適用先を選択してください。**] 設定に移動し、[**特定の論理ドライブ文字**] を選択し、使用するドライブを選択します。 |2016 年 6 月 20 日 |バージョン 1606 |
 |タスク シーケンス: <br /> - ディスクをダイナミックに変換 <br /> - 展開ツールのインストール |2016 年 11 月 18 日|2017 年 6 月 1 日以降にリリースされる最初の更新プログラムでこれらのタスク シーケンスのサポートは終了します。|
-|ソフトウェア センターは新しい現代的な外観へと一新されます。 Silverlight を使用するアプリケーション カタログにしか表示されなかったアプリ (ユーザーが利用できるアプリ) がソフトウェア センターの **[アプリケーション]** タブに表示されるようになります。 アプリケーション カタログには、ソフトウェア センターの **[インストールのステータス]** タブ上にあるリンクを使用してアクセスできます。<br><br>以前のバージョンのソフトウェア センターは、今後数か月の間に使用できなくなります。<br><br>新しいソフトウェア センターを使用するようにクライアントをセットアップするには、クライアント設定 **[コンピューター エージェント]** > **[新しいソフトウェア センターの使用]** を有効化します。<br><br>ソフトウェア センターの詳細については、「[System Center Configuration Manager のアプリケーション管理の計画と構成](https://docs.microsoft.com/sccm/apps/plan-design/plan-for-and-configure-application-management)」を参照してください。|2016 年 12 月 13 日|後日発表|
+|ソフトウェア センターは新しい現代的な外観へと一新されます。 Silverlight を使用するアプリケーション カタログにしか表示されなかったアプリ (ユーザーが利用できるアプリ) がソフトウェア センターの **[アプリケーション]** タブに表示されるようになります。 アプリケーション カタログには、ソフトウェア センターの **[インストールのステータス]** タブ上にあるリンクを使用してアクセスできます。<br><br>以前のバージョンのソフトウェア センターは、今後数か月の間に使用できなくなります。<br><br>新しいソフトウェア センターを使用するようにクライアントをセットアップするには、クライアント設定 **[コンピューター エージェント]** > **[新しいソフトウェア センターの使用]** を有効化します。<br><br>ソフトウェア センターの詳細については、「[System Center Configuration Manager のアプリケーション管理の計画と構成](https://docs.microsoft.com/sccm/apps/plan-design/plan-for-and-configure-application-management)」を参照してください。|2016 年 12 月 13 日|ソフトウェア センターの以前のバージョンは、2018 年 1 月 1 日以降にリリースされる最初の更新プログラムによってサポートが終了します。|
 |Configuration Manager によるバーチャル ハード ディスク (VHD) の管理。 </br></br>これには、新しい VHD の作成オプション、またはタスク シーケンスを使用した VHD の管理オプションの削除と、Configuration Manager コンソールからのバーチャル ハード ディスクのノードの削除が含まれます。 </br></br>このサポートが削除されると、既存の VHD は削除されませんが、Configuration Manager コンソール内からアクセスできなくなります。  |2017 年 1 月 6 日 |VHD のサポートは、2017 年 6 月 1 日より後にリリースされた最初の更新プログラムで終了します。|
 |System Center Configuration Manager Upgrade Assessment Tool。 </br></br>Upgrade Assessment Tool は、System Center Configuration Manager と Application Compatibility Toolkit (ACT) 6.x の両方に依存します。 ACT の最終バージョンは、Windows 10 v1511 ADK に同梱されていました。 今後、ACT が更新されることはないため、Upgrade Assessment Tool のサポートは廃止されます。 </br></br>Upgrade Assessment Tool は、[アップグレードの準備](/sccm/core/clients/manage/upgrade/upgrade-analytics)機能に置き換えられます。 非推奨に関する注記は、9/12/2016 に [UAT のダウンロード ページ](https://www.microsoft.com/download/details.aspx?id=37145)に追加されました。 |9/12/2016  | 2017 年 7 月 11 日 |  
 

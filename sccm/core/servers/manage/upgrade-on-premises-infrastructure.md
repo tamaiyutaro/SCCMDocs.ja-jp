@@ -2,7 +2,7 @@
 title: "オンプレミス インフラストラクチャのアップグレード | Microsoft Docs"
 description: "SQL Server やサイト システムのサイト オペレーティング システムなどのインフラストラクチャをアップグレードする方法について説明します。"
 ms.custom: na
-ms.date: 2/14/2017
+ms.date: 06/05/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -17,14 +17,15 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 ms.translationtype: Human Translation
-ms.sourcegitcommit: 2e711cce2435957f3e85dad08f17260e1a224fc2
-ms.openlocfilehash: c6448932e91a02984ca57cef0b75c10ea3f43fa1
+ms.sourcegitcommit: 0564cb678200d17d97c0f1d111c0b4b41d8ba40e
+ms.openlocfilehash: 188b7f2537dd0e569a5c00995620124512cf311b
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/17/2017
+ms.lasthandoff: 06/30/2017
 
 
 ---
-# <a name="upgrade-on-premises-infrastructure-that-supports-system-center-configuration-manager"></a>System Center Configuration Manager をサポートするオンプレミス インフラストラクチャのアップグレード
+# System Center Configuration Manager をサポートするオンプレミス インフラストラクチャのアップグレード
+<a id="upgrade-on-premises-infrastructure-that-supports-system-center-configuration-manager" class="xliff"></a>
 
 *適用対象: System Center Configuration Manager (Current Branch)*
 
@@ -39,9 +40,10 @@ System Center Configuration Manager を実行するサーバー インフラス�
 
 -   アップグレード後の Service Pack レベルが Configuration Manager によってサポートされている場合の、Windows Server の上位 Service Pack への一括アップグレード。  
 -   以下の一括アップグレード。
-    - Windows Server 2012 R2 から Windows Server 2016 ([詳細を参照](#upgrade-windows-server-2012-r2-to-2016))。
-    - Windows Server 2012 から Windows Server 2012 R2 ([詳細を参照](#upgrade-windows-server-2012-to-windows-server-2012-r2))。
-    - Configuration Manager バージョン 1602 以降を使用する場合は、Windows Server 2008 R2 から Windows Server 2012 R2 へのアップグレードもサポート ([詳細を参照](#upgrade-windows-server-2008-r2-to-windows-server-2012-r2))。
+    - Windows Server 2012 R2 から Windows Server 2016 ([詳細を参照](#bkmk_2016))。
+    - Windows Server 2012 から Windows Server 2016 ([詳細を参照](#bkmk_2016))。
+    - Windows Server 2012 から Windows Server 2012 R2 ([詳細を参照](#bkmk_2012r2))。
+    - Configuration Manager バージョン 1602 以降を使用する場合は、Windows Server 2008 R2 から Windows Server 2012 R2 へのアップグレードもサポート ([詳細を参照](#bkmk_from2008r2))。
 
     > [!WARNING]  
     >  Windows Server 2012 R2 にアップグレードする前に、サーバーから *WSUS 3.2 をアンインストールする必要があります* 。  
@@ -52,29 +54,29 @@ System Center Configuration Manager を実行するサーバー インフラス�
   -  Windows Server のドキュメントの「[Windows Server 2012 R2 のアップグレード オプション](https://technet.microsoft.com/library/dn303416.aspx)」。  
   - Windows Server のドキュメントの「[Windows Server 2016 のアップグレード オプションと変換オプション](https://technet.microsoft.com/windows-server-docs/get-started/supported-upgrade-paths)」。
 
-### <a name="upgrade-windows-server-2012-r2-to-2016"></a>Windows Server 2012 R2 から 2016 へのアップグレード  
-このオペレーティング システムのアップグレード シナリオには、次のような条件があります。
+### <a name="bkmk_2016"></a> Windows Server 2012 または Windows Server 2012 R2 から Windows Server 2016 へのアップグレード
+Windows Server 2012 または Windows Server 2012 R2 から Windows Server 2016 にアップグレードする場合は、以下が適用されます。
+
 
 **アップグレード前:**  
--     System Center Endpoint Protection (SCEP) クライアントを削除します。 Windows Server 2016 では、SCEP クライアントの代わりとして、Windows Defender が組み込まれています。 SCEP クライアントが存在している場合、Windows Server 2016 へのアップグレードが妨げられる可能性があります。
+-   System Center Endpoint Protection (SCEP) クライアントを削除します。 Windows Server 2016 では、SCEP クライアントの代わりとして、Windows Defender が組み込まれています。 SCEP クライアントが存在している場合、Windows Server 2016 へのアップグレードが妨げられる可能性があります。
 
 **アップグレード後:**
--     Windows Defender が有効であり、自動開始が設定され、実行されていることを確認します。
--     次の Configuration Manager のサービスが実行されていることを確認します。
+-   Windows Defender が有効であり、自動開始が設定され、実行されていることを確認します。
+-   次の Configuration Manager のサービスが実行されていることを確認します。
   -     SMS_EXECUTIVE
   -     SMS_SITE_COMPONENT_MANAGER
 
 
--     **Windows プロセス アクティブ化**サービスと **WWW/W3svc** サービスが有効であり、自動開始が設定され、次のサイト システムの役割で実行されていることを確認します (これらのサービスはアップグレード時に無効になります)。
+-   **Windows プロセス アクティブ化**サービスと **WWW/W3svc** サービスが有効であり、自動開始が設定され、次のサイト システムの役割で実行されていることを確認します (これらのサービスはアップグレード時に無効になります)。
   -     サイト サーバー
   -     管理ポイント
   -     アプリケーション カタログ Web サービス ポイント
   -     アプリケーション カタログ Web サイト ポイント
 
+-   サイト システムの役割をホストする各サーバーが、そのサーバーで実行される[サイト システムの役割の前提条件](/sccm/core/plan-design/configs/site-and-site-system-prerequisites)のすべてを引き続き満たしていることを確認します。 たとえば、BITS、WSUS を再インストールしたり、IIS の特定の設定を構成したりすることが必要になる場合があります。
 
--     サイト システムの役割をホストする各サーバーが、そのサーバーで実行される[サイト システムの役割の前提条件](/sccm/core/plan-design/configs/site-and-site-system-prerequisites)のすべてを引き続き満たしていることを確認します。 たとえば、BITS、WSUS を再インストールしたり、IIS の特定の設定を構成したりすることが必要になる場合があります。
-
-  不足している前提条件を復元した後で、もう一度サーバーを再起動して、サービスが開始され、動作していることを確認します。
+-   不足している前提条件を復元した後で、もう一度サーバーを再起動して、サービスが開始され、動作していることを確認します。
 
 **リモートの Configuration Manager コンソールに関する既知の問題:**  
 サイト サーバーまたは SMS_Provider のインスタンスをホストするサーバーを Windows Server 2016 にアップグレードした後、管理ユーザーが Configuration Manager コンソールをサイトに接続できない場合があります。 この問題を回避するには、WMI の SMS Admins グループのアクセス許可を手動で復元する必要があります。 サイト サーバーと、SMS_Provider のインスタンスをホストする各リモート サーバーで、アクセス許可を設定する必要があります。
@@ -84,46 +86,45 @@ System Center Configuration Manager を実行するサーバー インフラス�
 3. ルートの下のツリーを展開し、**[SMS]** ノードを選択して、**[セキュリティ]** を選択します。  **SMS Admins** グループに次のアクセス許可が付与されていることを確認します。
   -     アカウントの有効化
   -     リモートの有効化
-4. **[セキュリティ] タブ**で、**[SMS]** ノードの下にある **[site_**&lt;*sitecode>]* ノードを選択し、次に **[セキュリティ]** を選択します。 **SMS Admins** グループに次のアクセス許可が付与されていることを確認します。
+4. **[セキュリティ] タブ**で、**[SMS]** ノードの下にある **[site_&lt;sitecode**>] ノードを選択し、次に **[セキュリティ]** を選択します。 **SMS Admins** グループに次のアクセス許可が付与されていることを確認します。
   -   メソッドの実行
   -   プロバイダーによる書き込み
   -   アカウントの有効化
   -   リモートの有効化
 5. アクセス許可を保存して、Configuration Manager コンソールへのアクセスを復元します。
 
-### <a name="windows-server-2012-to-windows-server-2012-r2"></a>Windows Server 2012 から Windows Server 2012 R2
+### <a name="bkmk_2012r2"></a>Windows Server 2012 から Windows Server 2012 R2
 
 **アップグレード前:**
 -  他のサポートされるシナリオとは異なり、このシナリオではアップグレードの前に特別な考慮事項は必要ありません。
 
 **アップグレード後:**
-  -    Windows 展開サービスが開始され、次のサイト システムの役割を実行していることを確認します (このサービスはアップグレード時に停止されます)。
+  - Windows 展開サービスが開始され、次のサイト システムの役割を実行していることを確認します (このサービスはアップグレード時に停止されます)。
     - サイト サーバー
     - 管理ポイント
     - アプリケーション カタログ Web サービス ポイント
     - アプリケーション カタログ Web サイト ポイント
 
-
   -     **Windows プロセス アクティブ化**サービスと **WWW/W3svc** サービスが有効であり、自動開始が設定され、次のサイト システムの役割で実行されていることを確認します (これらのサービスはアップグレード時に無効になります)。
-    -     サイト サーバー
-    -     管理ポイント
-    -     アプリケーション カタログ Web サービス ポイント
-    -     アプリケーション カタログ Web サイト ポイント
+    -   サイト サーバー
+    -   管理ポイント
+    -   アプリケーション カタログ Web サービス ポイント
+    -   アプリケーション カタログ Web サイト ポイント
 
 
   -     サイト システムの役割をホストする各サーバーが、そのサーバーで実行される[サイト システムの役割の前提条件](/sccm/core/plan-design/configs/site-and-site-system-prerequisites)のすべてを引き続き満たしていることを確認します。 たとえば、BITS、WSUS を再インストールしたり、IIS の特定の設定を構成したりすることが必要になる場合があります。
 
   不足している前提条件を復元した後で、もう一度サーバーを再起動して、サービスが開始され、動作していることを確認します。
 
-### <a name="upgrade-windows-server-2008-r2-to-windows-server-2012-r2"></a>Windows Server 2008 R2 から Windows Server 2012 R2 へのアップグレード
+### <a name="bkmk_from2008r2"></a>Windows Server 2008 R2 から Windows Server 2012 R2 へのアップグレード
 このオペレーティング システムのアップグレード シナリオには、次のような条件があります。  
 
 **アップグレード前:**
--     WSUS 3.2 をアンインストールします。  
+-   WSUS 3.2 をアンインストールします。  
     サーバー オペレーティングシステムを Windows Server 2012 R2 にアップグレードする前に、サーバーから WSUS 3.2 をアンインストールする必要があります。 この重要な手順の詳細については、Windows Server ドキュメントの「Windows Server Update Services の概要」の「新機能と変更された機能」セクションを参照してください。
 
 **アップグレード後:**
-  -    Windows 展開サービスが開始され、次のサイト システムの役割を実行していることを確認します (このサービスはアップグレード時に停止されます)。
+  - Windows 展開サービスが開始され、次のサイト システムの役割を実行していることを確認します (このサービスはアップグレード時に停止されます)。
     - サイト サーバー
     - 管理ポイント
     - アプリケーション カタログ Web サービス ポイント
@@ -131,10 +132,10 @@ System Center Configuration Manager を実行するサーバー インフラス�
 
 
   -     **Windows プロセス アクティブ化**サービスと **WWW/W3svc** サービスが有効であり、自動開始が設定され、次のサイト システムの役割で実行されていることを確認します (これらのサービスはアップグレード時に無効になります)。
-    -     サイト サーバー
-    -     管理ポイント
-    -     アプリケーション カタログ Web サービス ポイント
-    -     アプリケーション カタログ Web サイト ポイント
+    -   サイト サーバー
+    -   管理ポイント
+    -   アプリケーション カタログ Web サービス ポイント
+    -   アプリケーション カタログ Web サイト ポイント
 
 
   -     サイト システムの役割をホストする各サーバーが、そのサーバーで実行される[サイト システムの役割の前提条件](/sccm/core/plan-design/configs/site-and-site-system-prerequisites)のすべてを引き続き満たしていることを確認します。 たとえば、BITS、WSUS を再インストールしたり、IIS の特定の設定を構成したりすることが必要になる場合があります。
@@ -142,7 +143,8 @@ System Center Configuration Manager を実行するサーバー インフラス�
   不足している前提条件を復元した後で、もう一度サーバーを再起動して、サービスが開始され、動作していることを確認します。
 
 
-### <a name="unsupported-upgrade-scenarios"></a>サポートされていないアップグレードのシナリオ
+### サポートされていないアップグレードのシナリオ
+<a id="unsupported-upgrade-scenarios" class="xliff"></a>
 次の Windows Server のアップグレード シナリオは、よく問い合わせが寄せられますが、Configuration Manager ではサポートされていません。  
 
 -   Windows Server 2008 から Windows Server 2012 以降  
@@ -204,7 +206,8 @@ SQL Server の詳細については、TechNet にある SQL Server のドキュ�
 
 
 
-### <a name="to-upgrade-sql-server-on-the-site-database-server"></a>サイト データベース サーバー上の SQL Server をアップグレードするには  
+### サイト データベース サーバー上の SQL Server をアップグレードするには
+<a id="to-upgrade-sql-server-on-the-site-database-server" class="xliff"></a>  
 
 1.  サイトのすべての Configuration Manager サービスを停止します。  
 2.  SQL Server をサポートされるバージョンにアップグレードします。  

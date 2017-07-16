@@ -2,7 +2,7 @@
 title: "サービス接続ポイント | Microsoft Docs"
 description: "この Configuration Manager サイト システムの役割について学習し、その使用範囲を理解し計画します。"
 ms.custom: na
-ms.date: 3/30/2017
+ms.date: 6/28/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -17,14 +17,15 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 ms.translationtype: Human Translation
-ms.sourcegitcommit: 6accec2d356861b273b25ba2b6338d9684a46ff6
-ms.openlocfilehash: ad6df047beff670411d203220576b87f7d56d50c
+ms.sourcegitcommit: 0ec241d07f51b80b84d65676ef1207b31a9a9983
+ms.openlocfilehash: e3d41dc1bb732e887d722f39ee86deaf0aae3240
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/17/2017
+ms.lasthandoff: 06/28/2017
 
 
 ---
-# <a name="about-the-service-connection-point-in-system-center-configuration-manager"></a>System Center Configuration Manager のサービス接続ポイントについて
+# System Center Configuration Manager のサービス接続ポイントについて
+<a id="about-the-service-connection-point-in-system-center-configuration-manager" class="xliff"></a>
 
 *適用対象: System Center Configuration Manager (Current Branch)*
 
@@ -92,6 +93,8 @@ Configuration Manager サービス マネージャーを使用するには、コ
 
 -   *.akamaiedge.net  
 
+-   *.akamaitechnologies.com 
+
 -   *.manage.microsoft.com
 
 -   go.microsoft.com
@@ -117,12 +120,14 @@ Configuration Manager サービス マネージャーを使用するには、コ
 
 -   https://go.microsoft.com/fwlink/?LinkID=619849  
 
-## <a name="install-the-service-connection-point"></a>サービス接続ポイントをインストールする
+## サービス接続ポイントをインストールする
+<a id="install-the-service-connection-point" class="xliff"></a>
 **[セットアップ]** を実行して階層の最上位サイトをインストールする場合、サービス接続ポイントをインストールするオプションがあります。
 
 [セットアップ] を実行した後、またはサイト システムの役割を再インストールする場合は、**サイト システムの役割の追加**ウィザード、または**サイト システム サーバーの作成**ウィザードを使用して、サーバー上のサイト システムを階層の最上位サイト (中央管理サイトまたはスタンドアロン プライマリ サイト) にインストールします。 どちらのウィザードも、コンソールの **[ホーム]** タブの、**[管理]** > **[サイトの構成]** > **[サーバーとサイト システムの役割]** にあります。
 
-## <a name="log-files-used-by-the-service-connection-point"></a>サービス接続ポイントにより使用されるログ ファイル
+## サービス接続ポイントにより使用されるログ ファイル
+<a id="log-files-used-by-the-service-connection-point" class="xliff"></a>
 Microsoft へのアップロードに関する情報については、サービス接続ポイントを実行するコンピューターの **Dmpuploader.log** をご覧ください。  更新プログラムのダウンロード進捗状況など、ダウンロードについては、**Dmpdownloader.log** をご覧ください。 サービス接続ポイント関連のログの完全な一覧については、Configuration Manager ログ ファイル トピックの「[サービス接続ポイント](/sccm/core/plan-design/hierarchy/log-files#BKMK_WITLog)」を参照してください。
 
 更新プログラムをダウンロードするプロセスと更新プログラムを他のサイトに複製するプロセスの流れや重要なログ エントリについては、次のフローチャートを使用して理解に役立てることもできます。
