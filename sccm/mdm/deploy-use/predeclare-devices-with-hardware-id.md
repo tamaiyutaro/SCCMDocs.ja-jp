@@ -16,13 +16,14 @@ author: nathbarn
 ms.author: nathbarn
 manager: angrobe
 ms.translationtype: Human Translation
-ms.sourcegitcommit: e6833951db27b227a3ca22925e9d9f4c3fc443fc
-ms.openlocfilehash: e8606b8a9268a0a0668b75070cf35894f4794123
+ms.sourcegitcommit: 5eed004bd38a567dfdd4e392300be656a7abe3f7
+ms.openlocfilehash: c692fad43807e54cecbd7ab60284ea740d60617d
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/20/2017
+ms.lasthandoff: 05/25/2017
 
 ---
-# <a name="predeclare-devices-with-imei-or-ios-serial-numbers"></a>IMEI または iOS シリアル番号を持つデバイスの事前宣言
+# IMEI または iOS シリアル番号を持つデバイスの事前宣言
+<a id="predeclare-devices-with-imei-or-ios-serial-numbers" class="xliff"></a>
 
 *適用対象: System Center Configuration Manager (Current Branch)*
 
@@ -30,7 +31,8 @@ ms.lasthandoff: 05/20/2017
 
 会社所有の iOS デバイスのシリアル番号をアップロードする場合は、企業登録プロファイルとペアにする必要があります。 したがって、デバイスを Apple の DEP (Device Enrollment Program) または Apple Configurator を使用して登録し、会社所有であることを示す必要があります。
 
-## <a name="how-to-predeclare-corporate-owned-devices"></a>会社所有のデバイスを事前宣言する方法
+## 会社所有のデバイスを事前宣言する方法
+<a id="how-to-predeclare-corporate-owned-devices" class="xliff"></a>
 
 1.    Configuration Manager コンソールで、**[資産とコンプライアンス]** > **[概要]** > **[会社が所有しているすべてのデバイス]** > **[事前に宣言されたデバイス]** の順にクリックします。
 
@@ -60,11 +62,12 @@ ms.lasthandoff: 05/20/2017
 
 6. **[閉じる]** をクリックして完了します。
 
-## <a name="format-for-uploading-csv-files"></a>アップロードする .csv ファイルの形式
+## アップロードする .csv ファイルの形式
+<a id="format-for-uploading-csv-files" class="xliff"></a>
 
-IMEI またはシリアル番号でデバイスを識別するために使用する .csv ファイルは、ガイダンスにのみ使用される一番上の行を除き、次の形式で作成する必要があります。 各行には、IMEI 番号または iOS シリアル番号のどちらかの ID 番号を含める必要があります。 両方を含めることもできます。 IMEI 番号は、Android、iOS、Windows デバイスのものが使用できます。 iOS シリアル番号もサポートされています。  この表には、サンプル データが含まれます。
+IMEI または iOS シリアル番号でデバイスを識別するために使用する .csv ファイルは、ガイダンスとしてのみ示される一番上の行を除き、次の形式で作成する必要があります。 各行には、IMEI 番号または iOS シリアル番号のどちらかの ID 番号を含める必要があります。 IOS デバイスの場合は、両方を含めることができます。 IMEI 番号は、Android、iOS、Windows デバイスのものが使用できます。 この表には、サンプル データが含まれます。
 
-| IMEI #  | iOS シリアル #  | OS | 説明 |
+| IMEI 番号  | iOS シリアル番号  | OS | 説明 |
 |------------ |---------------|-----|-----|
 | 123456789012345    |   | WINDOWS | 会社所有の Windows デバイス|
 |   | A1B2C3D4E5C6 | IOS |     会社所有の iOS デバイス|

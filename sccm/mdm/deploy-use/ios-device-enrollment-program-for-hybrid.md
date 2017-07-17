@@ -16,13 +16,14 @@ author: mtillman
 ms.author: mtillman
 manager: angrobe
 ms.translationtype: Human Translation
-ms.sourcegitcommit: ae60eb25383f4bd07faaa1265185a471ee79b1e9
-ms.openlocfilehash: 5b5eadd7b4026eae59acceaef43cdacd7a33d3ac
+ms.sourcegitcommit: 255249332350843ba0b78128423482e260974521
+ms.openlocfilehash: 1ea0360b5b182b92e11ea9dfe78b5a3552ae4845
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/17/2017
+ms.lasthandoff: 05/30/2017
 
 ---
-# <a name="ios-device-enrollment-program-dep-enrollment-for-hybrid-deployments-with-configuration-manager"></a>Configuration Manager とのハイブリッド展開に対応する iOS Device Enrollment Program (DEP) 登録
+# Configuration Manager とのハイブリッド展開に対応する iOS Device Enrollment Program (DEP) 登録
+<a id="ios-device-enrollment-program-dep-enrollment-for-hybrid-deployments-with-configuration-manager" class="xliff"></a>
 
 *適用対象: System Center Configuration Manager (Current Branch)*
 
@@ -30,10 +31,12 @@ ms.lasthandoff: 05/17/2017
 
  DEP を使用して企業所有の iOS デバイスを登録するには、Apple の DEP トークンが必要です。 このトークンにより、Intune は企業所有の DEP 参加デバイスに関する情報を同期できるようになります。 また、Intune は Apple に登録プロファイルをアップロードし、デバイスをそれらのプロファイルに割り当てられるようになります。  
 
-## <a name="apple-dep-enrollment-for-ios-devices"></a>iOS デバイスの Apple DEP 登録  
+## iOS デバイスの Apple DEP 登録
+<a id="apple-dep-enrollment-for-ios-devices" class="xliff"></a>  
  次に、Apple DEP で購入した iOS デバイスを、Intune が管理する企業所有のデバイスに指定する手順について説明します。 ユーザーがデバイスの電源を初めて入れると、DEP 管理プロファイルを受信し、セットアップ アシスタントが実行され、管理対象になります。  
 
-###  <a name="enable-dep-enrollment-in-configuration-manager-with-intune"></a>Configuration Manager と Intune で DEP 登録を有効にする  
+###  Configuration Manager と Intune で DEP 登録を有効にする
+<a id="enable-dep-enrollment-in-configuration-manager-with-intune" class="xliff"></a>  
 
 1.  **Configuration Manager を使用して iOS デバイス管理を開始する**   
     iOS Device Enrollment Program (DEP) デバイスを登録する前に、[iOS の登録をサポートする手順](../deploy-use/enroll-hybrid-ios-mac.md)を含む「[Set up Hybrid mobile device management](../../mdm/deploy-use/setup-hybrid-mdm.md)」(ハイブリッド モバイル デバイス管理のセットアップ) の手順を完了する必要があります。
@@ -57,7 +60,8 @@ ms.lasthandoff: 05/17/2017
 4.  **DEP トークンの Configuration Manager への追加**   
     Configuration Manager コンソールの **[管理]** ワークスペースで、**[階層の構成]** を展開してから、**[Windows Intune サブスクリプション]** をクリックします。 **[ホーム]** タブの **[プラットフォームの構成]** をクリックし、 **[iOS]**をクリックします。 **[デバイスの登録プログラムを有効にする]**を選択して、証明書 (.p7m) ファイルを参照してから、 **[開く]**、 **[アップロード]**、 **[OK]**の順にクリックします。  
 
-#### <a name="set-up-enrollment-for-apple-device-enrollment-program-dep-ios-devices"></a>Apple Device Enrollment Program (DEP) iOS デバイスの登録をセットアップします。  
+#### Apple Device Enrollment Program (DEP) iOS デバイスの登録をセットアップします。
+<a id="set-up-enrollment-for-apple-device-enrollment-program-dep-ios-devices" class="xliff"></a>  
 
 1.  **業務用デバイスの登録ポリシーを追加する**   
     Configuration Manager コンソールの **[資産とコンプライアンス]** ワークスペースで、**[概要]**、**[すべての企業所有のデバイス]**、**[iOS]** の順に展開してから、**[登録プロファイル]** をクリックします。 **[ホーム]** タブの **[プロファイルの作成]** をクリックして、プロファイルの作成ウィザードを開きます。 次の各ページで、設定を構成します。  
@@ -123,6 +127,9 @@ ms.lasthandoff: 05/17/2017
 
 3.  **DEP で管理されたデバイスの同期**   
     **[資産とコンプライアンス]** ワークスペースで、**[会社が所有しているすべてのデバイス]**、**[事前に宣言されたデバイス]** の順に進みます。 **[ホーム]** タブの **[DEP の同期]**をクリックします。 同期要求が Apple に送信されます。 同期が完了すると、DEP で管理されたデバイスが表示されます。
+
+> [!NOTE]
+> ハイブリッド構成では、Configuration Manager コンソールで **[DEP 同期]** をクリックすると、DEP の同期操作が手動でトリガーされます。
 
 4.  **DEP プロファイルを割り当てる**<br>**[資産とコンプライアンス]** ワークスペースで、**[会社が所有しているすべてのデバイス]** > **[iOS]** > **[登録プロファイル]** の順に進みます。 DEP 登録プロファイルを選択し、**[ホーム]** タブで **[デバイスに割り当て]** をクリックします。 この登録プロファイルを使用するデバイスを選択し、**[追加]** をクリックし、**[OK]** をクリックします。   
      ![iOS デバイスへの DEP プロファイルの割り当てのスクリーンショット](../media/dep-assign-profile.png)

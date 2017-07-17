@@ -16,14 +16,15 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 ms.translationtype: Human Translation
-ms.sourcegitcommit: a93ea730c39cce9dc46036f5aa6ece4a62679d0f
-ms.openlocfilehash: 0d16d362b798c194645f987088ba8a95a7be3f19
+ms.sourcegitcommit: 0ebda27c0f3848615346c2ecf1ab8b9bb9ab6f0d
+ms.openlocfilehash: 0a3704a2d3b75ed7e0a7f718b681448ab6fc078d
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/17/2017
+ms.lasthandoff: 05/26/2017
 
 
 ---
-# <a name="plan-for-site-system-servers-and-site-system-roles-for-system-center-configuration-manager"></a>System Center Configuration Manager のサイト システム サーバーとサイト システムの役割の計画
+# System Center Configuration Manager のサイト システム サーバーとサイト システムの役割の計画
+<a id="plan-for-site-system-servers-and-site-system-roles-for-system-center-configuration-manager" class="xliff"></a>
 
 *適用対象: System Center Configuration Manager (Current Branch)*
 
@@ -81,7 +82,7 @@ Configuration Manager の各サイトは異なるセットのサイト システ
 
 -   **配布ポイント。** クライアントがダウンロードするソース ファイルを格納します。このソースファイルには、アプリケーションのコンテンツ、ソフトウェア パッケージ、ソフトウェア更新プログラム、オペレーティング システム イメージ、ブート イメージなどがあります。 既定では、この役割は、サイトのインストール時に新しいプライマリ サイトとセカンダリ サイトのサイト サーバー コンピューターにインストールされます。 この役割は中央管理サイトではサポートされていません。 1 つのサポートされているサイトおよび同じ階層の複数のサイトにこの役割の複数のインスタンスをインストールできます。 詳細については、「[Fundamental concepts for content management in System Center Configuration Manager (System Center Configuration Manager のコンテンツ管理の基本的な概念)](../../../core/plan-design/hierarchy/fundamental-concepts-for-content-management.md)」と「[System Center Configuration Manager のコンテンツ インフラストラクチャとコンテンツの管理](../../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md)」をご覧ください。  
 
--   **フォールバック ステータス ポイント。** クライアントのインストールを監視し、管理ポイントと通信できないため管理されていないクライアントを識別します。 この役割はプライマリ サイトでのみサポートされていますが、1 つのサイトおよび同じ階層の複数のサイトにこの役割の複数のインスタンスをインストールできます。 詳細については、「 [Content source location scenarios](../../../core/plan-design/hierarchy/content-source-location-scenarios.md)」をご覧ください。
+-   **フォールバック ステータス ポイント。** クライアントのインストールを監視し、管理ポイントと通信できないため管理されていないクライアントを識別します。 この役割はプライマリ サイトでのみサポートされていますが、この役割の複数のインスタンスを 1 つのサイトにインストールしたり、同じ階層内の複数のサイトにインストールしたりできます。     
 
 
 -   **Endpoint Protection ポイント。** Configuration Manager で Endpoint Protection ライセンス条項に同意し、Cloud Protection Service の既定のメンバーシップを構成します。 階層はこの役割の 1 つのインスタンスのみをサポートします。このインスタンスは、階層の最上位層サイト (中央管理サイトまたはスタンドアロン プライマリ サイト) に置く必要があります。 スタンドアロン プライマリ サイトをより大きな階層に拡張する場合は、この役割をプライマリ サイトからアンインストールしてから、中央管理サイトにインストールする必要があります。 詳しくは、「[System Center Configuration Manager での Endpoint Protection](../../../protect/deploy-use/endpoint-protection.md)」をご覧ください。  

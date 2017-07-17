@@ -12,19 +12,21 @@ ms.service:
 ms.technology:
 - configmgr-sum
 ms.assetid: b27682de-adf8-4edd-9572-54886af8f7fb
-translationtype: Human Translation
-ms.sourcegitcommit: 78524abd4c45f0b7402d6f1e85afc60bb72ab0ee
-ms.openlocfilehash: 34b0819957ffcc3711ee354a5b821d78fa7445cb
+ms.translationtype: Human Translation
+ms.sourcegitcommit: c6ee0ed635ab81b5e454e3cd85637ff3e20dbb34
+ms.openlocfilehash: 804a9d7a32cfbdb498c6748c5d99a1874261c231
+ms.contentlocale: ja-jp
+ms.lasthandoff: 06/08/2017
 
 ---
 
-#  <a name="a-namebkmkautodeploya-automatically-deploy-software-updates"></a><a name="BKMK_AutoDeploy"></a> ソフトウェア更新プログラムの自動展開  
+#  <a name="BKMK_AutoDeploy"></a> ソフトウェア更新プログラムの自動展開  
 
 *適用対象: System Center Configuration Manager (Current Branch)*
 
  アクティブな展開と関連付けられたソフトウェア更新プログラム グループに新しいソフトウェア更新プログラムを追加して、ソフトウェア更新プログラムを自動的に展開することができます。または、自動展開規則 (ADR) を使用できます。 通常、月ごとのソフトウェア更新プログラム (一般的に、月例パッチとして知られています) の展開や定義の更新の管理に、ADR を使用します。 どちらの展開方法が適しているか判断する場合は、「[ソフトウェアの更新を展開する](deploy-software-updates.md)」をご覧ください。
 
-##  <a name="a-namebkmkaddupdatestoexistinggroupa-add-software-updates-to-a-deployed-update-group"></a><a name="BKMK_AddUpdatesToExistingGroup"></a> 展開されるソフトウェア更新プログラム グループへのソフトウェア更新プログラムの追加  
+##  <a name="BKMK_AddUpdatesToExistingGroup"></a> 展開されるソフトウェア更新プログラム グループへのソフトウェア更新プログラムの追加  
 ソフトウェア更新プログラム グループを作成して展開した後に、ソフトウェア更新プログラムをその更新グループに追加することができ、追加されたソフトウェア更新プログラムが自動的に展開されます。  
 
 > [!IMPORTANT]  
@@ -32,7 +34,8 @@ ms.openlocfilehash: 34b0819957ffcc3711ee354a5b821d78fa7445cb
 
 ソフトウェア更新プログラムを既存のソフトウェア更新プログラム グループに追加するには、次の手順に従います。  
 
-#### <a name="to-add-software-updates-to-an-existing-software-update-group"></a>ソフトウェア更新プログラムを既存のソフトウェア更新プログラム グループに追加するには  
+#### ソフトウェア更新プログラムを既存のソフトウェア更新プログラム グループに追加するには
+<a id="to-add-software-updates-to-an-existing-software-update-group" class="xliff"></a>  
 
 1.  Configuration Manager コンソールで、[**ソフトウェア ライブラリ**] > [**概要**] > [**ソフトウェアの更新**] に移動します。  
 
@@ -46,7 +49,7 @@ ms.openlocfilehash: 34b0819957ffcc3711ee354a5b821d78fa7445cb
 
 6.  ソフトウェア更新プログラム グループをクリックし、[ホーム **** ] タブの [更新 **** ] グループで [メンバーの表示 **** ] をクリックして、グループ内のソフトウェア更新プログラムの一覧を表示します。  
 
-##  <a name="a-namebkmkcreateautomaticdeploymentrulea-create-an-automatic-deployment-rule-adr"></a><a name="BKMK_CreateAutomaticDeploymentRule"></a> 自動展開規則 (ADR) の作成  
+##  <a name="BKMK_CreateAutomaticDeploymentRule"></a> 自動展開規則 (ADR) の作成  
 ADR を使用して、ソフトウェア更新プログラムを自動的に承認して展開できます。 規則が実行されるか、規則によってソフトウェア更新プログラムが既存のグループに追加されるたびにソフトウェア更新プログラムがソフトウェア更新プログラム グループに追加されるようにできます。 規則が実行され、既存のグループにソフトウェア更新プログラムが追加されると、規則によってそのグループからすべてのソフトウェア更新プログラムが削除され、定義されている条件を満たすソフトウェア更新プログラムがグループに追加されます。 たとえば、ADR を実行して、毎日新しくリリースされたソフトウェア更新プログラムを見つけてクライアントに展開するには、ソフトウェア更新プログラムを既存のグループに追加する代わりに、新しいソフトウェア更新プログラム グループを作成するオプションを選択する必要があります。  
 
 > [!WARNING]  
@@ -54,7 +57,8 @@ ADR を使用して、ソフトウェア更新プログラムを自動的に承�
 
  次の手順に従って、ADR を作成します。  
 
-#### <a name="to-create-an-adr"></a>ADR を作成するには  
+#### ADR を作成するには
+<a id="to-create-an-adr" class="xliff"></a>  
 
 1.  Configuration Manager コンソールで、[**ソフトウェア ライブラリ**] / [**概要**] > [**ソフトウェアの更新**] > [**自動展開規則**] に移動します。  
 
@@ -167,15 +171,15 @@ ADR を使用して、ソフトウェア更新プログラムを自動的に承�
 
 10. [ダウンロードの設定] ページで、次の設定を構成します。  
 
-    -   クライアントが低速ネットワークに接続している場合、または、代替のコンテンツの場所を使用している場合に、クライアントでソフトウェア更新プログラムをダウンロードしてインストールするかどうかを指定します。  
+    - クライアントが低速ネットワークに接続している場合、または、代替のコンテンツの場所を使用している場合に、クライアントでソフトウェア更新プログラムをダウンロードしてインストールするかどうかを指定します。  
 
-    -   ソフトウェア更新プログラムのコンテンツが優先配布ポイントにない場合に、クライアントでソフトウェア更新プログラムを代替の配布ポイントからダウンロードしてインストールするかどうかを指定します。  
+    - ソフトウェア更新プログラムのコンテンツが優先配布ポイントにない場合に、クライアントでソフトウェア更新プログラムを代替の配布ポイントからダウンロードしてインストールするかどうかを指定します。  
 
-    -   **同じサブネットにある他のクライアントとのコンテンツの共有を許可する**: コンテンツのダウンロードで BranchCache の使用を有効にするかどうかを指定します。 BranchCache の詳細については、「 [Concepts for content management](../../core/plan-design/hierarchy/fundamental-concepts-for-content-management.md#branchcache)」を参照してください。  
+    - **同じサブネットにある他のクライアントとのコンテンツの共有を許可する**: コンテンツのダウンロードで BranchCache の使用を有効にするかどうかを指定します。 BranchCache の詳細については、「 [Concepts for content management](../../core/plan-design/hierarchy/fundamental-concepts-for-content-management.md#branchcache)」を参照してください。  
 
-    -   配布ポイントでソフトウェア更新プログラムを利用できない場合に、イントラネットに接続しているクライアントで、Microsoft Update からソフトウェア更新プログラムをダウンロードするかどうかを指定します。  
+    - **If software updates are not available on distribution point in current, neighbor or site groups, download content from Microsoft Updates \(現在、近隣、またはサイト グループの配布ポイントでソフトウェア更新プログラムを利用できない場合は、Microsoft 更新プログラムからコンテンツをダウンロードします\)**: 配布ポイントでソフトウェア更新プログラムを利用できない場合に、イントラネットに接続されているクライアントで Microsoft 更新プログラムからソフトウェア更新プログラムをダウンロードする場合は、この設定を選択します。 インターネット ベースのクライアントは、ソフトウェア更新プログラムのコンテンツを取得するために Microsoft 更新プログラムにいつでも移動することができます。
 
-    -   クライアントで従量制のインターネット接続を使用している場合に、インストール期限後にクライアントでのダウンロードを許可するかどうかを指定します。 インターネット プロバイダーは、従量制インターネット接続を使用しているときに送受信したデータ量に基づいて課金することがあります。  
+    - クライアントで従量制のインターネット接続を使用している場合に、インストール期限後にクライアントでのダウンロードを許可するかどうかを指定します。 インターネット プロバイダーは、従量制インターネット接続を使用しているときに送受信したデータ量に基づいて課金することがあります。  
 
     > [!NOTE]  
     >  クライアントは、展開のソフトウェア更新プログラムの管理ポイントからコンテンツの場所を要求します。 ダウンロードの動作は、配布ポイント、展開パッケージ、このページの設定の構成によって異なります。 詳細については、「 [Content source location scenarios](../../core/plan-design/hierarchy/content-source-location-scenarios.md)」をご覧ください。  
@@ -221,10 +225,11 @@ ADR を使用して、ソフトウェア更新プログラムを自動的に承�
 
  ウィザードの完了後、ADR が実行されます。 指定された条件に一致するソフトウェア更新プログラムがソフトウェア更新プログラム グループに追加されて、ソフトウェア更新プログラムがサイト サーバーのコンテンツ ライブラリにダウンロードされ、構成された配布ポイントに配布されて、ターゲット コレクション内のクライアントに展開されます。  
 
-##  <a name="a-namebkmkadddeploymenttoadra-add-a-new-deployment-to-an-existing-adr"></a><a name="BKMK_AddDeploymentToADR"></a> 既存の ADR への新しい展開の追加  
+##  <a name="BKMK_AddDeploymentToADR"></a> 既存の ADR への新しい展開の追加  
  ADR を作成した後、ルールにさらに他の展開を追加できます。 これにより、コレクションごとに異なる更新プログラムを展開する複雑さが軽減されます。 それぞれの新しい展開がさまざまな機能と展開監視エクスペリエンスを備えています。  
 
-#### <a name="to-add-a-new-deployment-to-an-existing-adr"></a>既存の ADR に新しい展開を追加するには  
+#### 既存の ADR に新しい展開を追加するには
+<a id="to-add-a-new-deployment-to-an-existing-adr" class="xliff"></a>  
 
 1.  Configuration Manager コンソールで、[**ソフトウェア ライブラリ**] > [**概要**] > [**ソフトウェアの更新**] > [**自動展開規則**] に移動し、目的の規則を選択します。  
 
@@ -299,26 +304,22 @@ ADR を使用して、ソフトウェア更新プログラムを自動的に承�
 
 8. [ダウンロードの設定] ページで、次の設定を構成します。  
 
-    -   クライアントが低速ネットワークに接続している場合、または、代替のコンテンツの場所を使用している場合に、クライアントでソフトウェア更新プログラムをダウンロードしてインストールするかどうかを指定します。  
+    - クライアントが低速ネットワークに接続している場合、または、代替のコンテンツの場所を使用している場合に、クライアントでソフトウェア更新プログラムをダウンロードしてインストールするかどうかを指定します。  
 
-    -   ソフトウェア更新プログラムのコンテンツが優先配布ポイントにない場合に、クライアントでソフトウェア更新プログラムを代替の配布ポイントからダウンロードしてインストールするかどうかを指定します。  
+    - ソフトウェア更新プログラムのコンテンツが優先配布ポイントにない場合に、クライアントでソフトウェア更新プログラムを代替の配布ポイントからダウンロードしてインストールするかどうかを指定します。  
 
-    -   **同じサブネットにある他のクライアントとのコンテンツの共有を許可する**: コンテンツのダウンロードで BranchCache の使用を有効にするかどうかを指定します。 BranchCache の詳細については、「 [Concepts for content management](../../core/plan-design/hierarchy/fundamental-concepts-for-content-management.md#branchcache)」を参照してください。  
+    - **同じサブネットにある他のクライアントとのコンテンツの共有を許可する**: コンテンツのダウンロードで BranchCache の使用を有効にするかどうかを指定します。 BranchCache の詳細については、「 [Concepts for content management](../../core/plan-design/hierarchy/fundamental-concepts-for-content-management.md#branchcache)」を参照してください。  
 
-    -   配布ポイントでソフトウェア更新プログラムを利用できない場合に、イントラネットに接続しているクライアントで、Microsoft Update からソフトウェア更新プログラムをダウンロードするかどうかを指定します。  
+    - **If software updates are not available on distribution point in current, neighbor or site groups, download content from Microsoft Updates \(現在、近隣、またはサイト グループの配布ポイントでソフトウェア更新プログラムを利用できない場合は、Microsoft 更新プログラムからコンテンツをダウンロードします\)**: 配布ポイントでソフトウェア更新プログラムを利用できない場合に、イントラネットに接続されているクライアントで Microsoft 更新プログラムからソフトウェア更新プログラムをダウンロードする場合は、この設定を選択します。 インターネット ベースのクライアントは、ソフトウェア更新プログラムのコンテンツを取得するために Microsoft 更新プログラムにいつでも移動することができます。
 
-    -   クライアントで従量制のインターネット接続を使用している場合に、インストール期限後にクライアントでのダウンロードを許可するかどうかを指定します。 インターネット プロバイダーは、従量制インターネット接続を使用しているときに送受信したデータ量に基づいて課金することがあります。  
+    - クライアントで従量制のインターネット接続を使用している場合に、インストール期限後にクライアントでのダウンロードを許可するかどうかを指定します。 インターネット プロバイダーは、従量制インターネット接続を使用しているときに送受信したデータ量に基づいて課金することがあります。  
 
     > [!NOTE]  
-    >  クライアントは、展開のソフトウェア更新プログラムの管理ポイントからコンテンツの場所を要求します。 ダウンロードの動作は、配布ポイント、展開パッケージ、このページの設定の構成によって異なります。 詳細については、「 [Content source location scenarios](../../core/plan-design/hierarchy/content-source-location-scenarios.md)」をご覧ください。  
+    > クライアントは、展開のソフトウェア更新プログラムの管理ポイントからコンテンツの場所を要求します。 ダウンロードの動作は、配布ポイント、展開パッケージ、このページの設定の構成によって異なります。 詳細については、「 [Content source location scenarios](../../core/plan-design/hierarchy/content-source-location-scenarios.md)」をご覧ください。  
 
 展開プロセスの詳細については、「 [Software update deployment process](../../sum/understand/software-updates-introduction.md#BKMK_DeploymentProcess)」を参照してください。
 
-## <a name="next-steps"></a>次のステップ
+## 次のステップ
+<a id="next-steps" class="xliff"></a>
 [ソフトウェア更新プログラムの監視](monitor-software-updates.md)
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

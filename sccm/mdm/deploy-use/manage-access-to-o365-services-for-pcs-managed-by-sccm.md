@@ -16,52 +16,51 @@ author: andredm7
 ms.author: andredm
 manager: angrobe
 ms.translationtype: Human Translation
-ms.sourcegitcommit: 23b1d24e908d04b64c3bbfa518793a44e696d468
-ms.openlocfilehash: e9028a54e538b4ec987dbaeb5ba1ee22ad091728
+ms.sourcegitcommit: c8717925dba42451b1e241a7c2f59e43896d7d99
+ms.openlocfilehash: e78fe989b7ff445717c8320c4eae3900eb46baea
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/17/2017
+ms.lasthandoff: 06/19/2017
 
 
 ---
-# <a name="manage-access-to-o365-services-for-pcs-managed-by-system-center-configuration-manager"></a>System Center Configuration Manager で管理されている PC の O365 サービスへのアクセスを管理する
+# System Center Configuration Manager で管理されている PC の O365 サービスへのアクセスを管理する
+<a id="manage-access-to-o365-services-for-pcs-managed-by-system-center-configuration-manager" class="xliff"></a>
 
 *適用対象: System Center Configuration Manager (Current Branch)*
 
-
-
- Configuration Manager のバージョン 1602 より、System Center Configuration Manager によって管理されている PC の条件付きアクセスを構成することができます。  
+Configuration Manager のバージョン 1602 より、System Center Configuration Manager によって管理されている PC の条件付きアクセスを構成することができます。  
 
 > [!IMPORTANT]  
->  これは、更新プログラム 1602、更新プログラム 1606、更新プログラム 1610 で使用できるプレリリース機能です。 プレリリース機能は、運用環境での早期テストのためにこの製品に含まれていますが、運用環境で使用することはできません。 詳細については、「[更新プログラムからプレリリース機能を使用する](../../core/servers/manage/install-in-console-updates.md#bkmk_prerelease)」を参照してください。
+> これは、更新プログラム 1602、更新プログラム 1606、更新プログラム 1610 で使用できるプレリリース機能です。 プレリリース機能は、運用環境での早期テストのためにこの製品に含まれていますが、運用環境で使用することはできません。 詳細については、「[更新プログラムからプレリリース機能を使用する](../../core/servers/manage/install-in-console-updates.md#bkmk_prerelease)」を参照してください。
 > - 更新プログラム 1602 をインストールすると、プレリリース機能であっても機能の種類はリリース済みとして表示されます。
 > - その後 1602 から 1606 に更新した場合、プレリリース機能のままですが、機能の種類はリリース済みとして表示されます。
 > - バージョン 1511 から 1606 に直接更新した場合、機能の種類はプレリリースとして表示されます。
 
- Intune によって登録および管理されているデバイスへの条件付きアクセスや、ドメインに参加していてコンプライアンス評価対象ではない PC への条件付きアクセスを構成する方法については、「[System Center Configuration Manager でサービスへのアクセスを管理する](../../protect/deploy-use/manage-access-to-services.md)」を参照してください。  
+Intune によって登録および管理されているデバイスへの条件付きアクセスや、ドメインに参加していてコンプライアンス評価対象ではない PC への条件付きアクセスを構成する方法については、「[System Center Configuration Manager でサービスへのアクセスを管理する](../../protect/deploy-use/manage-access-to-services.md)」を参照してください。
 
+## サポートされているサービス
+<a id="supported-services" class="xliff"></a>  
 
-## <a name="supported-services"></a>サポートされているサービス  
+-   Exchange Online
+-   SharePoint Online
 
--   Exchange Online  
+## サポートされている PC
+<a id="supported-pcs" class="xliff"></a>  
 
--   SharePoint Online  
-
-## <a name="supported-pcs"></a>サポートされている PC  
-
--   Windows 7  
-
--   Windows 8.1  
-
+-   Windows 7
+-   Windows 8.1
 -   Windows 10 
 
-## <a name="configure-conditional-access"></a>条件付きアクセスの構成  
+## 条件付きアクセスの構成
+<a id="configure-conditional-access" class="xliff"></a>  
  条件付きアクセスをセットアップするには、最初にコンプライアンス ポリシーを作成して、条件付きアクセス ポリシーを構成する必要があります。 コンプライアンス ポリシーに対応している PC のみが Exchange Online サービスと SharePoint Online サービスにアクセスできるように、PC の条件付きアクセス ポリシーを構成できます。  
 
-### <a name="prerequisites"></a>必要条件  
+### 必要条件
+<a id="prerequisites" class="xliff"></a>  
 
 -   ADFS の同期と O365 サブスクリプション。 O365 サブスクリプションは、Exchange Online と SharePoint Online のセットアップのためのものです。  
 
--   Microsoft Intune サブスクリプション。 Microsoft Intune サブスクリプションは、Configuration Manager コンソールで構成される必要があります。 ただし、条件付きアクセスの構成はハイブリッド展開上で行われる必要があります。  
+-   Microsoft Intune サブスクリプション。 Microsoft Intune サブスクリプションは、Configuration Manager コンソールで構成される必要があります。 Azure Active Directory にデバイスのコンプライアンス対応状態を中継するために、また、ユーザー ライセンスのために、Intune サブスクリプションが使用されます。  
 
  PC は、次の要件を満たす必要があります。  
 
@@ -77,7 +76,8 @@ ms.lasthandoff: 05/17/2017
 
  下記の手順は、Exchange Online と SharePoint Online の両方に適用されます。  
 
-### <a name="step-1-configure-compliance-policy"></a>手順 1. コンプライアンス ポリシーの構成  
+### 手順 1. コンプライアンス ポリシーの構成
+<a id="step-1-configure-compliance-policy" class="xliff"></a>  
  Configuration Manager コンソールで、次の規則を含むコンプライアンス ポリシーを作成します。  
 
 -   Azure Active Directory への登録が必要: この規則は、ユーザーのデバイスが Azure AD に社内参加しているかどうかをチェックし、参加していない場合には Azure AD に自動的に登録します。 自動登録がサポートされているのは Windows 8.1 のみです。 Windows 7 PC の場合には、MSI を展開して自動登録を実行します。 詳細については、 [Azure Active Directory への自動デバイス登録](https://azure.microsoft.com/en-us/documentation/articles/active-directory-conditional-access-automatic-device-registration/?rnd=1)に関する記事を参照してください。  
@@ -88,12 +88,14 @@ ms.lasthandoff: 05/17/2017
 
 -   **マルウェア対策が必要:** これは、マルウェア対策ソフトウェア (System Center Endpoint Protection または Windows Defender 限定) が有効で実行されているかどうかをチェックします。 無効な場合、電子メール サービスおよび SharePoint サービスへのアクセスがブロックされます。  
 
-### <a name="step-2-evaluate-the-effect-of-conditional-access"></a>手順 2. 条件付きアクセスの効果の評価  
+### 手順 2. 条件付きアクセスの効果の評価
+<a id="step-2-evaluate-the-effect-of-conditional-access" class="xliff"></a>  
  条件付きアクセス コンプライアンス レポートを実行します。 このレポートは [レポート] > [コンプライアンスと設定の管理] の [監視] セクションにあります。 これには、すべてのデバイスのコンプライアンス対応状態が表示されます。  非対応としてレポートされたデバイスから Exchange Online および SharePoint Online へのアクセスはブロックされます。  
 
  ![CA&#95;compliance&#95;report](media/CA_compliance_report.png)  
 
-### <a name="configure-active-directory-security-groups"></a>Active Directory セキュリティ グループの構成  
+### Active Directory セキュリティ グループの構成
+<a id="configure-active-directory-security-groups" class="xliff"></a>  
  条件付きアクセス ポリシーは、ポリシーの種類に応じてユーザーのグループを対象とします。 これらのグループには、ポリシーの対象となるユーザーや、ポリシーから除外されるユーザーが含まれます。 サービスにアクセスするには、ポリシーの対象であるユーザーが使用する各デバイスがポリシーに対応している必要があります。  
 
  Active Directory セキュリティ ユーザー グループ。 これらのユーザー グループは、Azure Active Directory に同期される必要があります。 これらのグループを Office 365 管理センターまたは Intune アカウント ポータルで構成することもできます。  
@@ -107,7 +109,8 @@ ms.lasthandoff: 05/17/2017
 
      条件付きアクセス ポリシーの対象となるグループだけが評価されます。  
 
-### <a name="step-3--create-a-conditional-access-policy-for-exchange-online-and-sharepoint-online"></a>手順 3.  Exchange Online および SharePoint Online の条件付きアクセス ポリシーを作成します。  
+### 手順 3.  Exchange Online および SharePoint Online の条件付きアクセス ポリシーを作成します。
+<a id="step-3--create-a-conditional-access-policy-for-exchange-online-and-sharepoint-online" class="xliff"></a>  
 
 1.  Configuration Manager コンソールで、 **[資産とコンプライアンス]**をクリックします。  
 
@@ -146,6 +149,9 @@ ms.lasthandoff: 05/17/2017
 
 -   Windows 10 users may see multiple access failures when trying to reach O365 and/or SharePoint online resources. Note that conditional access is not fully supported for Windows 10.  
 --->
-### <a name="see-also"></a>関連項目  
- [System Center Configuration Manager でのデータとサイト インフラストラクチャの保護](../../protect/understand/protect-data-and-site-infrastructure.md)
+## 関連項目
+<a id="see-also" class="xliff"></a>
+
+- [System Center Configuration Manager でのデータとサイト インフラストラクチャの保護](../../protect/understand/protect-data-and-site-infrastructure.md)
+- [Configuration Manager の条件付きアクセスによるトラブルシューティング フローチャート](https://gallery.technet.microsoft.com/Conditional-access-fd747c1a?redir=0)
 

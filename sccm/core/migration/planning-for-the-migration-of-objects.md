@@ -17,14 +17,15 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 ms.translationtype: Human Translation
-ms.sourcegitcommit: 45931f60273f3130cca36320770126a36dcc3d1e
-ms.openlocfilehash: 9870ffa6ae5f80db823bfc74a7cc2e67fc8cf21d
+ms.sourcegitcommit: c6ee0ed635ab81b5e454e3cd85637ff3e20dbb34
+ms.openlocfilehash: 17f3955aa7c63a13bab03b46002f7de0b0ec38fe
 ms.contentlocale: ja-jp
-ms.lasthandoff: 01/13/2017
+ms.lasthandoff: 06/08/2017
 
 
 ---
-# <a name="plan-for-the-migration-of-configuration-manager-objects-to-system-center-configuration-manager"></a>Configuration Manager オブジェクトの System Center Configuration Manager への移行の計画
+# Configuration Manager オブジェクトの System Center Configuration Manager への移行の計画
+<a id="plan-for-the-migration-of-configuration-manager-objects-to-system-center-configuration-manager" class="xliff"></a>
 
 *適用対象: System Center Configuration Manager (Current Branch)*
 
@@ -84,7 +85,8 @@ System Center 2012 Configuration Manager または System Center Configuration M
 ##  <a name="Plan_Migrate_content"></a> コンテンツの移行の計画  
  サポートされているソース階層から移行先階層にコンテンツを移行できます。 Configuration Manager 2007 ソース階層では、このコンテンツには、ソフトウェアの配布パッケージとプログラム、および Microsoft Application Virtualization (App-V) などの仮想アプリケーションが含まれます。 System Center 2012 Configuration Manager および System Center Configuration Manager のソース階層の場合、このコンテンツには、アプリケーションおよび APP-V 仮想アプリケーションが含まれています。 階層間でコンテンツを移行すると、圧縮ソース ファイルが移行先階層に移行されます。  
 
-### <a name="packages-and-programs"></a>パッケージとプログラム  
+### パッケージとプログラム
+<a id="packages-and-programs" class="xliff"></a>  
  パッケージとプログラムを移行しても、移行処理により変更されません。 ただし移行前に、ソース ファイルの場所に汎用名前付け規則 (UNC) パスを使用するように各パッケージを設定しておく必要があります。 パッケージとプログラムを移行するための構成の一環として、移行先階層内にこのコンテンツを管理するサイトを割り当てる必要があります。 割り当てたサイトからコンテンツは移行されませんが、移行後、割り当てたサイトが UNC マッピングを使用して元のソース ファイルの場所にアクセスします。  
 
  移行先階層にパッケージとプログラムを移行した後で、ソース階層からの移行が引き続きアクティブになっている間は、共有配布ポイントを使用して、その階層内のクライアントでコンテンツを利用できるようにすることができます。 共有配布ポイントを使用するには、ソース サイトの配布ポイントで、コンテンツに引き続きアクセスできる必要があります。 共有配布ポイントの詳細については、「[System Center Configuration Manager のコンテンツ展開移行戦略の計画](../../core/migration/planning-a-content-deployment-migration-strategy.md)」の「[ソース階層と移行先階層での配布ポイントの共有](../../core/migration/planning-a-content-deployment-migration-strategy.md#About_Shared_DPs_in_Migration)」を参照してください。  
@@ -97,7 +99,8 @@ System Center 2012 Configuration Manager または System Center Configuration M
 > [!TIP]  
 >  Microsoft System Center Configuration Manager Package Conversion Manager を使用して、パッケージとプログラムを System Center Configuration Manager アプリケーションに変換できます。 Package Conversion Manager は、 [Microsoft ダウンロード センター](http://go.microsoft.com/fwlink/p/?LinkId=212950) サイトからダウンロードしてください。 詳細については、「 [Configuration Manager のパッケージ変換マネージャー](http://go.microsoft.com/fwlink/p/?LinkId=247245)」を参照してください。  
 
-### <a name="virtual-applications"></a>仮想アプリケーション  
+### 仮想アプリケーション
+<a id="virtual-applications" class="xliff"></a>  
 サポートされている Configuration Manager 2007 サイトから App-V パッケージを移行すると、移行処理でこのパッケージは移行先階層のアプリケーションに変換されます。 さらに、App-V パッケージの既存の開示通知を基に、移行先階層で次のように展開の種類が作成されます。  
 
 -   開示通知がない場合は、展開の種類の既定設定を使用する展開の種類が 1 つ作成されます。  
@@ -114,13 +117,15 @@ System Center 2012 Configuration Manager または System Center Configuration M
 
 System Center 2012 Configuration Manager または System Center Configuration Manager のソース階層から移行するときに、App-V の展開の種類とアプリケーションに加えて、App-V 仮想環境のオブジェクトも移行することができます。 App-V 環境の詳細については、「[System Center Configuration Manager での App-V 仮想アプリケーションの展開](../../apps/get-started/deploying-app-v-virtual-applications.md)」を参照してください。  
 
-### <a name="advertisements"></a>開示通知 (旧称「提供情報」)  
+### 開示通知 (旧称「提供情報」)
+<a id="advertisements" class="xliff"></a>  
 コレクション ベースの移行を使用して、サポートされている Configuration Manager 2007 ソース サイトから移行先階層に開示通知を移行できます。 クライアントをアップグレードする場合は、クライアントで移行済みの開示通知が再実行されないように、以前に実行された開示通知の履歴が保持されます。  
 
 > [!NOTE]  
 >  仮想パッケージの開示通知は移行できません。 これは、開示情報の移行の例外となります。  
 
-### <a name="applications"></a>アプリケーション  
+### アプリケーション
+<a id="applications" class="xliff"></a>  
  サポートされている System Center 2012 Configuration Manager または System Center Configuration Manager のソース階層から移行先階層にアプリケーションを移行できます。 ソース階層から移行先階層にクライアントを再割り当てする場合は、クライアントで移行済みのアプリケーションが再実行されないように、以前にインストールされたアプリケーションの履歴がクライアントに保持されます。  
 
 ##  <a name="BKMK_MigrateCollections"></a> コレクションの移行の計画  
@@ -144,7 +149,7 @@ System Center 2012 Configuration Manager または System Center Configuration M
     > [!NOTE]  
     >  タスク シーケンスを移行する場合、Configuration Manager によって、移行先階層では必要ないオブジェクトが移行されることがあります。 このようなオブジェクトには、ブート イメージと Configuration Manager 2007 クライアント インストール パッケージがあります。  
 
--   ドライバーとドライバー パッケージ。  
+-   ドライバーとドライバー パッケージ。 ドライバー パッケージを移行する場合、移行先階層内の SMS プロバイダーのコンピューター アカウントでパッケージ ソースを完全に制御できる必要があります。
 
 ##  <a name="Plan_Migrate_Compliance_settings"></a> 必要な構成管理の移行の計画  
 構成項目と構成基準を移行できます。  

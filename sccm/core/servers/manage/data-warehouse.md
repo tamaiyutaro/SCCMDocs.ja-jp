@@ -2,7 +2,7 @@
 title: "データ ウェアハウス | Microsoft Docs"
 description: "System Center Configuration Manager のデータ ウェアハウス サービス ポイントとデータベース"
 ms.custom: na
-ms.date: 3/28/2017
+ms.date: 5/31/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,14 +16,15 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 ms.translationtype: Human Translation
-ms.sourcegitcommit: 3c2a07f560e0aa3d2beb7cc50e71c98ac45c27e1
-ms.openlocfilehash: 9239f6e749c368835e8594ca2d07378d8555b99e
+ms.sourcegitcommit: dc221ddf547c43ab1f25ff83c3c9bb603297ece6
+ms.openlocfilehash: f11a53bbc85b40077b3909568db5ae5552b0456c
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/17/2017
+ms.lasthandoff: 06/01/2017
 
 
 ---
-#  <a name="the-data-warehouse-service-point-for-system-center-configuration-manager"></a>System Center Configuration Manager のデータ ウェアハウス サービス ポイント
+#  System Center Configuration Manager のデータ ウェアハウス サービス ポイント
+<a id="the-data-warehouse-service-point-for-system-center-configuration-manager" class="xliff"></a>
 *適用対象: System Center Configuration Manager (Current Branch)*
 
 バージョン 1702 以降では、データ ウェアハウス サービス ポイントを使用して、Configuration Manager 展開の長期的な履歴データを格納およびレポートできるようになりました。
@@ -46,11 +47,13 @@ ms.lasthandoff: 05/17/2017
 
 
 
-## <a name="prerequisites-for-the-data-warehouse-service-point"></a>データ ウェアハウス サービス ポイントの前提条件
+## データ ウェアハウス サービス ポイントの前提条件
+<a id="prerequisites-for-the-data-warehouse-service-point" class="xliff"></a>
 - サイト システムのロールをインストールするコンピューターには、.NET Framework 4.5.2 以降が必要です。
 - サイト システムの役割をインストールするコンピューターのコンピューター アカウントは、データをデータ ウェアハウス データベースと同期するために使用します。 このアカウントには次の権限が必要です。  
   - データ ウェアハウス データベースをホストするコンピューターの**管理者**。
   - データ ウェアハウス データベースの **DB_owner** へのアクセス許可。
+  - 最上位サイトのサイト データベースに対する **DB_reader** および **execute** アクセス許可。
 -    データ ウェアハウス データベースは、SQL Server 2012 以降の既定のインスタンス、または名前付きインスタンスでサポートされます。 エディションは Enterprise または Datacenter である必要があります。
   - SQL Server AlwaysOn 可用性グループ: この構成はサポートされていません。
   - SQL Server クラスター: SQL Server フェールオーバー クラスターはサポートされていません。 これは、SQL Server フェールオーバー クラスターでデータ ウェアハウス データベースが完全にテストされていないためです。
@@ -64,7 +67,8 @@ ms.lasthandoff: 05/17/2017
 > - CHT – 繁体字中国語 この問題は、今後のリリースで解決される予定です。
 
 
-## <a name="install-the-data-warehouse"></a>データ ウェアハウスのインストール
+## データ ウェアハウスのインストール
+<a id="install-the-data-warehouse" class="xliff"></a>
 データ ウェアハウスのサイト システムの役割は、階層の最上位層サイト (中央管理サイトまたはスタンドアロン プライマリ サイト) のみにインストールできます。
 
 各階層ではこの役割の単一インスタンスがサポートされ、最上位層サイトのどのサイト システムにも配置することができます。 ウェアハウスのデータベースをホストする SQL Server は、サイト システムの役割に対してローカルまたはリモートに配置できます。 データ ウェアハウスは同じサイトにインストールされているレポート サービス ポイントと連携しますが、この 2 つのサイト システムの役割が同じサーバーにインストールされている必要はありません。   
@@ -73,7 +77,8 @@ ms.lasthandoff: 05/17/2017
 
 ロールをインストールすると、指定した SQL Server のインスタンス上にデータ ウェアハウス データベースが Configuration Manager によって作成されます。 既存のデータベース名を指定した場合 ([データ ウェアハウス データベースを新しい SQL Server に移動する場合と同様に](#move-the-data-warehouse-database))、Configuration Manager では、新しいデータベースは作成されず、代わりに指定したデータベースが使用されます。
 
-### <a name="configurations-used-during-installation"></a>インストール時に使用する構成
+### インストール時に使用する構成
+<a id="configurations-used-during-installation" class="xliff"></a>
 **[システムのロールの選択]** ページ:  
 
 **[全般]** ページ:
@@ -95,7 +100,8 @@ ms.lasthandoff: 05/17/2017
     - **毎日**: 同期が毎日実行されるように指定します。
     - **毎週**: 各週の曜日を 1 つ指定して、同期が毎週繰り返されるようにします。
 
-## <a name="reporting"></a>レポート
+## レポート
+<a id="reporting" class="xliff"></a>
 データ ウェアハウス サービス ポイントをインストールすると、同じサイトにインストールされているレポート サービス ポイントでいくつかのレポートが利用できます。 レポート サービス ポイントをインストールする前にデータ ウェアハウス サービス ポイントをインストールした場合は、後でレポート サービス ポイントをインストールしたときにレポートが自動的に追加されます。
 
 データ ウェアハウス サイト システムの役割には、**データ ウェアハウス**のカテゴリを持つ次のレポートが含まれます。
@@ -114,7 +120,8 @@ ms.lasthandoff: 05/17/2017
  特定の提供情報を目的とし特定のコンピューターを対象としたソフトウェアの配布の概要。
 
 
-## <a name="expand-an-existing-stand-alone-primary-into-a-hierarchy"></a>既存のスタンドアロン プライマリを 1 つの階層に展開する
+## 既存のスタンドアロン プライマリを 1 つの階層に展開する
+<a id="expand-an-existing-stand-alone-primary-into-a-hierarchy" class="xliff"></a>
 中央管理サイトをインストールして既存のスタンドアロン プライマリ サイトを拡張する前に、まずデータ ウェアハウス サービス ポイントの役割をアンインストールする必要があります。 中央管理サイトをインストールした後に、中央管理サイトでサイト システムの役割をインストールすることができます。  
 
 データ ウェアハウス データベースの移動とは異なり、この変更によって以前にプライマリ サイトで同期した履歴データが失われます。 プライマリ サイトからデータベースをバックアップして、中央管理サイトで復元することはサポートされていません。
@@ -122,7 +129,8 @@ ms.lasthandoff: 05/17/2017
 
 
 
-## <a name="move-the-data-warehouse-database"></a>データ ウェアハウス データベースの移動
+## データ ウェアハウス データベースの移動
+<a id="move-the-data-warehouse-database" class="xliff"></a>
 データ ウェアハウス データベースを新しい SQL Server に移動するには、次の手順に従います。
 
 1.    SQL Server Management Studio を使用して、データ ウェアハウス データベースをバックアップします。次に、そのデータベースを、データ ウェアハウスをホストする新しいコンピューター上の SQL Server に復元します。   
@@ -133,7 +141,8 @@ ms.lasthandoff: 05/17/2017
 3.    データ ウェアハウス サービス ポイントを再インストールします。さらに、新しい SQL Server の名前と復元したデータ ウェアハウス データベースをホストするインスタンスを指定します。
 4.    サイト システムのロールがインストールされたら、移動は完了です。
 
-## <a name="troubleshooting-data-warehouse-issues"></a>データ ウェアハウス問題のトラブルシューティング
+## データ ウェアハウス問題のトラブルシューティング
+<a id="troubleshooting-data-warehouse-issues" class="xliff"></a>
 **ログ ファイル**：  
 データ ウェアハウス サービス ポイントのインストールまたはデータの同期に関する問題を調査するには、次のログを使用します。
  - *DWSSMSI.log* と *DWSSSetup.log* - データ ウェアハウス サービス ポイントのインストール時に発生したエラーを調査する場合に使用するログです。
@@ -170,7 +179,8 @@ ms.lasthandoff: 05/17/2017
   2.    SQL Server Reporting Services をホストするコンピューターで、MMC を開いて**証明書**のスナップインを追加し、**コンピューター アカウント**の証明書の管理を選択します。 **[信頼されたルート証明機関]** フォルダーで、**Data Warehouse SQL Server Identification Certificate (データ ウェアハウス SQL サーバーの識別証明書)** をインポートします。
 
 
-## <a name="data-warehouse-dataflow"></a>データ ウェアハウスのデータフロー   
+## データ ウェアハウスのデータフロー
+<a id="data-warehouse-dataflow" class="xliff"></a>   
 ![Datawarehouse_flow](./media/datawarehouse.png)
 
 **データの格納と同期**

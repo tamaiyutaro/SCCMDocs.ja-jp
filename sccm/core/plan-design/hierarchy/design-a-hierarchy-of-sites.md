@@ -2,7 +2,7 @@
 title: "サイト階層を設計する - Configuration Manager | Microsoft Docs"
 description: "System Center Configuration Manager で使用できるトポロジと管理オプションを理解することで、サイト階層を計画することができます。"
 ms.custom: na
-ms.date: 1/3/2017
+ms.date: 6/16/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -17,14 +17,15 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 ms.translationtype: Human Translation
-ms.sourcegitcommit: 35e48666f4d1a2363304650f960531fd0630a291
-ms.openlocfilehash: e346e83b0ae0dc7a612cef7a7b9fb1fdb42236bc
+ms.sourcegitcommit: db673277d1cc2d24e8dba2439b2b1891c883ebd0
+ms.openlocfilehash: 4710b1b89eb50cb7bcf4c4ee50c12a96b6561bc9
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/17/2017
+ms.lasthandoff: 06/16/2017
 
 
 ---
-# <a name="design-a-hierarchy-of-sites-for-system-center-configuration-manager"></a>System Center Configuration Manager のサイト階層の設計
+# System Center Configuration Manager のサイト階層の設計
+<a id="design-a-hierarchy-of-sites-for-system-center-configuration-manager" class="xliff"></a>
 
 *適用対象: System Center Configuration Manager (Current Branch)*
 
@@ -66,7 +67,7 @@ ms.lasthandoff: 05/17/2017
 
 -   中央管理サイトは、階層の最上位のサイトです。  
 
--   複数のプライマリ サイトが含まれる階層を構成する場合は、中央管理サイトをインストールする必要があります。また、中央管理サイトが、インストールする最初のサイトである必要があります。  
+-   複数のプライマリ サイトが含まれる階層を構成する場合は、中央管理サイトをインストールする必要があります。 複数のプライマリ サイトがすぐに必要な場合は、まず中央管理サイトをインストールします。 既にプライマリ サイトがある状態で中央管理サイトをインストールする場合は、中央管理サイトをインストールするために、[スタンドアロン プライマリ サイトを展開する](/sccm/core/servers/deploy/install/prerequisites-for-installing-sites#bkmk_expand)必要があります。 
 
 -   中央管理サイトは、プライマリ サイトのみ子サイトとしてサポートします。  
 

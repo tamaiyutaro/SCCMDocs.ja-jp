@@ -15,29 +15,28 @@ caps.latest.revision: 4
 author: robstackmsft
 ms.author: robstack
 manager: angrobe
-translationtype: Human Translation
-ms.sourcegitcommit: 10b1010ccbf3889c58c55b87e70b354559243c90
-ms.openlocfilehash: 479a7e902ff19b8ec501ff01c8e56565fd69f51b
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 2087badc9dd1d216352dce232b145a786783ac89
+ms.openlocfilehash: 44f454d2f7c9d317d1ad99ba724931b4631bd11e
+ms.contentlocale: ja-jp
+ms.lasthandoff: 05/18/2017
 
 
 ---                     
-# <a name="queries-technical-reference-for-system-center-configuration-manager"></a>System Center Configuration Manager のクエリのテクニカル リファレンス
+# System Center Configuration Manager のクエリのテクニカル リファレンス
+<a id="queries-technical-reference-for-system-center-configuration-manager" class="xliff"></a>
 
 *適用対象: System Center Configuration Manager (Current Branch)*
 
 System Center Configuration Manager でのクエリは指定した基準に基づきサイト データベースの情報を返します。 クエリを使用して、サイト内のリソースまたはインベントリ データやステータス メッセージに関する情報を取得することができます。  
 
-## <a name="queries-topics"></a>クエリのトピック  
- Configuration Manager でクエリを使用する際は、次のトピックを参考にします。  
+## Configuration Manager でのクエリの使用に関するトピック
+<a id="topics-about-using-queries-in-configuration-manager" class="xliff"></a>  
+ 次のトピックは、Configuration Manager でクエリを使用する場合に役立ちます。  
 
 -   [System Center Configuration Manager のクエリの概要](../../../core/servers/manage/introduction-to-queries.md)  
 
 -   [System Center Configuration Manager でのクエリの操作とメンテナンス](../../../core/servers/manage/operations-and-maintenance-for-queries.md)  
 
 -   [System Center Configuration Manager のクエリのセキュリティとプライバシー](../../../core/servers/manage/security-and-privacy-for-queries.md)  
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

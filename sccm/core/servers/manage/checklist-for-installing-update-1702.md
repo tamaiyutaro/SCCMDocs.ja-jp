@@ -2,7 +2,7 @@
 title: "1702 のチェックリスト | System Center Configuration Manager"
 description: "System Center Configuration Manager バージョン 1702 に更新する前に、実行するアクションについて説明します。"
 ms.custom: na
-ms.date: 05/02/2017
+ms.date: 6/6/2017
 ms.reviewer: na
 ms.suite: na
 ms.prod: configuration-manager
@@ -16,13 +16,14 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 ms.translationtype: Human Translation
-ms.sourcegitcommit: 90775fcf2549080a43e9c1606caa79d9eb90a89c
-ms.openlocfilehash: c4ace452d62d4fa08f4457cb1735718ca4bd016d
+ms.sourcegitcommit: 3619a73d3a39659de927e1711a7ec81de9918064
+ms.openlocfilehash: 355dfb361a1ab3e1bd436dae1df8a416bf79c6c8
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/20/2017
+ms.lasthandoff: 06/13/2017
 
 ---
-# <a name="checklist-for-installing-update-1702-for-system-center-configuration-manager"></a>System Center Configuration Manager の更新プログラム 1702 をインストールするためのチェックリスト
+# System Center Configuration Manager の更新プログラム 1702 をインストールするためのチェックリスト
+<a id="checklist-for-installing-update-1702-for-system-center-configuration-manager" class="xliff"></a>
 
 *適用対象: System Center Configuration Manager (Current Branch)*
 
@@ -45,7 +46,8 @@ System Center Configuration Manager の Current Branch を利用するとき、�
 
 Current Branch バージョンの詳細については、「[System Center Configuration Manager の更新プログラム](/sccm/core/servers/manage/updates)」の「[基準バージョンと更新プログラムのバージョン](/sccm/core/servers/manage/updates#bkmk_Baselines)」を参照してください。
 
-## <a name="about-installing-update-1702"></a>更新プログラム 1702 のインストールについて
+## 更新プログラム 1702 のインストールについて
+<a id="about-installing-update-1702" class="xliff"></a>
 
 **サイト:**  
 更新プログラム 1702 は、階層の最上位サイトにインストールします。 つまり、中央管理サイトがある場合はそこからインストールを開始します。そうでない場合は、スタンドアロン プライマリ サイトからインストールを開始します。 更新プログラムを最上位サイトにインストールすると、子サイトで次の更新動作が行われます。
@@ -68,7 +70,8 @@ Current Branch バージョンの詳細については、「[System Center Confi
 
 
 
-## <a name="checklist"></a>チェックリスト
+## チェックリスト
+<a id="checklist" class="xliff"></a>
 
 **すべてのサイトで、1702 への更新をサポートしているバージョンの System Center Configuration Manager が実行されていることを確認する:**   
 更新プログラム 1702 のインストールを始めるには、階層内の各サイト サーバーが、同じバージョンの System Center Configuration Manager を実行している必要があります。 1702 に更新するには、バージョン 1602、1606、または 1610 を使っている必要があります。
@@ -108,10 +111,7 @@ ADK を更新する前にサイトを更新する場合は、ブート イメー
 **サイト、サイト データベース サーバー、リモートのサイト システムの役割をホストするコンピューターのオペレーティング システムに適用できる、重要な更新プログラムすべてをインストールする:** Configuration Manager に更新プログラムをインストールする前に、該当する各サイト システムの重要な更新プログラムをすべてインストールします。 更新のインストール時に再起動が必要な場合は、アップグレードを開始する前に該当するコンピューターを再起動します。
 
 **プライマリ サイトの管理ポイントのデータベース レプリカを無効にする:**   
-Configuration Manager では、管理ポイントのデータベース レプリカが有効になっているプライマリ サイトを正常に更新することはできません。 次の操作を行う前に、データベースのレプリケーションを無効にしてください。
-
--   データベースのアップグレードをテストするためにサイト データベースのバックアップを作成する
--   Configuration Manager の更新プログラムをインストールする
+Configuration Manager では、管理ポイントのデータベース レプリカが有効になっているプライマリ サイトを正常に更新することはできません。 データベースのレプリケーションを無効にしてから、Configuration Manager の更新プログラムをインストールしてください。
 
 詳細については、「[Database replicas for management points for System Center Configuration Manager (System Center Configuration Manager の管理ポイント用データベース レプリカ)](/sccm/core/servers/deploy/configure/database-replicas-for-management-points)」を参照してください。
 
@@ -139,21 +139,24 @@ Configuration Manager では、ネットワーク負荷分散 (NLB) クラスタ
 
 詳細については、「[Backup and recovery for System Center Configuration Manager](/sccm/protect/understand/backup-and-recovery)」 (System Center Configuration Manager のバックアップと回復) をご覧ください。
 
-**最新のサイト データベース バックアップのコピーで、データベースのアップグレードをテストする:** System Center Configuration Manager の中央管理サイトまたはプライマリ サイトを更新する前に、サイト データベースのコピーでサイト データベースのアップグレード処理をテストできます。
+<!-- Removed from update guidance 6/6/2017
+**Test the database upgrade on a copy of the most recent site database backup:** 
+Before you update a System Center Configuration Manager central administration site or primary site, you can test the site database upgrade process on a copy of the site database.
 
--   サイトのアップグレード時にサイト データベースが変更される可能性があるため、サイト データベースのアップグレード処理をテストしておくことをお勧めします。
+-   We recommend that you test the site database upgrade process because when you upgrade a site, the site database might be modified.
 
--   データベースのアップグレード テストは必須ではありませんが、テストによって、実稼働データベースが影響を受ける前に、アップグレードの問題を特定することができます
+-   Although a test database upgrade is not required, it can identify problems for the upgrade before your production database is affected.
 
--   サイト データベースのアップグレードが失敗すると、サイト データベースが運用不可能になり、機能を復元するにはサイトの回復が必要になる可能性があります。
+-   A failed site database upgrade can render your site database inoperable and might require a site recovery to restore functionality.
 
--   サイト データベースは階層内のサイトで共有されますが、そのサイトをアップグレードする前に、該当する各サイトのデータベースをテストするように計画してください。
+-   Although the site database is shared between sites in a hierarchy, plan to test the database at each applicable site before you upgrade that site.
 
--   プライマリ サイトで管理ポイントにデータベース レプリカを使用する場合、サイト データベースのバックアップを作成する前にレプリケーションを無効にします。
+-   If you use database replicas for management points at a primary site, disable replication before you create the backup of the site database.
 
-Configuration Manager では、セカンダリ サイトのバックアップとセカンダリ サイト データベースのテスト アップグレードのいずれもサポートされていません。
+Configuration Manager does not support the backup of secondary sites nor does it support the test upgrade of a secondary site database.
 
-テスト データベースのアップグレードを実稼働サイト データベースで実行することは避けてください。 実行するとサイト データベースが更新され、サイトが機能しなくなる可能性があります。 詳細については、「**コンソール内の更新プログラムをインストールする前に**」の「[手順 2: 更新プログラムをインストールする前のデータベースのアップグレードのテスト](/sccm/core/servers/manage/install-in-console-updates#bkmk_step2)」を参照してください。
+Do not run a test database upgrade on the production site database. Doing so updates the site database and could render your site inoperable. For more information, see [Step 2: Test the database upgrade before installing an update](/sccm/core/servers/manage/install-in-console-updates#bkmk_step2) from **Before you install an in-console update**.
+-->
 
 **クライアントのパイロット運用を計画する:**   
 クライアントを更新する更新プログラムをインストールすると、すべてのアクティブなクライアントを展開してアップグレードする前に、実稼働前環境でその新しいクライアントの更新プログラムをテストできます。
@@ -184,13 +187,14 @@ Configuration Manager では、セカンダリ サイトのバックアップと
 
 詳細については、「[System Center Configuration Manager の更新プログラム](/sccm/core/servers/manage/updates)」を参照してください。
 
-## <a name="post-update-checklist"></a>更新後のチェックリスト
+## 更新後のチェックリスト
+<a id="post-update-checklist" class="xliff"></a>
 更新プログラムのインストールが完了した後で以下の作業が行われることを確認します。
-1.    サイト間レプリケーションがアクティブであることを確認します。 コンソールで、**[監視]** > **[サイト階層]** および**[監視]** > **[データベースのレプリケーション]** を表示し、問題が発生していないこと、またはレプリケーション リンクがアクティブであることを確認します。
-2.    各サイト サーバーおよびサイト システムの役割がバージョン 1702 に更新されていることを確認します。 コンソールでは、**[サイト]** や **[配布ポイント]** などの一部のノードの表示に、オプションの列 **[バージョン]** を追加できます。
+1.  サイト間レプリケーションがアクティブであることを確認します。 コンソールで、**[監視]** > **[サイト階層]** および**[監視]** > **[データベースのレプリケーション]** を表示し、問題が発生していないこと、またはレプリケーション リンクがアクティブであることを確認します。
+2.  各サイト サーバーおよびサイト システムの役割がバージョン 1702 に更新されていることを確認します。 コンソールでは、**[サイト]** や **[配布ポイント]** などの一部のノードの表示に、オプションの列 **[バージョン]** を追加できます。
 
  必要な場合は、サイト システムの役割が自動的に再インストールされて、新しいバージョンに更新されます。 正常に更新されないリモート サイト システムは再起動してみます。
-3.    更新を始める前に無効にした、プライマリ サイトでの管理ポイントのデータベース レプリカを、再構成します。
+3.  更新を始める前に無効にした、プライマリ サイトでの管理ポイントのデータベース レプリカを、再構成します。
 4.  更新を始める前に無効にしたデータベース メンテナンス タスクを、再構成します。
-5.    更新プログラムをインストールする前にクライアントのパイロット運用を構成した場合は、作成した計画に従ってクライアントをアップグレードします。
+5.  更新プログラムをインストールする前にクライアントのパイロット運用を構成した場合は、作成した計画に従ってクライアントをアップグレードします。
 

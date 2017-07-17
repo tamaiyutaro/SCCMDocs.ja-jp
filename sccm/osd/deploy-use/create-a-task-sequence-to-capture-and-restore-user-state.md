@@ -2,7 +2,7 @@
 title: "ユーザー状態をキャプチャおよび復元するタスク シーケンスの作成 | Microsoft Docs"
 description: "System Center Configuration Manager のタスク シーケンスを使用してオペレーティング システムの展開シナリオでのユーザー状態のデータをキャプチャして復元します。"
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 06/07/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,19 +16,22 @@ caps.handback.revision: 0
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-translationtype: Human Translation
-ms.sourcegitcommit: 74341fb60bf9ccbc8822e390bd34f9eda58b4bda
-ms.openlocfilehash: fdfbdd1acb1190ca7de9cff2b4b7f916d8dc1272
+ms.translationtype: Human Translation
+ms.sourcegitcommit: c6ee0ed635ab81b5e454e3cd85637ff3e20dbb34
+ms.openlocfilehash: 4b3668094d576b1b8710f08b384aa2f7c5eb0cca
+ms.contentlocale: ja-jp
+ms.lasthandoff: 06/08/2017
 
 
 ---
-# <a name="create-a-task-sequence-to-capture-and-restore-user-state-in-system-center-configuration-manager"></a>System Center Configuration Manager でユーザー状態をキャプチャおよび復元するためのタスク シーケンスを作成する
+# System Center Configuration Manager でユーザー状態をキャプチャおよび復元するためのタスク シーケンスを作成する
+<a id="create-a-task-sequence-to-capture-and-restore-user-state-in-system-center-configuration-manager" class="xliff"></a>
 
 *適用対象: System Center Configuration Manager (Current Branch)*
 
 オペレーティング システムを展開するときに、現在のオペレーティング システムのユーザー状態を維持したい場合は、System Center Configuration Manager のタスク シーケンスを使って、ユーザー状態データをキャプチャして復元します。 作成するタスク シーケンスの種類によっては、タスク シーケンスの一部として、キャプチャの作成と復元のステップが自動的に追加されることがあります。 他のシナリオでは、タスク シーケンスにキャプチャと復元のステップを手動で追加する必要があります。 このトピックでは、ユーザー状態データをキャプチャして復元するために、既存のタスク シーケンスに追加する必要があるステップを示します。  
 
-##  <a name="a-namebkmkcapturerestoreuserstatea-how-to-capture-and-restore-user-state-data"></a><a name="BKMK_CaptureRestoreUserState"></a> ユーザー状態データのキャプチャおよび復元方法  
+##  <a name="BKMK_CaptureRestoreUserState"></a> ユーザー状態データのキャプチャおよび復元方法  
  ユーザー状態をキャプチャして復元するには、タスク シーケンスに、次のステップを追加する必要があります。  
 
 -   **状態ストアの要求**: 状態移行ポイントにユーザー状態を保存する場合に限り、このステップが必要となります。  
@@ -41,7 +44,8 @@ ms.openlocfilehash: fdfbdd1acb1190ca7de9cff2b4b7f916d8dc1272
 
  次の手順に従い、ユーザー状態のキャプチャと復元に必要なタスク シーケンスのステップを追加します。 タスク シーケンスの作成の詳細については、「[タスクを自動化するためのタスク シーケンスの管理](manage-task-sequences-to-automate-tasks.md)」を参照してください。  
 
-#### <a name="to-add-task-sequence-steps-to-capture-the-user-state"></a>ユーザー状態をキャプチャするタスク シーケンスのステップを追加するには  
+#### ユーザー状態をキャプチャするタスク シーケンスのステップを追加するには
+<a id="to-add-task-sequence-steps-to-capture-the-user-state" class="xliff"></a>  
 
 1.  [ **タスク シーケンス** ] 一覧で、タスク シーケンスを選択し、[ **編集**] をクリックします。  
 
@@ -80,7 +84,7 @@ ms.openlocfilehash: fdfbdd1acb1190ca7de9cff2b4b7f916d8dc1272
 
         -   すべてのユーザー プロファイルをキャプチャするには、[標準オプションを使用してすべてのユーザー プロファイルをキャプチャする] をクリックします。 ****  
 
-        -   キャプチャするユーザー プロファイルを個別に指定するには、[ユーザー プロファイルのキャプチャ方法をカスタマイズする] をクリックします。 ****  
+        -   キャプチャするユーザー プロファイルを個別に指定するには、[ユーザー プロファイルのキャプチャ方法をカスタマイズする] をクリックします。 **** ユーザー プロファイル情報を含む構成ファイル (miguser.xml、migsys.xml、または migapp.xml) を選択します。 ここでは config.xml 構成ファイルを使用できませんが、OSDMigrageAdditionalCaptureOptions 変数と OSDMigrateAdditionalRestoreOptions 変数を使用して、USMT コマンド ラインに手動で追加することができます。
 
     -   [詳細ログ記録を有効にする **** ] を選択し、エラーが発生した場合にどのくらいの情報をログに書き込むかを指定します。  
 
@@ -117,7 +121,8 @@ ms.openlocfilehash: fdfbdd1acb1190ca7de9cff2b4b7f916d8dc1272
 
  このタスク シーケンスを展開し、展開先コンピューターでユーザー状態をキャプチャします。 タスク シーケンスの展開方法の詳細については、「[タスク シーケンスの展開](../deploy-use/manage-task-sequences-to-automate-tasks.md#BKMK_DeployTS)」を参照してください。  
 
-#### <a name="to-add-task-sequence-steps-to-restore-the-user-state"></a>ユーザー状態を復元するタスク シーケンスのステップを追加するには  
+#### ユーザー状態を復元するタスク シーケンスのステップを追加するには
+<a id="to-add-task-sequence-steps-to-restore-the-user-state" class="xliff"></a>  
 
 1.  [ **タスク シーケンス** ] 一覧で、タスク シーケンスを選択し、[ **編集**] をクリックします。  
 
@@ -133,7 +138,7 @@ ms.openlocfilehash: fdfbdd1acb1190ca7de9cff2b4b7f916d8dc1272
 
         -   [キャプチャしたすべてのユーザー プロファイルを標準オプションを使用して復元する **** ] をクリックし、ユーザー プロファイルをすべて復元します。  
 
-        -   [ユーザー プロファイルのキャプチャ方法をカスタマイズする **** ] をクリックし、個別のユーザー プロファイルを復元します。  
+        -   **[Customize user profile restore]\(ユーザー プロファイルの復元方法をカスタマイズする\)** をクリックし、個別のユーザー プロファイルを復元します。 ユーザー プロファイル情報を含む構成ファイル (miguser.xml、migsys.xml、または migapp.xml) を選択します。 ここでは config.xml 構成ファイルを使用できませんが、OSDMigrageAdditionalCaptureOptions 変数と OSDMigrateAdditionalRestoreOptions 変数を使用して、USMT コマンド ラインに手動で追加することができます。
 
     -   [ローカル コンピューターのユーザー プロファイルを復元する **** ] を選択し、復元したプロファイルの新しいパスワードを入力します。 ローカル プロファイルのパスワードは移行できません。  
 
@@ -167,11 +172,7 @@ ms.openlocfilehash: fdfbdd1acb1190ca7de9cff2b4b7f916d8dc1272
 
  このタスク シーケンスを展開し、対象コンピューターでユーザー状態を復元します。 タスク シーケンスの詳細については、「[タスク シーケンスの展開](manage-task-sequences-to-automate-tasks.md#BKMK_DeployTS)」を参照してください。  
 
-## <a name="next-steps"></a>次のステップ
+## 次のステップ
+<a id="next-steps" class="xliff"></a>
 [タスク シーケンスの展開の監視](monitor-operating-system-deployments.md#BKMK_TSDeployStatus)
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

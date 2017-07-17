@@ -2,7 +2,7 @@
 title: "System Center Configuration Manager を使用したスタンドアロン メディアを作成する | Microsoft Docs"
 description: "Configuration Manager サイトまたはネットワークへの接続を使用せずに、コンピューターにオペレーティング システムを展開するには、スタンドアロン メディアを使用します。"
 ms.custom: na
-ms.date: 03/24/2017
+ms.date: 06/07/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -17,14 +17,15 @@ author: Dougeby
 ms.author: dougeby
 manager: angrobe
 ms.translationtype: Human Translation
-ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
-ms.openlocfilehash: d4689545ce2be5c16a65b24489f30028a0f90f94
+ms.sourcegitcommit: c6ee0ed635ab81b5e454e3cd85637ff3e20dbb34
+ms.openlocfilehash: 98f902429ad1b9965a0dc4cc2e1bd071ad5c0779
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/17/2017
+ms.lasthandoff: 06/08/2017
 
 
 ---
-# <a name="create-stand-alone-media-with-system-center-configuration-manager"></a>System Center Configuration Manager を使用したスタンドアロン メディアを作成する
+# System Center Configuration Manager を使用したスタンドアロン メディアを作成する
+<a id="create-stand-alone-media-with-system-center-configuration-manager" class="xliff"></a>
 
 *適用対象: System Center Configuration Manager (Current Branch)*
 
@@ -36,12 +37,13 @@ Configuration Manager のスタンドアロン メディアには、Configuratio
 
 -   [Windows を最新バージョンにアップグレードする](upgrade-windows-to-the-latest-version.md)  
 
- スタンドアロン メディアには、オペレーティング システムと他のすべて必要なコンテンツ (ブート イメージ、オペレーティング システム イメージ、およびデバイス ドライバーなど) をインストールするステップを自動化するタスク シーケンスが含まれています。 オペレーティング システムを展開するためのすべてがスタンドアロン メディアに保存されるため、スタンドアロン メディアのディスク容量は、他の種類のメディアで必要とされる容量よりもずっと大きなものである必要があります。 中央管理サイトにスタンドアロン メディアを作成すると、クライアントは割り当てられたサイト コードを Active Directory から取得します。 子サイトで作成されたスタンドアロン メディアは、そのサイトのサイト コードをクライアントに自動的に割り当てます。  
+スタンドアロン メディアには、オペレーティング システムと他のすべて必要なコンテンツ (ブート イメージ、オペレーティング システム イメージ、およびデバイス ドライバーなど) をインストールするステップを自動化するタスク シーケンスが含まれています。 オペレーティング システムを展開するためのすべてがスタンドアロン メディアに保存されるため、スタンドアロン メディアのディスク容量は、他の種類のメディアで必要とされる容量よりもずっと大きなものである必要があります。 中央管理サイトにスタンドアロン メディアを作成すると、クライアントは割り当てられたサイト コードを Active Directory から取得します。 子サイトで作成されたスタンドアロン メディアは、そのサイトのサイト コードをクライアントに自動的に割り当てます。  
 
 ##  <a name="BKMK_CreateStandAloneMedia"></a> スタンドアロン メディアの作成  
- タスク シーケンス メディアの作成ウィザードを使用してスタンドアロン メディアを作成する前に、次の条件が満たされていることを確認します。  
+タスク シーケンス メディアの作成ウィザードを使用してスタンドアロン メディアを作成する前に、次の条件が満たされていることを確認します。  
 
-### <a name="create-a-task-sequence-to-deploy-an-operating-system"></a>オペレーティング システムを展開するタスク シーケンスを作成する
+### オペレーティング システムを展開するタスク シーケンスを作成する
+<a id="create-a-task-sequence-to-deploy-an-operating-system" class="xliff"></a>
 スタンドアロン メディアの一部として、オペレーティング システムを展開するタスク シーケンスを指定する必要があります。 新しいタスク シーケンスを作成する手順については、「[System Center Configuration Manager のオペレーティング システムをインストールするタスク シーケンスを作成する](create-a-task-sequence-to-install-an-operating-system.md)」を参照してください。
 
 スタンドアロン メディアでは、次の操作はサポートされていません。
@@ -54,20 +56,32 @@ Configuration Manager のスタンドアロン メディアには、Configuratio
 - 動的なパッケージはパッケージのインストール タスクを使用してインストールします。
 - 動的なアプリケーションはアプリケーションのインストール タスクを使用してインストールします。
 
-オペレーティング システムを展開するタスク シーケンスに [[パッケージのインストール]](../../osd/understand/task-sequence-steps.md#BKMK_InstallPackage) ステップが含まれる場合に、中央管理サイトでスタンドアロン メディアを作成すると、エラーが発生する可能性があります。 中央管理サイトには、タスク シーケンスの実行中に、ソフトウェアの配布エージェントを有効にするために必要なクライアント構成ポリシーがありません。 CreateTsMedia.log ファイルに次のエラーが表示される場合があります。<br /><br /> "WMI method SMS_TaskSequencePackage.GetClientConfigPolicies failed (0x80041001)"<br /><br /> **パッケージのインストール** ステップを含むスタンドアロン メディアの場合、ソフトウェアの配布エージェントが有効なプライマリ サイトにスタンドアロン メディアを作成するか、または [Windows と ConfigMgr のセットアップ](../understand/task-sequence-steps.md#BKMK_RunCommandLine) ステップの後かつタスク シーケンスの最初の**パッケージのインストール** ステップの前に[コマンド ラインの実行](../understand/task-sequence-steps.md#BKMK_SetupWindowsandConfigMgr)ステップを追加する必要があります。 [ **コマンド ラインの実行** ] ステップでは、最初の [パッケージのインストール] ステップを実行する前に、ソフトウェアの配布エージェントを有効にする WMIC コマンドを実行します。 [ **コマンド ラインの実行** ] タスク シーケンス ステップでは、次のコマンド ラインを使用できます。<br /><br />
-```
-WMIC /namespace:\\\root\ccm\policy\machine\requestedconfig path ccm_SoftwareDistributionClientConfig CREATE ComponentName="Enable SWDist", Enabled="true", LockSettings="TRUE", PolicySource="local", PolicyVersion="1.0", SiteSettingsKey="1" /NOINTERACTIVE
-```
+> [!NOTE]    
+> オペレーティング システムを展開するタスク シーケンスに [[パッケージのインストール]](../../osd/understand/task-sequence-steps.md#BKMK_InstallPackage) ステップが含まれる場合に、中央管理サイトでスタンドアロン メディアを作成すると、エラーが発生する可能性があります。 中央管理サイトには、タスク シーケンスの実行中に、ソフトウェアの配布エージェントを有効にするために必要なクライアント構成ポリシーがありません。 CreateTsMedia.log ファイルに次のエラーが表示される場合があります。    
+>     
+> "WMI method SMS_TaskSequencePackage.GetClientConfigPolicies failed (0x80041001)"    
+> 
+> **パッケージのインストール** ステップを含むスタンドアロン メディアの場合、ソフトウェアの配布エージェントが有効なプライマリ サイトにスタンドアロン メディアを作成するか、または [Windows と ConfigMgr のセットアップ](../understand/task-sequence-steps.md#BKMK_RunCommandLine) ステップの後かつタスク シーケンスの最初の**パッケージのインストール** ステップの前に[コマンド ラインの実行](../understand/task-sequence-steps.md#BKMK_SetupWindowsandConfigMgr)ステップを追加する必要があります。 [ **コマンド ラインの実行** ] ステップでは、最初の [パッケージのインストール] ステップを実行する前に、ソフトウェアの配布エージェントを有効にする WMIC コマンドを実行します。 [ **コマンド ラインの実行** ] タスク シーケンス ステップでは、次のコマンド ラインを使用できます。    
+>    
+> *WMIC /namespace:\\\root\ccm\policy\machine\requestedconfig path ccm_SoftwareDistributionClientConfig CREATE ComponentName="Enable SWDist", Enabled="true", LockSettings="TRUE", PolicySource="local", PolicyVersion="1.0", SiteSettingsKey="1" /NOINTERACTIVE*
 
-### <a name="distribute-all-content-associated-with-the-task-sequence"></a>タスク シーケンスに関連付けられているすべてのコンテンツを配布する
+
+> [!IMPORTANT]    
+> オペレーティング システム タスク シーケンスの「**Windows と ConfigMgr のセットアップ**」タスク シーケンス手順を使用している場合は、スタンドアロン メディアに **[使用可能な場合は、実稼働前クライアント パッケージを使用する]** をオンにしないでください。 この設定をオンにして、実稼働前のクライアント パッケージが使用可能な場合、スタンドアロン メディアで使用されます。 この方法はサポートされていません。 この設定の詳細については、「[Windows と ConfigMgr のセットアップ](/sccm/osd/understand/task-sequence-steps#BKMK_SetupWindowsandConfigMgr)」を参照してください。
+
+
+### タスク シーケンスに関連付けられているすべてのコンテンツを配布する
+<a id="distribute-all-content-associated-with-the-task-sequence" class="xliff"></a>
 少なくとも 1 つの配布ポイントに対して、タスク シーケンスで必要なすべてのコンテンツを配布する必要があります。 これには、ブート イメージ、オペレーティング システム イメージ、その他の関連するファイルが含まれます。 スタンドアロン メディアの作成時に、ウィザードによって配布ポイントから情報が収集されます。 その配布ポイントのコンテンツ ライブラリへの **読み取り** アクセス権を持っている必要があります。  詳細については、「[タスク シーケンスによって参照されるコンテンツの配布](manage-task-sequences-to-automate-tasks.md#BKMK_DistributeTS)」を参照してください。
 
-### <a name="prepare-the-removable-usb-drive"></a>リムーバブル USB ドライブを準備する
+### リムーバブル USB ドライブを準備する
+<a id="prepare-the-removable-usb-drive" class="xliff"></a>
 *リムーバブル USB ドライブの場合:*
 
 リムーバブル USB ドライブを使用する場合は、ウィザードが実行されるコンピューターに USB ドライブが接続され、USB ドライブが Windows に取り外し可能なメディアとして検知されている必要があります。 メディアの作成時に、ウィザードによって USB ドライブに直接書き込まれます。 スタンドアロン メディアでは FAT32 ファイル システムが使用されています。 スタンドアロン メディアは、サイズが 4 GB を超えるコンテンツが入っている USB フラッシュ ドライブには作成できません。
 
-### <a name="create-an-output-folder"></a>出力フォルダーを作成する
+### 出力フォルダーを作成する
+<a id="create-an-output-folder" class="xliff"></a>
 *CD/DVD セットの場合:*
 
 タスク シーケンス メディアの作成ウィザードを実行して CD または DVD セット用のメディアを作成する前に、ウィザードで作成される出力ファイル用のフォルダーを作成する必要があります。 CD または DVD セット用に作成されるメディアは、そのフォルダーに .iso ファイルとして直接書き込まれます。
@@ -75,11 +89,12 @@ WMIC /namespace:\\\root\ccm\policy\machine\requestedconfig path ccm_SoftwareDist
 
  リムーバブル USB ドライブまたは CD/DVD セット用のスタンドアロン メディアを作成するには、次の手順に従います。  
 
-## <a name="to-create-stand-alone-media"></a>スタンドアロン メディアを作成するには  
+## スタンドアロン メディアを作成するには
+<a id="to-create-stand-alone-media" class="xliff"></a>  
 
 1.  Configuration Manager コンソールで、 **[ソフトウェア ライブラリ]** をクリックします。  
 
-2.  [ **ソフトウェア ライブラリ** ] ワークスペースで [ **オペレーティング システム** ] を展開して、[ **タスク シーケンス** ] をクリックします。  
+2.  [ **ソフトウェア ライブラリ** ] ワークスペースで [ **オペレーティング システム**] を展開して、[ **タスク シーケンス**] をクリックします。  
 
 3.  [ **ホーム** ] タブの [ **作成** ] グループで [ **タスク シーケンス メディアの作成** ] をクリックして、タスク シーケンス メディアの作成ウィザードを起動します。  
 
@@ -94,9 +109,9 @@ WMIC /namespace:\\\root\ccm\policy\machine\requestedconfig path ccm_SoftwareDist
     > [!IMPORTANT]  
     >  スタンドアロン メディアでは FAT32 ファイル システムが使用されています。 スタンドアロン メディアは、サイズが 4 GB を超えるコンテンツが入っている USB フラッシュ ドライブには作成できません。  
 
-    -   **[USB フラッシュ ドライブ]** を選択した場合は、コンテンツを保存するドライブを指定します。  
+    -   **[USB フラッシュ ドライブ]**を選択した場合は、コンテンツを保存するドライブを指定します。  
 
-    -   **CD/DVD セット** を選択した場合は、メディアの容量および出力ファイルの名前とパスを指定します。 この場所に出力ファイルが書き込まれます。 例: **\\\servername\folder\outputfile.iso**  
+    -   **CD/DVD セット**を選択した場合は、メディアの容量および出力ファイルの名前とパスを指定します。 この場所に出力ファイルが書き込まれます。 例: **\\\servername\folder\outputfile.iso**  
 
          メディアにコンテンツ全体を保存しきれない場合は、複数のファイルが作成されます。この場合、複数の CD または DVD を使用してコンテンツを保存する必要があります。 複数のメディアが必要な場合は、Configuration Manager が作成する各出力ファイルの名前に連番が付けられます。 さらに、オペレーティング システムと共にアプリケーションを展開し、アプリケーションが 1 つのメディアに収まらない場合、Configuration Manager は複数のメディアでアプリケーションを保存します。 スタンドアロン メディアを実行している場合、Configuration Manager は、アプリケーションを保存する次のメディアの指定をユーザーに求めます。   
 

@@ -1,11 +1,11 @@
----
+﻿---
 title: "Office 365 ProPlus 更新プログラムの管理 | Microsoft Docs"
 description: "Configuration Manager が WSUS カタログからサイト サーバーに Office 365 のクライアント更新プログラムを同期したら、その更新プログラムをクライアントに展開できるようになります。"
 keywords: 
 author: dougeby
 ms.author: dougeby
 manager: angrobe
-ms.date: 03/24/2017
+ms.date: 05/31/2017
 ms.topic: article
 ms.prod: configuration-manager
 ms.service: 
@@ -13,14 +13,15 @@ ms.technology:
 - configmgr-sum
 ms.assetid: eac542eb-9aa1-4c63-b493-f80128e4e99b
 ms.translationtype: Human Translation
-ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
-ms.openlocfilehash: 016580dc6ee3c5268833db941d42416a976d201c
+ms.sourcegitcommit: dc221ddf547c43ab1f25ff83c3c9bb603297ece6
+ms.openlocfilehash: 744bcb603a02bc7d237ffb3a7f925037b94a23ba
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/17/2017
+ms.lasthandoff: 06/01/2017
 
 ---
 
-# <a name="manage-office-365-proplus-with-configuration-manager"></a>Configuration Manager での Office 365 ProPlus の管理
+# Configuration Manager での Office 365 ProPlus の管理
+<a id="manage-office-365-proplus-with-configuration-manager" class="xliff"></a>
 
 *適用対象: System Center Configuration Manager (Current Branch)*
 
@@ -30,15 +31,16 @@ Configuration Manager バージョン 1602 以降では、ソフトウェア更�
 
 バージョン 1702 以降では、Office 365 クライアント管理ダッシュボードから Office 365 インストーラーを起動することで、最初の Office 365 アプリのインストール操作をより簡単にすることができます。 ウィザードに従って、Office 365 のインストール設定を構成し、Office コンテンツ配信ネットワーク (CDN) からファイルをダウンロードして、コンテンツを含むスクリプト アプリケーションを作成して展開することができます。
 
-## <a name="office-365-client-management-dashboard"></a>Office 365 クライアント管理ダッシュボード  
+## Office 365 クライアント管理ダッシュボード
+<a id="office-365-client-management-dashboard" class="xliff"></a>  
 Configuration Manager バージョン 1610 より、Office 365 クライアント管理ダッシュボードを Configuration Manager コンソールで利用できます。 このダッシュボードを表示するには、**[ソフトウェア ライブラリ]** > **[概要]** > **[Office 365 クライアント管理]** に移動します。
 
 ダッシュボードには、次のチャートが表示されます。
 
 - Office 365 クライアントの数
 - Office 365 クライアントのバージョン
-- Office 365 クライアントの言語
-- Office 365 クライアントのチャネル     
+- Office 365 クライアントのバージョン
+- Office 365 クライアントのチャネル     
 詳細については、「[Office 365 ProPlus 更新プログラム チャネルの概要](https://technet.microsoft.com/library/mt455210.aspx)」をご覧ください。
 <!--- - Automatic deployment rules with Office 365 apps (have Office 365 Client selected in the set of available products). --->
 
@@ -47,9 +49,11 @@ Configuration Manager バージョン 1610 より、Office 365 クライアン�
 
 ダッシュボードの上部にある [**コレクション**] ドロップダウン設定を使用して、特定のコレクションのメンバーでダッシュボードのデータをフィルター処理します。
 
-### <a name="display-data-in-the-office-365-client-management-dashboard"></a>Office 365 クライアント管理ダッシュボードにデータを表示する
+### Office 365 クライアント管理ダッシュボードにデータを表示する
+<a id="display-data-in-the-office-365-client-management-dashboard" class="xliff"></a>
 Office 365 クライアント管理ダッシュ ボードに表示されるデータは、ハードウェア インベントリから取得されます。 データがダッシュボードに表示される前に、ハードウェア インベントリを有効にし、**Office 365 ProPlus 構成**ハードウェア インベントリ クラスを選択する必要があります。
-#### <a name="to-display-data-in-the-office-365-client-management-dashboard"></a>Office 365 クライアント管理ダッシュボードにデータを表示するには
+#### Office 365 クライアント管理ダッシュボードにデータを表示するには
+<a id="to-display-data-in-the-office-365-client-management-dashboard" class="xliff"></a>
 1. ハードウェア インベントリがまだ有効になっていない場合は、有効にします。 詳細については、「[Configure hardware inventory](\sccm\core\clients\manage\configure-hardware-inventory)」(ハードウェア インベントリを構成する) を参照してください。
 2. Configuration Manager コンソールで、**[管理]** > **[クライアント設定]** > **[既定のクライアント設定]** の順に選択します。  
 3. **[ホーム]** タブの **[プロパティ]** グループで、 **[プロパティ]**をクリックします。  
@@ -59,7 +63,8 @@ Office 365 クライアント管理ダッシュ ボードに表示されるデ�
 7.  [ **OK** ] をクリックして変更を保存し、[ **ハードウェア インベントリ クラス** ] ダイアログ ボックスを閉じます。  
 ハードウェア インベントリが報告されると、Office 365 クライアント管理ダッシュボードにデータが表示されます。
 
-## <a name="deploy-office-365-updates-with-configuration-manager"></a>Configuration Manager で Office 365 の更新プログラムを展開する
+## Configuration Manager で Office 365 の更新プログラムを展開する
+<a id="deploy-office-365-updates-with-configuration-manager" class="xliff"></a>
 Configuration Manager で Office 365 の更新プログラムを展開するには、次の手順を使用します。
 
 1.  Configuration Manager を使用して Office 365 クライアントの更新プログラムを管理するための[要件を確認します](https://technet.microsoft.com/library/mt628083.aspx) (このトピックの「**構成マネージャーを使用して Office 365 クライアントの更新を管理するための要件**」セクションを参照してください)。  
@@ -81,12 +86,14 @@ Configuration Manager で Office 365 の更新プログラムを展開するに�
 > Office 365 クライアントに複数の言語を設定している状態で、その言語数より少ない言語用の更新プログラムをダウンロードした場合、インストールは失敗します。 たとえば、Office 365 クライアントに en-us と de-de を設定しているとします。 サイト サーバーで、適用可能な Office 365 更新プログラムに対して en-us のコンテンツのみをダウンロードして展開します。 ユーザーがソフトウェア センターからこの更新プログラムのインストールを開始すると、更新プログラムはコンテンツのダウンロード中にハングします。 Office 365 クライアントと同じ言語の更新プログラムをダウンロードして展開する必要があります。  
 
 
-## <a name="add-other-languages-for-office-365-update-downloads"></a>Office 365 更新プログラムのダウンロード対象言語を追加する
+## Office 365 更新プログラムのダウンロード対象言語を追加する
+<a id="add-other-languages-for-office-365-update-downloads" class="xliff"></a>
 バージョン 1610 以降の Configuration Manager では、Office 365 でサポートされている言語であれば、Configuration Manager でサポートされているかどうかに関係なく、その言語の更新プログラムをダウンロード対象に含めることができます。
 > [!IMPORTANT]  
 > Office 365 更新プログラムの言語を追加するための構成設定はサイト全体に適用されます。 以下の手順に従って言語を追加すると、その言語における Office 365 のすべての更新プログラムが、ソフトウェア更新プログラムの展開ウィザードまたはソフトウェア更新プログラムのダウンロード ウィザードの [言語の選択] ページで選択した言語に加えてダウンロードされます。
 
-### <a name="to-add-support-to-download-updates-for-additional-languages"></a>更新プログラムのダウンロード対象言語を追加するには
+### 更新プログラムのダウンロード対象言語を追加するには
+<a id="to-add-support-to-download-updates-for-additional-languages" class="xliff"></a>
 以下の手順は、ソフトウェアの更新ポイント サイト システムの役割がインストールされている中央管理サイト (またはスタンドアロンのプライマリ サイト) で実行してください。
 1. 管理ユーザーとしてコマンド プロンプトから「*wbemtest*」と入力し、Windows Management Instrumentation テストを開きます。
 2. **[接続]** をクリックして「*root\sms\site_&lt;siteCode&gt;*」と入力します。
@@ -107,7 +114,8 @@ Configuration Manager で Office 365 の更新プログラムを展開するに�
 ![Filenames with additional languages](..\media\5-verification.png)
 
 
-## <a name="change-the-update-channel-after-you-enable-office-365-clients-to-receive-updates-from-configuration-manager"></a>Configuration Manager から更新プログラムを適用できるように Office 365 クライアントを設定した後で更新チャネルを変更する
+## Configuration Manager から更新プログラムを適用できるように Office 365 クライアントを設定した後で更新チャネルを変更する
+<a id="change-the-update-channel-after-you-enable-office-365-clients-to-receive-updates-from-configuration-manager" class="xliff"></a>
 Configuration Manager から更新プログラムを適用できるように Office 365 クライアントを設定した後で更新チャネルを変更するには、グループ ポリシーを使用して、レジストリ キー値の変更を Office 365 クライアントに配信します。 **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Office\ClickToRun\Configuration\CDNBaseUrl** というレジストリ キーを次のいずれかの値を使用するように変更します。
 
 - 最新機能提供チャネル:  
@@ -122,7 +130,8 @@ Configuration Manager から更新プログラムを適用できるように Off
 - 段階的提供チャネルの初回リリース:  
   **CDNBaseUrl** = http&#58;//officecdn.microsoft.com/pr/b8f9b850-328d-4355-9145-c59439a0c4cf
 
-## <a name="deploy-office-365-apps"></a>Office 365 アプリを展開する  
+## Office 365 アプリを展開する
+<a id="deploy-office-365-apps" class="xliff"></a>  
 バージョン 1702 以降では、Office 365 クライアント管理ダッシュボードから Office 365 インストーラーを起動して、最初の Office 365 アプリのインストール操作をより簡単にすることができます。 ウィザードに従って、Office 365 のインストール設定を構成し、Office コンテンツ配信ネットワーク (CDN) からファイルをダウンロードして、そのファイルのスクリプト アプリケーションを作成して展開することができます。
 
 Office 365 更新プログラムは Office 365 がインストールされていないクライアントには適用できないため、これは特に便利です。 1702 より前のバージョンでは、クライアントに初めて Office 365 アプリをインストールする場合に、Office 365 Deployment Tool (ODT) と、必要な言語パックをすべて含む Office 365 インストール ソース ファイルを手動でダウンロードし、適切な Office のバージョンとチャネルを指定する Configuration.xml を生成する必要があります。 次に、従来のパッケージ、または Office 365 アプリをインストールするクライアント用のスクリプト アプリケーションを作成して展開する必要があります。
@@ -135,13 +144,17 @@ Office 365 更新プログラムは Office 365 がインストールされてい
 >    - [o365client_32bit.xml](http://officecdn.microsoft.com/pr/wsus/ofl.cab)  
 > - Office 365 インストーラーを使用して Office 365 アプリケーションを作成して展開した場合、既定では Configuration Manage で Office 更新プログラムが管理されません。 Office 365 クライアントで Configuration Manager から更新プログラムを受信できるようにする場合は、「[Configuration Manager で Office 365 の更新プログラムを展開する](#deploy-office-365-updates-with-configuration-manager)」を参照してください。
 
-### <a name="to-deploy-office-365-apps-to-clients-from-the-office-365-client-management-dashboard"></a>Office 365 クライアント管理ダッシュボードからクライアントに Office 365 アプリを展開するには
+### Office 365 クライアント管理ダッシュボードからクライアントに Office 365 アプリを展開するには
+<a id="to-deploy-office-365-apps-to-clients-from-the-office-365-client-management-dashboard" class="xliff"></a>
 1. Configuration Manager コンソールで [**ソフトウェア ライブラリ**] > [**概要**] > [**Office 365 クライアント管理**] に移動します。
 2. 右上のウィンドウで [**Office 365 インストーラー**] をクリックします。 Office 365 クライアントのインストール ウィザードが開きます。
 3. [**アプリケーションの設定**] ページでアプリの名前と説明を入力し、ファイルをダウンロードする場所を入力して、[**次へ**] をクリックします。 場所は &#92;&#92;*server*&#92;*share* の形式で指定する必要があります。
 4. [**クライアント設定のインポート**] ページで、Office 365 クライアントの設定を既存の XML 構成ファイルからインポートするか、手動で設定を指定するかどうかを選び、[**次へ**] をクリックします。  
 
     既存の構成ファイルを使用する場合は、ファイルの場所を入力し、ステップ 7 に進みます。 場所は &#92;&#92;*server*&#92;*share*&#92;*filename*.XML の形式で指定する必要があります。
+    > [!IMPORTANT]    
+    > XML 構成ファイルには、[Office 365 ProPlus クライアントでサポートされる言語](https://technet.microsoft.com/library/cc179219&#40;v=office.16&#41;.aspx)のみを含める必要があります。
+
 5. [**クライアント プロダクト**] ページで、使用する Office 365 スイートを選び、含めたいアプリケーションを選び、含める必要がある追加の Office 製品を選び、[**次へ**] をクリックします。
 6. [**クライアント設定**] ページで、含める設定を選び、[**次へ**] をクリックします。
 7. [**展開**] ページで、アプリケーションを展開するかどうかを選び[**次へ**] をクリックします。  
@@ -151,7 +164,7 @@ Office 365 更新プログラムは Office 365 がインストールされてい
 10. 他のアプリケーションと同様に、Configuration Manager で [**ソフトウェア ライブラリ**] > [**概要**] > [**アプリケーション管理**] > [**アプリケーション**] の順に選択して、アプリケーションを展開または編集することができます。   
 
 > [!IMPORTANT]
-> Configuration Manager で Office 365 アプリケーション ウィザードを使用して作成し、展開した Office 365 は、**[Office 365 クライアント エージェントの管理を有効にする]** ソフトウェア更新プログラム クライアント エージェント設定を有効にしない限り、Configuration Manager で自動的に管理されません。 詳細については、「[System Center Configuration Manager のクライアント設定について](/sccm/core/clients/deploy/about-client-settings)」を参照してください。
+> Configuration Manager で Office 365 アプリケーション ウィザードを使用して作成し、展開した Office 365 アプリは、**[Office 365 クライアント エージェントの管理を有効にする]** ソフトウェア更新プログラム クライアント エージェント設定を有効にしない限り、Configuration Manager で自動的に管理されません。 詳細については、「[System Center Configuration Manager のクライアント設定について](/sccm/core/clients/deploy/about-client-settings)」を参照してください。
 
 >[!NOTE]
 >Office 365 アプリを展開すると、アプリを維持するための自動展開規則を作成できます。 Office 365 アプリの自動展開規則を作成するには、Office 365 クライアント管理ダッシュボードから **[ADR の作成]** をクリックし、製品を選択する際に **[Office 365 クライアント]** を選択します。 詳細については、「[ソフトウェア更新プログラムの自動展開](/sccm/sum/deploy-use/automatically-deploy-software-updates)」を参照してください。

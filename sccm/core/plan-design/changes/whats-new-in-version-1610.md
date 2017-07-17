@@ -16,13 +16,14 @@ ms.author: brenduns
 manager: angrobe
 ROBOTS: NOINDEX, NOFOLLOW
 ms.translationtype: Human Translation
-ms.sourcegitcommit: 831d8a66c827d246069c7415cdce7a7c4bb95b33
-ms.openlocfilehash: 19e3099773f887129374413482702de3f4b0a36f
+ms.sourcegitcommit: db673277d1cc2d24e8dba2439b2b1891c883ebd0
+ms.openlocfilehash: 8b80f4d14eafa4cbbfb083178a118bc0e71f4019
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/17/2017
+ms.lasthandoff: 06/16/2017
 
 ---
-# <a name="what39s-new-in-version-1610-of-system-center-configuration-manager"></a>System Center Configuration Manager のバージョン 1610 の新機能
+# System Center Configuration Manager のバージョン 1610 の新機能
+<a id="what39s-new-in-version-1610-of-system-center-configuration-manager" class="xliff"></a>
 
 *適用対象: System Center Configuration Manager (Current Branch)*
 
@@ -39,15 +40,18 @@ System Center Configuration Manager の現在のブランチの更新プログ�
 以降のセクションでは、Configuration Manager のバージョン 1610 の変更点および導入された新機能について詳しく説明します。  
 
 
-## <a name="in-console-monitoring-of-update-installation-status"></a>更新プログラムのインストール状態をコンソール内で監視する  
+## 更新プログラムのインストール状態をコンソール内で監視する
+<a id="in-console-monitoring-of-update-installation-status" class="xliff"></a>  
 バージョン 1610 以降、更新プログラム パックをインストールし、コンソールでインストールを監視すると、**[Post Installation (インストール後)]** という新しいフェーズが表示されるようになります。 このフェーズには、主要なサービスの再起動、レプリケーション監視の初期化など、タスクの状態が含まれます (このフェーズを使用するには、サイトをバージョン 1610 に更新する必要があります)。更新プログラムのインストール状態の詳細については、「[Install in-console updates](/sccm/core/servers/manage/install-in-console-updates#a-namebkmkinstalla-install-in-console-updates)」(コンソール内の更新プログラムのインストール) を参照してください。
 
 
-## <a name="exclude-clients-from-automatic-upgrade"></a>自動アップグレードからクライアントを除外する
+## 自動アップグレードからクライアントを除外する
+<a id="exclude-clients-from-automatic-upgrade" class="xliff"></a>
 新しいバージョンのクライアント ソフトウェアで、自動アップグレードから Windows クライアントを除外することができます。 除外するには、アップグレードから除外するように指定したコレクションにクライアント コンピューターを含めます。 除外されるコレクションのクライアントは、クライアント ソフトウェアを更新する要求を無視します。  詳細については、「[Exclude Windows clients from upgrades](../../clients/manage/upgrade/exclude-clients-windows.md)」(アップグレードから Windows クライアントを除外する) を参照してください。
 
 
-## <a name="improvements-for-boundary-groups"></a>境界グループの機能強化
+## 境界グループの機能強化
+<a id="improvements-for-boundary-groups" class="xliff"></a>
 バージョン 1610 では、境界グループとそれらが配布ポイントを扱う方法に重要な変更が加えられています。 これらの変更によって、コンテンツ インフラストラクチャの設計が単純化されると共に、クライアントがいつどのようにフォールバックしてコンテンツ ソースの場所となる他の配布ポイントを検索するかをより細かく制御することができます。 これには、オンプレミスとクラウド ベースの配布ポイントの両方が含まれます。
 従来からある概念や動作は、これらの機能強化によって一新されます (配布ポイントの [高速] と [低速] の構成など)。 セットアップとメンテナンスは、新しいモデルによって省力化されると考えられます。 これらの変更も、境界グループに関連付けるその他のサイト システムの役割を向上させる将来の変更のための基礎です。
 
@@ -56,7 +60,8 @@ System Center Configuration Manager の現在のブランチの更新プログ�
 詳細については、「[境界グループ](/sccm/core/servers/deploy/configure/define-site-boundaries-and-boundary-groups#a-namebkmkboundarygroupsa-boundary-groups)」を参照してください。
 
 
-## <a name="peer-cache-for-content-distribution-to-clients"></a>クライアントへのコンテンツ配布のピア キャッシュ
+## クライアントへのコンテンツ配布のピア キャッシュ
+<a id="peer-cache-for-content-distribution-to-clients" class="xliff"></a>
 バージョン 1610 より、クライアントの**ピア キャッシュ**をリモート クライアントへのコンテンツ展開の管理に使用できるようになりました。 クライアントがローカル キャッシュから直接他のクライアントとコンテンツを共有するための組み込みの Configuration Manager ソリューションである、ピア キャッシュです。
 
 ピア キャッシュを有効にするクライアント設定をコレクションに展開すると、そのコレクションのメンバーは同じ境界グループ内の他のクライアントのピア コンテンツ ソースとして動作できます。
@@ -69,20 +74,24 @@ System Center Configuration Manager の現在のブランチの更新プログ�
 詳細については、「[Configuration Manager クライアントのピア キャッシュ](/sccm/core/plan-design/hierarchy/client-peer-cache)」と「[クライアント データ ソース ダッシュボード](/sccm/core/servers/deploy/configure/monitor-content-you-have-distributed#client-data-sources-dashboard)」を参照してください。
 
 
-## <a name="migrate-multiple-shared-distribution-points-at-the-same-time"></a>複数の共有配布ポイントを同時に移行する
+## 複数の共有配布ポイントを同時に移行する
+<a id="migrate-multiple-shared-distribution-points-at-the-same-time" class="xliff"></a>
 **配布ポイントを再割り当てする**オプションを利用し、Configuration Manager に、最大 50 の共有配布ポイントの同時再割り当てを並列処理させることができます。 このリリースの前のバージョンでは、再割り当てされた配布ポイントは、同時に処理されていました。 詳細については、「[複数の共有配布ポイントを同時に移行する](/sccm/core/migration/planning-a-content-deployment-migration-strategy#migrate-multiple-shared-distribution-points-at-the-same-time)」を参照してください。
 
-## <a name="cloud-management-gateway-for-managing-internet-based-clients"></a>インターネットベースのクライアントを管理するためのクラウド管理ゲートウェイ
+## インターネットベースのクライアントを管理するためのクラウド管理ゲートウェイ
+<a id="cloud-management-gateway-for-managing-internet-based-clients" class="xliff"></a>
 
 クラウド管理ゲートウェイは、インターネット上で Configuration Manager クライアントを管理する簡単な方法を提供します。 Microsoft Azure にデプロイされ、Azure サブスクリプションを必要とするクラウド管理ゲートウェイ サービスは、クラウド管理ゲートウェイ接続ポイントと呼ばれる新しい役割を使用して、オンプレミスの Configuration Manager インフラストラクチャに接続します。 完全にデプロイされ、構成されると、クライアントは内部のプライベート ネットワークに接続しているかどうか、またはインターネット上にあるかどうかに関係なく、オンプレミスの Configuration Manager サイト システムの役割およびクラウドベースの配布ポイントと通信できるようになります。 詳細と、クラウド管理ゲートウェイがインターネットベースのクライアント管理を比較する方法については、「[Manage clients on the Internet](/sccm/core/clients/manage/manage-clients-internet)」(インターネット上のクライアントの管理) を参照してください。
 
-## <a name="improvements-to-the-windows-10-edition-upgrade-policy"></a>Windows 10 のエディションのアップグレード ポリシーの改善
+## Windows 10 のエディションのアップグレード ポリシーの改善
+<a id="improvements-to-the-windows-10-edition-upgrade-policy" class="xliff"></a>
 このリリースでは、次の機能強化がこのポリシーの種類に加えられています。
 
 - Microsoft Intune に登録された Windows 10 PC に加え、Configuration Manager クライアントを実行している Windows 10 PC で、エディションのアップグレード ポリシーを使用できるようになりました。
 - Windows 10 Professional から、ハードウェアと互換性がある、ウィザードのプラットフォームのいずれかにアップグレードすることができます。
 
-## <a name="manage-hardware-identifiers"></a>ハードウェア ID の管理
+## ハードウェア ID の管理
+<a id="manage-hardware-identifiers" class="xliff"></a>
 PXE ブートとクライアント登録で Configuration Manager が無視するハードウェア ID の一覧を指定できるようになりました。 それにより 2 つの一般的な問題に対処できます。
 
 1. Surface Pro 3 など、デバイスの多くにオンボード イーサネット ポートが含まれません。 オペレーティング システムの展開で有線接続を確立するとき、一般的に USB/イーサネット アダプターが使用されます。 しかしながら、コストや汎用性に起因し、多くの場合、共有アダプターになります。 そのアダプターの MAC アドレスを利用してデバイスを識別するため、展開ごとに管理者による追加措置がないと、アダプターの再利用が問題になります。 Configuration Manager Version 1610 では、このアダプターの MAC アドレスを除外できます。そのため、このシナリオで簡単に再利用できます。
@@ -90,7 +99,8 @@ PXE ブートとクライアント登録で Configuration Manager が無視す�
 
 詳細については、「[Manage duplicate hardware identifiers](/sccm/core/clients/manage/manage-clients#manage-duplicate-hardware-identifiers)」(重複するハードウェア識別子を管理する) を参照してください。
 
-## <a name="enhancements-to-windows-store-for-business-integration-with-configuration-manager"></a>ビジネス向け Windows ストアと Configuration Manager のとの統合の強化
+## ビジネス向け Windows ストアと Configuration Manager のとの統合の強化
+<a id="enhancements-to-windows-store-for-business-integration-with-configuration-manager" class="xliff"></a>
 このリリースの変更点:
 - 以前は、ビジネス向け Windows ストアから無料のアプリの展開のみができました。 さらに、Configuration Manager で有償のオンライン ライセンス付きアプリ (Intune に登録されているデバイスのみ) も展開できるようになりました。
 - ビジネス向け Windows ストアと Configuration Manager との即時同期を開始できるようになりました。
@@ -100,26 +110,31 @@ PXE ブートとクライアント登録で Configuration Manager が無視す�
 詳細については、「[System Center Configuration Manager によるビジネス向け Windows ストアからのアプリの管理](/sccm/apps/deploy-use/manage-apps-from-the-windows-store-for-business)」をご覧ください。
 
 
-## <a name="policy-sync-for-intune-enrolled-devices"></a>Intune に登録されたデバイスのポリシー同期
+## Intune に登録されたデバイスのポリシー同期
+<a id="policy-sync-for-intune-enrolled-devices" class="xliff"></a>
 デバイス自体のポータル サイト アプリから同期を要求するのではなく、Configuration Manager コンソールから Intune に登録されたデバイスのポリシー同期を要求できるようになりました。 同期要求の状態に関する情報は、デバイス ビュー内に 「**Remote Sync State**」 (リモート同期の状態) と呼ばれる新しい列として表示されます。 この情報は、各デバイスの **[プロパティ]** ダイアログ ボックスの [探索データ] セクションにも表示されます。
 詳細については、「[Intune に登録されたデバイスのポリシーを Configuration Manager コンソールからリモートで同期する](/sccm/mdm/deploy-use/sync-intune-device)」を参照してください。
 
 
-## <a name="use-compliance-settings-to-configure-windows-defender-settings"></a>コンプライアンス設定を使用して Windows Defender 設定を構成する
+## コンプライアンス設定を使用して Windows Defender 設定を構成する
+<a id="use-compliance-settings-to-configure-windows-defender-settings" class="xliff"></a>
 Configuration Manager コンソールの構成項目を使用して、Intune に登録されている Windows 10 コンピューターで Windows Defender クライアント設定を構成できるようになりました。
 詳細については、「[System Center Configuration Manager クライアントを使用せずに管理されている Windows 8.1 デバイスと Windows 10 デバイスの構成項目を作成する](/sccm/compliance/deploy-use/create-configuration-items-for-windows-8.1-and-windows-10-devices-managed-without-the-client)」の「**Windows Defender**」セクションを参照してください。
 
 
 
-## <a name="general-improvements-to-software-center"></a>ソフトウェア センターの全般的な機能強化
+## ソフトウェア センターの全般的な機能強化
+<a id="general-improvements-to-software-center" class="xliff"></a>
 - ユーザーは、ソフトウェア センターだけでなく、アプリケーション カタログからアプリを要求できるようになりました。
 - 新規のソフトウェアと関連性のあるソフトウェアを把握しやすくなりました。
 
-## <a name="new-columns-in-device-collection-views"></a>デバイス コレクション ビューの新しい列
+## デバイス コレクション ビューの新しい列
+<a id="new-columns-in-device-collection-views" class="xliff"></a>
 デバイス コレクション ビューで **IMEI** と**シリアル番号** (iOS デバイス) の列を表示できるようになりました。
 詳細については、「[IMEI または iOS シリアル番号によるデバイスの事前宣言](https://docs.microsoft.com/sccm/mdm/deploy-use/predeclare-devices-with-hardware-id)」をご覧ください。
 
-## <a name="customizable-branding-for-software-center-dialogs"></a>ソフトウェア センター ダイアログにおけるカスタマイズ可能なブランド
+## ソフトウェア センター ダイアログにおけるカスタマイズ可能なブランド
+<a id="customizable-branding-for-software-center-dialogs" class="xliff"></a>
 ソフトウェア センターのカスタム ブランド設定は、Configuration Manager バージョン 1602 で導入されました。 バージョン 1610 では、ソフトウェア センターのユーザーにより一貫性のあるエクスペリエンスを提供するため、このブランド設定が関連するすべてのダイアログ ボックスに拡張されています。
 
 ソフトウェア センターのカスタム ブランド設定は、次の規則に従って適用されます。
@@ -131,7 +146,8 @@ Configuration Manager コンソールの構成項目を使用して、Intune に
 - Microsoft Intune サブスクリプションが構成されていて Configuration Manager 環境に接続されている場合は、Intune サブスクリプションのプロパティに指定されている組織名、色、および会社のロゴがソフトウェア センターに表示されます。 詳細については、「 [Configuring the Microsoft Intune subscription](/sccm/mdm/deploy-use/setup-hybrid-mdm#step-3-configure-intune-subscription)」をご覧ください。
 
 
-## <a name="enforcement-grace-period-for-required-application-and-software-update-deployments"></a>必要なアプリケーションとソフトウェア更新プログラムを展開するための適用猶予期間
+## 必要なアプリケーションとソフトウェア更新プログラムを展開するための適用猶予期間
+<a id="enforcement-grace-period-for-required-application-and-software-update-deployments" class="xliff"></a>
 場合によっては、必要なアプリケーション展開またはソフトウェア更新プログラムをインストールできるように、設定期限よりも長い時間をユーザーに与える必要があります。 これは、たとえばコンピューターが長期間オフになっていて、多数のアプリケーションや更新プログラムの展開をインストールする必要がある場合に必要になります。 たとえば、エンド ユーザーが休暇から戻って来たばかりの場合、期限切れのアプリケーションの展開がインストールされるまで、長時間待たなければならない場合があります。 この問題を解決するため、Configuration Manager クライアント設定をコレクションに展開することで、適用猶予期間を定義できるようになりました。 
 
 猶予期間を設定するには、次の操作を実行します。
@@ -142,8 +158,9 @@ Configuration Manager コンソールの構成項目を使用して、Intune に
 
 
 
-## <a name="improved-functionality-in-dialog-boxes-about-required-software"></a>必要なソフトウェアに関するダイアログ ボックスで改善された機能
-ユーザーが必要なソフトウェアを受け取ったときに、**[次の時間が経過したら再通知する]** 設定で、次のドロップダウン リストから値を選択できます。 
+## 必要なソフトウェアに関するダイアログ ボックスで改善された機能
+<a id="improved-functionality-in-dialog-boxes-about-required-software" class="xliff"></a>
+ユーザーが必要なソフトウェアを受け取ったときに、[**次の時間が経過したら再通知する**] 設定で、次のドロップダウン リストから値を選択できます。 
 - **[後で]**:  クライアント エージェント設定で構成されている通知の設定に基づいて通知をスケジュールすることを指定します。
 - **[定時]**:  選択した時間後にもう一度通知を表示するように指定します (30 分後など)。
 
@@ -160,18 +177,21 @@ Configuration Manager コンソールの構成項目を使用して、Intune に
 - [危険度の高い展開を管理するための設定](../../../protect/understand/settings-to-manage-high-risk-deployments.md)
 - [クライアント設定を構成する方法](../../clients/deploy/configure-client-settings.md)
 
-## <a name="software-updates-dashboard"></a>ソフトウェア更新プログラム ダッシュボード
+## ソフトウェア更新プログラム ダッシュボード
+<a id="software-updates-dashboard" class="xliff"></a>
 新しいソフトウェア更新プログラム ダッシュボードを使用すると、組織内にあるデバイスの現在のコンプライアンス状態を確認し、データをすばやく分析して危険な状態のデバイスを確認できます。 ダッシュボードを表示するには、**[監視]** > **[概要]** > **[セキュリティ]** > **[ソフトウェア更新プログラム ダッシュボード]** に移動します。
 
 詳細については、「[Monitor software updates](/sccm/sum/deploy-use/monitor-software-updates)」(ソフトウェア更新プログラムの監視) を参照してください。
 
 
-## <a name="improvements-to-the-application-request-process"></a>アプリケーション要求プロセスの改善
+## アプリケーション要求プロセスの改善
+<a id="improvements-to-the-application-request-process" class="xliff"></a>
 アプリケーションのインストールを承認した後は、要求を拒否するには、Configuration Manager コンソールで **[拒否]** をクリックします。 以前は、承認後にこのボタンが淡色表示されていました。
 
 この操作で、アプリケーションがデバイスからアンインストールされることはありませんが、 ユーザーはソフトウェア センターからアプリケーションの新しいコピーをインストールできなくなります。
 
-## <a name="filter-by-content-size-in-automatic-deployment-rules"></a>自動展開規則でコンテンツのサイズでフィルター処理する
+## 自動展開規則でコンテンツのサイズでフィルター処理する
+<a id="filter-by-content-size-in-automatic-deployment-rules" class="xliff"></a>
 自動展開規則でソフトウェア更新プログラムのコンテンツのサイズでフィルター処理できるようになりました。 たとえば、2 MB 未満のソフトウェア更新プログラムだけをダウンロードするには、**[コンテンツ サイズ (KB)]** フィルターを **[< 2048]** に設定します。 ネットワーク帯域幅が制限されている場合に、下位レベルの簡素化された Windows サービスのよりよいサポートのため、このフィルターを使用して、サイズの大きいソフトウェア更新プログラムが自動的にダウンロードされるのを防止します。 詳細については、以下を参照してください。
 - [Configuration Manager と下位レベルのオペレーティング システムでの簡素化された Windows サービス](https://blogs.technet.microsoft.com/enterprisemobility/2016/10/07/configuration-manager-and-simplified-windows-servicing-on-down-level-operating-systems/)
 - [ソフトウェア更新プログラムの自動展開](/sccm/sum/deploy-use/automatically-deploy-software-updates)
@@ -180,7 +200,8 @@ Configuration Manager コンソールの構成項目を使用して、Intune に
 - 自動展開規則を作成するときに、自動展開規則の作成ウィザードの **[ソフトウェア更新プログラム]** ページにアクセスします。
 - 既にある自動展開規則のプロパティの **[ソフトウェア更新プログラム]** タブにアクセスします。
 
-## <a name="office-365-client-management-dashboard"></a>Office 365 クライアント管理ダッシュボード
+## Office 365 クライアント管理ダッシュボード
+<a id="office-365-client-management-dashboard" class="xliff"></a>
 Configuration Manager コンソールで Office 365 クライアント管理ダッシュボードを使用できるようになりました。 このダッシュボードを表示するには、**[ソフトウェア ライブラリ]** > **[概要]** > **[Office 365 クライアント管理]** に移動します。
 
 ダッシュボードには、次のチャートが表示されます。
@@ -192,50 +213,61 @@ Configuration Manager コンソールで Office 365 クライアント管理ダ�
 
 詳細については、[Office 365 ProPlus の更新プログラムの管理](/sccm/sum/deploy-use/manage-office-365-proplus-updates)に関するページを参照してください。
 
-## <a name="task-sequence-steps-to-manage-bios-to-uefi-conversion"></a>BIOS からUEFI への変換を管理するためのタスク シーケンス手順
+## BIOS からUEFI への変換を管理するためのタスク シーケンス手順
+<a id="task-sequence-steps-to-manage-bios-to-uefi-conversion" class="xliff"></a>
 **コンピューターの再起動**のステップで、UEFI に移行するためにハード ドライブに FAT32 パーティションを準備するため、新しい変数 TSUEFIDrive を使用して、オペレーティング システムの展開タスク シーケンスをカスタマイズできるようになりました。 次の手順では、タスク シーケンスのステップを作成して BIOS からUEFI への変換のためにハード ドライブを準備する方法の例を示します。 詳細については、「[BIOS から UEFI への変換を管理するためのタスク シーケンス手順](/sccm/osd/deploy-use/task-sequence-steps-to-manage-bios-to-uefi-conversion)」を参照してください。
 
-##  <a name="improvements-to-the-task-sequence-step-prepare-configmgr-client-for-capture"></a>タスク シーケンス ステップの向上: ConfigMgr クライアントのキャプチャの準備  
+##  タスク シーケンス ステップの向上: ConfigMgr クライアントのキャプチャの準備
+<a id="improvements-to-the-task-sequence-step-prepare-configmgr-client-for-capture" class="xliff"></a>  
 ConfigMgr クライアントの準備手順で、キー情報だけではなく、Configuration Manager クライアントが完全に削除されるようになりました。 タスク シーケンスでキャプチャしたオペレーティング システム イメージを展開すると、毎回新しい Configuration Manager クライアントがインストールされます。 詳細については、「[Task sequence steps](/sccm/osd/understand/task-sequence-steps#BKMK_PrepareConfigMgrClientforCapture)」(タスク シーケンスのステップ) を参照してください。
 
 
 
-## <a name="intune-compliance-policy-charts"></a>Intune コンプライアンス ポリシー グラフ
+## Intune コンプライアンス ポリシー グラフ
+<a id="intune-compliance-policy-charts" class="xliff"></a>
 Configuration Manager コンソールの **[監視]** ワークスペースで新しいチャートを使用して、デバイスの全体の準拠と非準拠の主な理由をすばやく表示することができるようになりました。 いずれかのチャートのセクションをクリックすると、そのカテゴリ内のデバイスのリストまでドリル ダウンすることができます。 詳細については、「[Monitor the compliance policy](/sccm/protect/deploy-use/create-compliance-policy#monitor-the-compliance-policy)」(コンプライアンス ポリシーの監視) を参照してください。
 
 
-## <a name="lookout-integration-for-hybrid-implementations-to-protect-ios-and-android-devices"></a>iOS デバイスと Android デバイスを保護するハイブリッド実装のための Lookout 統合
+## iOS デバイスと Android デバイスを保護するハイブリッド実装のための Lookout 統合
+<a id="lookout-integration-for-hybrid-implementations-to-protect-ios-and-android-devices" class="xliff"></a>
 Microsoft は、デバイス上のマルウェアやリスクの高いアプリなどを検出して iOS および Android モバイル デバイスを保護するため、Lookout のモバイル脅威保護ソリューションに統合しています。 Lookout のソリューションにより、構成可能な脅威レベルを決定できます。 System Center Configuration Manager に、Lookout によるリスク評価に基づいてデバイスのコンプライアンスを判断するためのコンプライアンス ポリシー規則を作成できます。 条件付きアクセス ポリシーを使用すると、デバイスのコンプライアンス状態に基づいて、会社のリソースへのアクセスを許可したりブロックしたりできます。 統合とそのしくみの詳細については、「[Manage access based on device, network, and application risk](/sccm/protect/deploy-use/manage-access-based-on-device-network-app-risk)」(デバイス、ネットワーク、アプリケーションのリスクに基づいたアクセスの管理) を参照してください。
 
-コンプライアンスの要件を満たしていない iOS デバイスのユーザーは登録が求められ、 会社のデータへのアクセス権を得るにはデバイスへの Lookout for Work アプリのインストール、アプリのアクティブ化、Lookout for Work アプリケーションで報告された脅威の修復が必要となります。 詳細については、「[Configure and deploy Lookout for Work apps](/sccm/protect/deploy-use/configure-and-deploy-lookout-for-work-apps)」(Lookout for Work アプリの構成と展開) を参照してください。
+コンプライアンスを満たしていない iOS デバイスのユーザーには登録が求められます。 会社のデータへのアクセス権を得るにはデバイスへの Lookout for Work アプリのインストール、アプリのアクティブ化、Lookout for Work アプリケーションで報告された脅威の修復が必要となります。 詳細については、「[Configure and deploy Lookout for Work apps](/sccm/protect/deploy-use/configure-and-deploy-lookout-for-work-apps)」(Lookout for Work アプリの構成と展開) を参照してください。
 
 
 
-## <a name="new-compliance-settings-for-configuration-items"></a>構成アイテムの新しいコンプライアンス設定
+## 構成アイテムの新しいコンプライアンス設定
+<a id="new-compliance-settings-for-configuration-items" class="xliff"></a>
 さまざまなデバイス プラットフォームの構成アイテムで使用できる多くの新しい設定が追加されました。 これらの設定は、以前はスタンドアロン構成での Microsoft Intune にありましたが、Intune を Configuration Manager で使用する際にも使用できるようになりました。
 詳細については、「[Configuration items for devices managed without the System Center Configuration Manager client](/sccm/compliance/deploy-use/configuration-items-for-devices-managed-without-the-client)」(System Center Configuration Manager クライアントを使用せずに管理されているデバイスの構成項目) を参照してください。
 
-### <a name="new-settings-for-android-devices"></a>Android デバイス向けの新しい設定
-#### <a name="password-settings"></a>パスワードの設定
+### Android デバイス向けの新しい設定
+<a id="new-settings-for-android-devices" class="xliff"></a>
+#### パスワードの設定
+<a id="password-settings" class="xliff"></a>
 - **パスワードの履歴を記憶する**
 - **指紋によるロック解除を使用する**
 
-#### <a name="security-settings"></a>セキュリティ設定
+#### セキュリティ設定
+<a id="security-settings" class="xliff"></a>
 - **メモリ カードの暗号化を必要とする**
 - **画面のキャプチャを許可する**
 - **診断データの送信を使用する**
 
-#### <a name="browser-settings"></a>ブラウザーの設定
+#### ブラウザーの設定
+<a id="browser-settings" class="xliff"></a>
 - **Web ブラウザーを許可する**
 - **オートコンプリートを使用する**
 - **ポップアップ ブロックを使用する**
 - **Cookie を使用する**
 - **アクティブ スクリプティングを使用する**
 
-#### <a name="app-settings"></a>アプリの設定
+#### アプリの設定
+<a id="app-settings" class="xliff"></a>
 - **Google Play ストアを使用する**
 
-#### <a name="device-capability-settings"></a>デバイスの機能の設定
+#### デバイスの機能の設定
+<a id="device-capability-settings" class="xliff"></a>
 - **リムーバブル記憶域を許可する**
 - **Wi-Fi テザリングを許可する**
 - **位置情報を許可する**
@@ -248,31 +280,39 @@ Microsoft は、デバイス上のマルウェアやリスクの高いアプリ�
 - **音声による発信を使用する**
 - **コピーと貼り付けを許可する**
 
-### <a name="new-settings-for-ios-devices"></a>iOS デバイスの新しい設定
-#### <a name="password-settings"></a>パスワードの設定
+### iOS デバイスの新しい設定
+<a id="new-settings-for-ios-devices" class="xliff"></a>
+#### パスワードの設定
+<a id="password-settings" class="xliff"></a>
 - **パスワードに必要な複雑な文字の数**
 - **単純なパスワードを許可する**
 - **パスワードが必要になるまでの非アクティブ状態の時間 (分)**
 - **パスワードの履歴を記憶する**
 
-### <a name="new-settings-for-mac-os-x-devices"></a>Mac OS X デバイスの新しい設定
-#### <a name="password-settings"></a>パスワードの設定
+### Mac OS X デバイスの新しい設定
+<a id="new-settings-for-mac-os-x-devices" class="xliff"></a>
+#### パスワードの設定
+<a id="password-settings" class="xliff"></a>
 - **パスワードに必要な複雑な文字の数**
 - **単純なパスワードを許可する**
 - **パスワードの履歴を記憶する**
 - **スクリーンセーバーがアクティブになるまでの非アクティブな時間 (分)**
 
-### <a name="new-settings-for-windows-10-desktop-and-mobile-devices"></a>Windows 10 デスクトップおよびモバイル デバイスの新しい設定
-#### <a name="password-settings"></a>パスワードの設定
+### Windows 10 デスクトップおよびモバイル デバイスの新しい設定
+<a id="new-settings-for-windows-10-desktop-and-mobile-devices" class="xliff"></a>
+#### パスワードの設定
+<a id="password-settings" class="xliff"></a>
 - **文字セットの最小数**
 - **パスワードの履歴を記憶する**
 - **デバイスがアイドル状態から戻るときにパスワードを必須とする**
 
-#### <a name="security-settings"></a>セキュリティ設定
+#### セキュリティ設定
+<a id="security-settings" class="xliff"></a>
 - **モバイル デバイスの暗号化を要求する**
 - **手動での登録解除を許可する**
 
-#### <a name="device-capability-settings"></a>デバイスの機能の設定
+#### デバイスの機能の設定
+<a id="device-capability-settings" class="xliff"></a>
 - **移動体通信で VPN を許可する**
 - **移動体通信で VPN ローミングを許可する**
 - **電話リセットを許可する**
@@ -280,18 +320,23 @@ Microsoft は、デバイス上のマルウェアやリスクの高いアプリ�
 - **Cortana を許可する**
 - **アクション センターの通知を許可する**
 
-### <a name="new-settings-for-windows-10-team-devices"></a>Windows 10 Team デバイスの新しい設定
-#### <a name="device-settings"></a>デバイスの設定
+### Windows 10 Team デバイスの新しい設定
+<a id="new-settings-for-windows-10-team-devices" class="xliff"></a>
+#### デバイスの設定
+<a id="device-settings" class="xliff"></a>
 - **Azure Operational Insights を有効にする**
 - **Miracast ワイヤレス投影を有効にする**
 - **[ようこそ] 画面に表示される会議の情報を選択する**
 - **ロック画面の背景画像 URL**
 
-### <a name="new-settings-for-windows-81-devices"></a>Windows 8.1 デバイスの新しい設定
-#### <a name="applicability-settings"></a>適用性の設定
+### Windows 8.1 デバイスの新しい設定
+<a id="new-settings-for-windows-81-devices" class="xliff"></a>
+#### 適用性の設定
+<a id="applicability-settings" class="xliff"></a>
 - **Windows 10 にすべての構成を適用する**
 
-#### <a name="password-settings"></a>パスワードの設定
+#### パスワードの設定
+<a id="password-settings" class="xliff"></a>
 - **必要なパスワードの種類**
 - **文字セットの最小数**
 - **最小のパスワードの長さ**
@@ -302,18 +347,23 @@ Microsoft は、デバイス上のマルウェアやリスクの高いアプリ�
 - **前のパスワードの再利用を防止**
 - **ピクチャ パスワードと PIN を許可する**
 
-#### <a name="browser-settings"></a>ブラウザーの設定
+#### ブラウザーの設定
+<a id="browser-settings" class="xliff"></a>
 - **イントラネット ネットワークの自動検出を使用する**
 
-### <a name="new-settings-for-windows-phone-81-devices"></a>Windows Phone 8.1 デバイスの新しい設定
-#### <a name="applicability-settings"></a>適用性の設定
+### Windows Phone 8.1 デバイスの新しい設定
+<a id="new-settings-for-windows-phone-81-devices" class="xliff"></a>
+#### 適用性の設定
+<a id="applicability-settings" class="xliff"></a>
 - **Windows 10 にすべての構成を適用する**
 
-#### <a name="password-settings"></a>パスワードの設定
+#### パスワードの設定
+<a id="password-settings" class="xliff"></a>
 - **文字セットの最小数**
 - **単純なパスワードを許可する**
 - **パスワードの履歴を記憶する**
 
-#### <a name="device-capability-settings"></a>デバイスの機能の設定
+#### デバイスの機能の設定
+<a id="device-capability-settings" class="xliff"></a>
 - **無料 Wi-Fi スポットへの自動接続を許可する**
 
