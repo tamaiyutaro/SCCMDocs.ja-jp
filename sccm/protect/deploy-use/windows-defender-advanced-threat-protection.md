@@ -16,13 +16,14 @@ author: NathBarn
 ms.author: nathbarn
 manager: angrobe
 ms.translationtype: Human Translation
-ms.sourcegitcommit: 8f4ec982a54cf3cefef310268a54850e70e2e63a
-ms.openlocfilehash: 237dc9cbccb973720a633490f096aed4bc16d183
+ms.sourcegitcommit: 0ebda27c0f3848615346c2ecf1ab8b9bb9ab6f0d
+ms.openlocfilehash: 6c3b67278fa587c137a29e174e277fb0f15872c8
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/17/2017
+ms.lasthandoff: 05/26/2017
 
 ---
-# <a name="windows-defender-advanced-threat-protection"></a>Windows Defender Advanced Threat Protection
+# Windows Defender Advanced Threat Protection
+<a id="windows-defender-advanced-threat-protection" class="xliff"></a>
 
 *適用対象: System Center Configuration Manager (Current Branch)*
 
@@ -33,10 +34,11 @@ Windows Defender ATP は、[Windows セキュリティ センター](https://sec
  **必要条件**  
 
 -   Windows Defender Advanced Threat Protection オンライン サービスのサブスクリプション  
+-   Windows 10 バージョン 1607 以降を実行しているクライアント コンピューター  
+-   Configuration Manager 1610 バージョン以降のクライアント エージェントを実行しているクライアント コンピューター
 
--   Windows 10 バージョン 1607 以降を実行しているクライアント  
-
-## <a name="how-to-create-an-onboarding-configuration-file"></a>オンボード構成ファイルの作成方法  
+## オンボード構成ファイルの作成方法
+<a id="how-to-create-an-onboarding-configuration-file" class="xliff"></a>  
 
  1.  [Windows Defender ATP オンライン サービス](https://securitycenter.windows.com/)にログオンします。   
 
@@ -49,7 +51,8 @@ Windows Defender ATP は、[Windows セキュリティ センター](https://sec
 > [!IMPORTANT]
 > Windows Defender ATP 構成ファイルには、セキュリティで保護する必要がある機密情報が含まれています。
 
-## <a name="onboard-devices-for-windows-defender-atp"></a>Windows Defender ATP のオンボード デバイス  
+## Windows Defender ATP のオンボード デバイス
+<a id="onboard-devices-for-windows-defender-atp" class="xliff"></a>  
 
 1.  Configuration Manager コンソールで、**[資産とコンプライアンス]** > **[概要]** > **[Endpoint Protection]** > **[Windows Defender ATP ポリシー]** の順に移動し、**[Windows Defender ATP ポリシーの作成]** をクリックします。 Windows Defender ATP ポリシーの作成ウィザードが開きます。  
 
@@ -69,7 +72,8 @@ Windows Defender ATP は、[Windows セキュリティ センター](https://sec
 
 6.  これで、**[展開]** をクリックすると、Windows Defender ATP ポリシーを管理対象のクライアント コンピューターに展開できます。  
 
-## <a name="monitor-windows-defender-atp"></a>Windows Defender ATP の監視  
+## Windows Defender ATP の監視
+<a id="monitor-windows-defender-atp" class="xliff"></a>  
 
 1.  Configuration Manager コンソールで、**[監視]** > **[概要]** > **[セキュリティ]** の順に移動し、**[Windows Defender ATP]** をクリックします。  
 
@@ -88,7 +92,8 @@ Windows Defender ATP は、[Windows セキュリティ センター](https://sec
         -   **非オンボード**: ポリシーは適用されましたが、エージェントがポリシー オンボードを報告していません  
 
 
-## <a name="how-to-create-and-deploy-an-offboarding-configuration-file"></a>オフボード構成ファイルの作成および展開方法  
+## オフボード構成ファイルの作成および展開方法
+<a id="how-to-create-and-deploy-an-offboarding-configuration-file" class="xliff"></a>  
 
 1.  [Windows Defender ATP オンライン サービス](https://securitycenter.windows.com/)にログオンします。   
 

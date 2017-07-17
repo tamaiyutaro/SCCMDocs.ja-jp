@@ -15,13 +15,16 @@ caps.latest.revision: 6
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-translationtype: Human Translation
-ms.sourcegitcommit: 10b1010ccbf3889c58c55b87e70b354559243c90
-ms.openlocfilehash: aed95333b6509b0aa7061f23969381f1ce8aff7f
+ms.translationtype: Human Translation
+ms.sourcegitcommit: f62d969dd49fb00b688602128df74b28ff551135
+ms.openlocfilehash: 7ae6bac23e585d6f61aff0f3155d050f1b537620
+ms.contentlocale: ja-jp
+ms.lasthandoff: 06/07/2017
 
 
 ---
-# <a name="configuring-reporting-in-system-center-configuration-manager"></a>System Center Configuration Manager におけるレポートの構成
+# System Center Configuration Manager におけるレポートの構成
+<a id="configuring-reporting-in-system-center-configuration-manager" class="xliff"></a>
 
 *適用対象: System Center Configuration Manager (Current Branch)*
 
@@ -33,14 +36,15 @@ System Center Configuration Manager コンソールでレポートを作成、�
 
 -   [System Center Configuration Manager のレポートの計画](../../../core/servers/manage/planning-for-reporting.md)  
 
-##  <a name="a-namebkmksqlreportingservicesa-sql-server-reporting-services"></a><a name="BKMK_SQLReportingServices"></a> SQL Server Reporting Services  
+##  <a name="BKMK_SQLReportingServices"></a> SQL Server Reporting Services  
  SQL Server Reporting Services は、サーバー ベースのレポート プラットフォームであり、各種のデータ リソースに包括的なレポート機能を提供します。 Configuration Manager のレポート サービス ポイントは、SQL Server Reporting Services と通信し、指定されたレポート フォルダーへの Configuration Manager レポートのコピー、Reporting Services 設定の構成、および Reporting Services のセキュリティ設定の構成を行います。 Reporting Services は、Configuration Manager のサイト データベースに接続し、レポートを実行したときに返されるデータを取得します。  
 
  Configuration Manager のサイトにレポート サービス ポイントをインストールする前に、レポート サービス ポイント サイト システムの役割をホストするサイト システムに、SQL Server Reporting Services をインストールして構成する必要があります。 Reporting Services のインストールの詳細については、 [SQL Server の TechNet ライブラリ](http://go.microsoft.com/fwlink/p/?LinkId=266389)を参照してください。  
 
  SQL Server Reporting Services がインストールされていて、正常に実行されているかどうかを確認するには、次の手順に従います。  
 
-#### <a name="to-verify-that-sql-server-reporting-services-is-installed-and-running"></a>SQL Server Reporting Services がインストールおよび実行されていることを確認するには  
+#### SQL Server Reporting Services がインストールおよび実行されていることを確認するには
+<a id="to-verify-that-sql-server-reporting-services-is-installed-and-running" class="xliff"></a>  
 
 1.  デスクトップで、[スタート ****]、[すべてのプログラム ****]、[Microsoft SQL Server 2008 R2 ****]、[構成ツール ****]、[Reporting Services 構成マネージャー ****] の順にクリックします。  
 
@@ -59,9 +63,10 @@ System Center Configuration Manager コンソールでレポートを作成、�
 
 7.  **[終了]** をクリックし、Reporting Services Configuration Manager を閉じます。  
 
-##  <a name="a-namebkmkreportbuilder3a-configure-reporting-to-use-report-builder-30"></a><a name="BKMK_ReportBuilder3"></a> レポートの操作にレポート ビルダー 3.0 を使用するように構成する  
+##  <a name="BKMK_ReportBuilder3"></a> レポートの操作にレポート ビルダー 3.0 を使用するように構成する  
 
-#### <a name="to-change-the-report-builder-manifest-name-to-report-builder-30"></a>レポート ビルダーのマニフェスト名をレポート ビルダー 3.0 に変更するには  
+#### レポート ビルダーのマニフェスト名をレポート ビルダー 3.0 に変更するには
+<a id="to-change-the-report-builder-manifest-name-to-report-builder-30" class="xliff"></a>  
 
 1.  Configuration Manager コンソールを実行しているコンピューターで、Windows レジストリ エディターを開きます。  
 
@@ -73,18 +78,22 @@ System Center Configuration Manager コンソールでレポートを作成、�
 
 5.  Windows レジストリ エディターを閉じます。  
 
-##  <a name="a-namebkmkinstallreportingservicespointa-install-a-reporting-services-point"></a><a name="BKMK_InstallReportingServicesPoint"></a> レポート サービス ポイントのインストール  
+##  <a name="BKMK_InstallReportingServicesPoint"></a> レポート サービス ポイントのインストール  
  サイトでレポートを管理するには、レポート サービス ポイントをサイトにインストールする必要があります。 レポート サービス ポイントは、SQL Server Reporting Services へのレポート フォルダーとレポートのコピー、レポートとフォルダーへのセキュリティ ポリシーの適用、および Reporting Services の構成設定を行います。 Configuration Manager コンソールでのレポートの表示、および Configuration Manager でのレポートの管理を行う前に、レポート サービス ポイントを構成する必要があります。 レポート サービス ポイントは、サイト システムの役割の 1 つであり、Microsoft SQL Server Reporting Services をインストールして実行しているサーバー上に構成する必要があります。 前提条件の詳細については、「[レポートの前提条件](prerequisites-for-reporting.md)」を参照してください。  
 
 > [!IMPORTANT]  
 >  レポート サービス ポイントをインストールするサイトを選択するときは、レポートにアクセスすることになるユーザーが、レポート サービス ポイントのインストール先サイトと同じセキュリティ スコープにいなければならないことに注意してください。  
 
-> [!IMPORTANT]  
+> [!NOTE]  
 >  サイト システムにレポート サービス ポイントをインストールした後に、レポート サーバーの URL を変更しないでください。 たとえば、レポート サービス ポイントを作成した後に、Reporting Services Configuration Manager でレポート サーバーの URL を変更すると、Configuration Manager コンソールは引き続き古い URL を使用するため、コンソールからレポートを実行、編集、または作成できません。 URL レポート サーバーを変更する必要がある場合は、レポート サービス ポイントを削除して、URL を変更し、レポート サービス ポイントを再インストールします。  
+
+> [!IMPORTANT]    
+> レポート サービス ポイントをインストールする場合、レポート サービス ポイント アカウントを指定する必要があります。 後で別のドメインのユーザーがレポートを実行しようとすると、ドメイン間に双方向の信頼が確立していない場合、レポートの実行は失敗します。
 
  レポート サービス ポイントをインストールするには、次の手順に従います。  
 
-#### <a name="to-install-the-reporting-services-point-on-a-site-system"></a>サイト システムにレポート サービス ポイントをインストールするには  
+#### サイト システムにレポート サービス ポイントをインストールするには
+<a id="to-install-the-reporting-services-point-on-a-site-system" class="xliff"></a>  
 
 1.  Configuration Manager コンソールで、[ **管理**] をクリックします。  
 
@@ -126,7 +135,7 @@ System Center Configuration Manager コンソールでレポートを作成、�
 
     -   **レポート サービス ポイントのアカウント**: **[設定]** をクリックして、レポートに表示されるデータを取得するために、レポート サービス ポイント上の SQL Server Reporting Services が Configuration Manager サイト データベースに接続する際に使用するアカウントを選択します。 **[既存のアカウント]** を選択して、以前に Configuration Manager アカウントとして構成されている Windows ユーザー アカウントを指定するか、**[新しいアカウント]** を選択して、現在 Configuration Manager アカウントとして構成されていない Windows ユーザー アカウントを指定します。 Configuration Manager は指定したユーザーにサイト データベースへのアクセスを自動的に付与します。 [ **管理** ] ワークスペースの [ **セキュリティ** ] ノードの [ **アカウント** ] サブフォルダーに、[ **ConfigMgr レポート サービス ポイント** ] のアカウント名でユーザーが表示されます。  
 
-         レポート サービスを実行するアカウントはドメイン ローカル セキュリティ グループ **Windows Authorization Access Group**に属し、[ **tokenGroupsGlobalAndUniversal の読み取り** ] アクセス許可が [ **許可**] に設定されている必要があります。  
+         レポート サービスを実行するアカウントはドメイン ローカル セキュリティ グループ **Windows Authorization Access Group**に属し、[ **tokenGroupsGlobalAndUniversal の読み取り** ] アクセス許可が [ **許可**] に設定されている必要があります。 レポートを正常に実行するには、レポート サービス ポイント アカウントとは異なるドメインのユーザーに対して双方向の信頼が確立されている必要があります。
 
          指定された Windows ユーザー アカウントとパスワードは、暗号化されて Reporting Services データベースに格納されます。 Reporting Services は、このアカウントとパスワードを使用して、サイト データベースからレポートのデータを取得します。  
 
@@ -142,7 +151,7 @@ System Center Configuration Manager コンソールでレポートを作成、�
     > [!NOTE]  
     >  レポート フォルダーが作成され、レポートがレポート サーバーにコピーされると、Configuration Manager はそのオブジェクトに適した言語を決定します。 関連する言語パックがサイトにインストールされている場合、Configuration Manager は、サイトのレポート サーバーで実行されているオペレーティング システムと同じ言語でオブジェクトを作成します。 その言語を使用できない場合、レポートは英語で作成および表示されます。 言語パックがないサイトにレポート サービス ポイントをインストールすると、レポートは英語でインストールされます。 レポート サービス ポイントをインストールした後に言語パックをインストールする場合、レポートのレポート サービス ポイントを適切な言語パックの言語で使用できるようにするには、そのポイントをアンインストールしてから再インストールする必要があります。 言語パックの詳細については、「[System Center Configuration Manager の言語パック](../deploy/install/language-packs.md)」を参照してください。  
 
-###  <a name="a-namebkmkfileinstallationandsecuritya-file-installation-and-report-folder-security-rights"></a><a name="BKMK_FileInstallationAndSecurity"></a> ファイルのインストールおよびレポート フォルダーのセキュリティ権限  
+###  <a name="BKMK_FileInstallationAndSecurity"></a> ファイルのインストールおよびレポート フォルダーのセキュリティ権限  
  Configuration Manager は次のアクションを実行して、レポート サービス ポイントをインストールし、Reporting Services を構成します。  
 
 > [!IMPORTANT]  
@@ -172,20 +181,21 @@ System Center Configuration Manager コンソールでレポートを作成、�
 
      Configuration Manager は Reporting Services に接続し、Configuration Manager と Reporting Services のルート フォルダーおよび特定のレポート フォルダーに対するアクセス許可をユーザーに設定します。 レポート サービス ポイントが最初にインストールされてから、Configuration Manager は Reporting Services に 10 分間隔で接続し、レポート フォルダーに構成されているユーザー権限が Configuration Manager ユーザーに設定された関連付けられている権限であることを確認します。 Reporting Services のレポート マネージャーを使用して、レポート フォルダーへのユーザーの追加、またはユーザー権限の変更を行うと、Configuration Manager は、サイト データベースに格納されている役割に基づいた割り当てを使用して、それらの変更を上書きします。 また、Configuration Manager は、Configuration Manager でのレポート権限を持っていないユーザーを削除します。  
 
-##  <a name="a-namebkmksecurityrolesa-reporting-services-security-roles-for-configuration-manager"></a><a name="BKMK_SecurityRoles"></a> Configuration Manager の Reporting Services のセキュリティ ロール  
+##  <a name="BKMK_SecurityRoles"></a> Configuration Manager の Reporting Services のセキュリティ ロール  
  Configuration Manager がレポート サービス ポイントをインストールするときに、Reporting Services に次のセキュリティ ロールを追加します。  
 
 -   **ConfigMgr レポート ユーザー**: このセキュリティ ロールが割り当てられたユーザーは、Configuration Manager レポートのみを実行できます。  
 
 -   **ConfigMgr レポート管理者**: このセキュリティ ロールが割り当てられたユーザーは、Configuration Manager のレポートに関連するすべてのタスクを実行できます。  
 
-##  <a name="a-namebkmkverifyreportingservicespointinstallationa-verify-the-reporting-services-point-installation"></a><a name="BKMK_VerifyReportingServicesPointInstallation"></a> レポート サービス ポイントのインストールの検証  
+##  <a name="BKMK_VerifyReportingServicesPointInstallation"></a> レポート サービス ポイントのインストールの検証  
  レポート サービス ポイントのサイトの役割を追加した後に、インストールを検証するには、特定のステータス メッセージおよびログ ファイルのエントリを確認します。 レポート サービス ポイントのインストールが成功したことを確認するには、次の手順に従います。  
 
 > [!WARNING]  
 >  レポートが Configuration Manager コンソールの **[監視]** ワークスペースにある **[レポート]** ノードの **[レポート]** サブフォルダーに表示される場合は、この手順をスキップすることができます。  
 
-#### <a name="to-verify-the-reporting-services-point-installation"></a>レポート サービス ポイントのインストールを検証するには  
+#### レポート サービス ポイントのインストールを検証するには
+<a id="to-verify-the-reporting-services-point-installation" class="xliff"></a>  
 
 1.  Configuration Manager コンソールで、[監視] をクリックします。 ****  
 
@@ -203,7 +213,7 @@ System Center Configuration Manager コンソールでレポートを作成、�
 
 7.  Srsrp.log を開いて、ログ ファイルのレポート サービス ポイントが正常にインストールされた時刻からログを確認します。 レポート フォルダーが作成されたこと、レポートが展開されたこと、および各フォルダーのセキュリティ ポリシーが確認されたことを検証します。 セキュリティ ポリシーの確認の最後の行の後ろに "SRS Web サービスがサーバー上で正常であることを確認しました" というメッセージがあることを確認します。 ****  
 
-##  <a name="a-namebkmkcertificatea-configure-a-self-signed-certificate-for-configuration-manager-console-computers"></a><a name="BKMK_Certificate"></a> Configuration Manager コンソール コンピューターの自己署名入り証明書の構成  
+##  <a name="BKMK_Certificate"></a> Configuration Manager コンソール コンピューターの自己署名入り証明書の構成  
  SQL Server Reporting Services レポートを作成する場合、多くのオプションがあります。 Configuration Manager コンソールでレポートを作成または編集する場合、Configuration Manager はレポート ビルダーを開いて、作成環境として使用します。 Configuration Manager レポートをどのように作成するかにかかわらず、サイト データベース サーバーでのサーバー認証のために自己署名入り証明書が必要となります。 Configuration Manager は、SMS プロバイダーがインストールされているサイト サーバーとコンピューターに証明書を自動的にインストールします。 このため、これらのコンピューターのいずれかから Configuration Manager コンソールを実行する場合は、そこでレポートを作成または編集できます。 ただし、別のコンピューターにインストールされている Configuration Manager コンソールからレポートの作成または変更を行う場合、サイト サーバーから証明書をエクスポートし、Configuration Manager コンソールを実行するコンピューターの**信頼されたユーザー**証明書ストアに追加する必要があります。  
 
 > [!NOTE]  
@@ -211,7 +221,8 @@ System Center Configuration Manager コンソールでレポートを作成、�
 
  両方のコンピューターが Windows Server 2008 R2 を実行している場合に、自己署名入り証明書のコピーをサイト サーバーから Configuration Manager コンソールを実行する別のコンピューターに転送するには、次のような手順を使用します。 別のオペレーティング システムのバージョンを使用しているために、この手順に従うことができない場合は、使用しているオペレーティング システムのドキュメントの対応する手順を参照してください。  
 
-#### <a name="to-transfer-a-copy-of-self-signed-certificate-from-the-site-server-to-another-computer"></a>自己署名入り証明書のコピーをサイト サーバーから別のコンピューターに転送するには  
+#### 自己署名入り証明書のコピーをサイト サーバーから別のコンピューターに転送するには
+<a id="to-transfer-a-copy-of-self-signed-certificate-from-the-site-server-to-another-computer" class="xliff"></a>  
 
 1.  サイト サーバーで次の手順を実行して、自己署名入り証明書をエクスポートします。  
 
@@ -243,10 +254,11 @@ System Center Configuration Manager コンソールでレポートを作成、�
 
     5.  [完了] をクリックし、ウィザードを閉じて、コンピューターへの証明書の構成を完了します。 ****  
 
-##  <a name="a-namebkmkmodifyreportingservicespointa-modify-reporting-services-point-settings"></a><a name="BKMK_ModifyReportingServicesPoint"></a> レポート サービス ポイントの設定の変更  
+##  <a name="BKMK_ModifyReportingServicesPoint"></a> レポート サービス ポイントの設定の変更  
  レポート サービス ポイントをインストールしたら、サイト データベースの接続および認証の設定をレポート サービス ポイントのプロパティで変更できます。 レポート サービス ポイントの設定を変更するには、次の手順に従います。  
 
-#### <a name="to-modify-reporting-services-point-settings"></a>レポート サービス ポイントの設定を変更するには  
+#### レポート サービス ポイントの設定を変更するには
+<a id="to-modify-reporting-services-point-settings" class="xliff"></a>  
 
 1.  Configuration Manager コンソールで、[ **管理**] をクリックします。  
 
@@ -277,13 +289,15 @@ System Center Configuration Manager コンソールでレポートを作成、�
 
 6.  [ **OK** ] をクリックして、変更を保存し、ダイアログ ボックスを閉じます。  
 
-## <a name="upgrading-sql-server"></a>SQL Server のアップグレード  
+## SQL Server のアップグレード
+<a id="upgrading-sql-server" class="xliff"></a>  
  SQL Server と、レポート サービス ポイントのデータ ソースとして使用される SQL Server Reporting Services をアップグレードした後に、Configuration Manager コンソールからレポートを実行または編集するときにエラーが発生する可能性があります。 Configuration Manager コンソールからレポートが適切に機能するには、そのサイトのレポート サービス ポイント サイト システムの役割を削除してから、再インストールする必要があります。 ただし、アップグレード後は、インターネット ブラウザーから引き続き正常にレポートの実行と編集を行うことができます。  
 
-##  <a name="a-namebkmkconfigurereportoptionsa-configure-report-options"></a><a name="BKMK_ConfigureReportOptions"></a> レポート オプションの構成  
+##  <a name="BKMK_ConfigureReportOptions"></a> レポート オプションの構成  
  レポートを管理するために使用する既定のレポート サービス ポイントを選択するには、Configuration Manager サイトのレポート オプションを使用します。 サイトでは複数のレポート サービス ポイントを持つことができますが、レポートの管理に使用されるのは、レポート オプションで選択した既定のレポート サーバーのみです。 サイトのレポート オプションを構成するには、次の手順に従います。  
 
-#### <a name="to-configure-report-options"></a>レポート オプションを構成するには  
+#### レポート オプションを構成するには
+<a id="to-configure-report-options" class="xliff"></a>  
 
 1.  Configuration Manager コンソールで、[監視] をクリックします。 ****  
 
@@ -293,11 +307,7 @@ System Center Configuration Manager コンソールでレポートを作成、�
 
 4.  一覧から既定のレポート サーバーを選択して、[OK] をクリックします。 **** 一覧にレポート サービス ポイントが表示されない場合は、レポート サービス ポイントがサイトに正常にインストールおよび構成されていることを確認します。  
 
-## <a name="next-steps"></a>次のステップ
+## 次のステップ
+<a id="next-steps" class="xliff"></a>
 [レポートの操作とメンテナンス](operations-and-maintenance-for-reporting.md)
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

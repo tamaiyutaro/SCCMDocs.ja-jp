@@ -16,14 +16,15 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 ms.translationtype: Human Translation
-ms.sourcegitcommit: 90775fcf2549080a43e9c1606caa79d9eb90a89c
-ms.openlocfilehash: f791278b0aa8efc734a894da7dab1704bb567ed0
+ms.sourcegitcommit: 662901e850566756759fcfc61c58f3c0e56bc5aa
+ms.openlocfilehash: 26356a80bd8c78d4517253bae73e53d8d8f3a73a
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/20/2017
+ms.lasthandoff: 06/03/2017
 
 
 ---
-# <a name="which-branch-of-configuration-manager-should-i-use"></a>適切な Configuration Manager のブランチを選択する
+# 適切な Configuration Manager のブランチを選択する
+<a id="which-branch-of-configuration-manager-should-i-use" class="xliff"></a>
 
 *適用対象: System Center Configuration Manager (Current Branch)、(Long-Term Servicing Branch)、(Technical Preview)*
 
@@ -33,7 +34,8 @@ ms.lasthandoff: 05/20/2017
 > [!TIP]  
 > 階層内のすべてのサイトは同じブランチを実行する必要があります。 階層内でサイトがそれぞれ異なるブランチをもつことはサポートされません。
 
-## <a name="current-branch-of-system-center-configuration-manager"></a>System Center Configuration Manager の Current Branch
+## System Center Configuration Manager の Current Branch
+<a id="current-branch-of-system-center-configuration-manager" class="xliff"></a>
 これは、実稼働環境で使用するためにライセンスされるブランチで、最新の機能を使用することができます。 System Center Datacenter、System Center Standard、System Center Configuration Manager、またはそれらと同等のサブスクリプション権を保有している場合は、このブランチを使用します。 ソフトウェア アシュアランスとライセンス オプションについては、「[System Center Configuration Manager のライセンスとブランチ](learn-more-editions.md)」をご覧ください。
 
 
@@ -71,7 +73,8 @@ Current Branch の初期リリースは、バージョン 1511 でした。 以�
 - Current Branch を Technical Preview に変換するオプションはありません。 Technical Preview は、ライセンスを必要としない個別のインストールです。
 - Current Branch を Long-Term Servicing Branch (LTSB) に変換するオプションはありません。 Current Branch をアンインストールしてから、新規インストールとして LTSB をインストールする必要があります。
 
-##  <a name="long-term-servicing-branch-of-system-center-configuration"></a>System Center Configuration Manager の Long-Term Servicing Branch
+##  System Center Configuration Manager の Long-Term Servicing Branch
+<a id="long-term-servicing-branch-of-system-center-configuration" class="xliff"></a>
 これは、実稼働環境で使用するためにライセンスされるブランチで、Current Branch を使用しており Configuration Manager ソフトウェア アシュアランス (SA) またはそれと同等のサブスクリプション権が 2016 年 10 月 1 日以降に失効することに同意した Configuration Manager ユーザーが対象となります。 ソフトウェア アシュアランスとライセンス オプションについては、「[System Center Configuration Manager のライセンスとブランチ](learn-more-editions.md)」をご覧ください。
 
 LTSB はバージョン 1606 に基づいています。 このブランチは、新機能の提供や既存の機能の更新を行うコンソール内の更新プログラムを受信しません。 ただし、重要なセキュリティ修正プログラムは提供されます。 LTSB をインストールするには、バージョン 1606 の [基準メディア](/sccm/core/servers/manage/updates#baseline-and-update-versions) (System Center 2016 または System Center Configuration Manager が収録された DVD として取得) を使用する必要があります。
@@ -81,7 +84,7 @@ LTSB を新しいサイトとしてインストールするか、またはサポ
 > [!TIP]  
 > System Center 2016 の詳細については、[System Center 2016 のドキュメント](https://technet.microsoft.com/system-center-docs/system-center)をご覧ください。 このドキュメントでは、System Center 2016 の入手方法についても説明しています。この製品を入手するには、Microsoft ライセンス契約または同様の権利が必要です。
 
-> ボリューム ランセンス サービス センター (VLSC) で System Center Configuration Manager バージョン 1606 を見つけるには、[VLSC](https://www.microsoft.com/Licensing/servicecenter/Downloads/DownloadsAndKeys.aspx) の **[Downloads and Keys (ダウンロードとキー)]** タブに移動し、"system center config" を検索し、**[System Center Config Mgr (current branch and LTSB 1606)]** (System Center Configuration Manager (現在のブランチと LTSB 1606)) を選択します。
+> ボリューム ランセンス サービス センター (VLSC) で System Center Configuration Manager バージョン 1606 を見つけるには、[VLSC](https://www.microsoft.com/Licensing/servicecenter/Downloads/DownloadsAndKeys.aspx) の **[Downloads and Keys]\(ダウンロードとキー\)** タブに移動し、"system center config" を検索し、**[System Center Config Mgr (current branch and LTSB)]\(System Center Configuration Manager (現在のブランチと LTSB)\)** を選択します。
 
 > System Center 2016 の評価版は、[TechNet Evaluation Center](https://www.microsoft.com/evalcenter/evaluate-system-center-technical-preview) から入手することもできます。
 
@@ -118,7 +121,8 @@ LTSB は Current Branch のバージョン 1606 をベースにしており、�
 -    Current Branch の評価版を LTSB インストールにアップグレードすることはできません。
 
 
-## <a name="technical-preview-for-system-center-configuration-manager"></a>System Center Configuration Manager の Technical Preview
+## System Center Configuration Manager の Technical Preview
+<a id="technical-preview-for-system-center-configuration-manager" class="xliff"></a>
 Technical Preview はラボ環境で使用するためのものです。この環境で、Configuration Manager 向けに開発されている最新の機能を確認してテストできます。 Technical Preview は実稼働環境ではサポートされないため、ソフトウェア アシュアランス ライセンス契約は必要ありません。
 
 Technical Preview を実行する新しいサイトをインストールするには、最新の [System Center Configuration Manager Technical Preview の基準メディア](/sccm/core/get-started/technical-preview#install-and-update-the-technical-preview)を使用します。 Technical Preview をインストールすると、毎月新しいバージョンがコンソール内の更新プログラムとして利用できます。
@@ -145,7 +149,8 @@ Technical Preview に最初に導入された機能は、多くの場合、以�
 -    Technical Preview を Current Branch または LTSB に変換するオプションはありません。
 
 
-## <a name="identify-your-branch-and-version"></a>ブランチとバージョンを確認する
+## ブランチとバージョンを確認する
+<a id="identify-your-branch-and-version" class="xliff"></a>
 Configuration Manager サイトのバージョン情報を表示すると、ブランチも確認できます。
 
 **バージョン**   

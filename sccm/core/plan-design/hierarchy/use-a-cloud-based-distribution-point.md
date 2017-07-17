@@ -16,14 +16,15 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 ms.translationtype: Human Translation
-ms.sourcegitcommit: f9097014c7e988ec8e139e518355c4efb19172b3
-ms.openlocfilehash: 489f38d3f88391e42b5271c03151203d22b26d9e
+ms.sourcegitcommit: c6ee0ed635ab81b5e454e3cd85637ff3e20dbb34
+ms.openlocfilehash: 8caf3319d93b98680ed4a719a8db714c7e4e96ce
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/17/2017
+ms.lasthandoff: 06/08/2017
 
 
 ---
-# <a name="use-a-cloud-based-distribution-point-with-system-center-configuration-manager"></a>System Center Configuration Manager でのクラウド ベースの配布ポイントの使用
+# System Center Configuration Manager でのクラウド ベースの配布ポイントの使用
+<a id="use-a-cloud-based-distribution-point-with-system-center-configuration-manager" class="xliff"></a>
 
 *適用対象: System Center Configuration Manager (Current Branch)*
 
@@ -32,7 +33,8 @@ ms.lasthandoff: 05/17/2017
 プライマリ サイトのインストールが完了し、クラウド ベースの配布ポイントをインストールする準備ができたら、[Azure でのクラウドベースの配布ポイントのインストール](../../../core/servers/deploy/configure/install-cloud-based-distribution-points-in-microsoft-azure.md)に関する記事をご覧ください。
 
 
-## <a name="plan-to-use-a-cloud-based-distribution-point"></a>クラウドベースの配布ポイントの使用の計画
+## クラウドベースの配布ポイントの使用の計画
+<a id="plan-to-use-a-cloud-based-distribution-point" class="xliff"></a>
 クラウドベースの配布ポイントを使用すると、次のことができます。  
 
 -   **クライアント設定を構成**し、ユーザーとデバイスがコンテンツにアクセスできるようにします。  

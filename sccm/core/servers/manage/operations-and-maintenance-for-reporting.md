@@ -15,22 +15,25 @@ caps.latest.revision: 5
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-translationtype: Human Translation
-ms.sourcegitcommit: 10b1010ccbf3889c58c55b87e70b354559243c90
-ms.openlocfilehash: f5a58ba9ecd9b0998c2859b6d3f45e493d7ef3cb
+ms.translationtype: Human Translation
+ms.sourcegitcommit: f62d969dd49fb00b688602128df74b28ff551135
+ms.openlocfilehash: df572cd0c64c82e25164430a53e1b893b3ba3cf5
+ms.contentlocale: ja-jp
+ms.lasthandoff: 06/07/2017
 
 
 ---
-# <a name="operations-and-maintenance-for-reporting-in-system-center-configuration-manager"></a>System Center Configuration Manager でのレポートの操作とメンテナンス
+# System Center Configuration Manager でのレポートの操作とメンテナンス
+<a id="operations-and-maintenance-for-reporting-in-system-center-configuration-manager" class="xliff"></a>
 
 *適用対象: System Center Configuration Manager (Current Branch)*
 
 System Center Configuration Manager にレポートのためのインフラストラクチャを準備した後、レポートおよびレポートのサブスクリプションを管理するために通常行う多くの操作があります。  
 
-##  <a name="a-namebkmkmanagereportsa-manage-configuration-manager-reports"></a><a name="BKMK_ManageReports"></a> Configuration Manager レポートの管理  
+##  <a name="BKMK_ManageReports"></a> Configuration Manager レポートの管理  
  Configuration Manager には、400 を超える事前定義のレポートがあり、組織内のユーザー、ハードウェア インベントリとソフトウェア インベントリ、ソフトウェア更新プログラム、アプリケーション、サイトのステータス、およびその他の Configuration Manager 操作に関する情報を収集、整理、および提示するために役立ちます。 事前定義のレポートは、そのまま使用するか、要件に合うようにレポートを変更できます。 カスタム モデル ベースのレポートおよび SQL ベースのレポートを作成して、要件に適合させることもできます。 次のセクションを使用して、Configuration Manager レポートを管理します。  
 
-###  <a name="a-namebkmkrunreporta-run-a-configuration-manager-report"></a><a name="BKMK_RunReport"></a> Configuration Manager レポートの実行  
+###  <a name="BKMK_RunReport"></a> Configuration Manager レポートの実行  
  Configuration Manager でのレポートは SQL Server Reporting Services に保存し、レポートに表示されるデータは、Configuration Manager サイト データベースから取得します。 Configuration Manager コンソールで、またはレポート マネージャーは、web ブラウザーでアクセスするを使用してレポートを表示できます。 レポートは、SQL Server Reporting Services を実行しているコンピューターにアクセスできるコンピューターで開くことができます。また、レポートを表示するための十分な権限がある必要があります。 レポートを実行すると、レポートのタイトル、説明、およびカテゴリが、ローカルのオペレーティング システムの言語で表示されます。  
 
 > [!NOTE]  
@@ -39,12 +42,16 @@ System Center Configuration Manager にレポートのためのインフラス�
 > [!WARNING]  
 >  レポートを実行するには、**サイト**の**読み取り**権限アクセス許可と特定のオブジェクト用に構成された**レポートの実行**アクセス許可が必要です。  
 
+> [!IMPORTANT]    
+> レポートを正常に実行するには、レポート サービス ポイント アカウントとは異なるドメインのユーザーに対して双方向の信頼が確立されている必要があります。
+
 > [!NOTE]  
 >  レポート マネージャーは、Web ベースでレポートへのアクセスおよび管理を行うツールであり、HTTP 接続を使用してリモートの場所にある単一のレポート サーバー インスタンスを管理するために使用します。 レポート マネージャーは、たとえば、レポートの表示、レポートのプロパティの変更、および関連付けられているレポートのサブスクリプションの管理などの操作タスクに使用できます。 このトピックでは、レポート マネージャーでレポートの表示およびレポートのプロパティの変更を行う手順を説明しますが、レポート マネージャーが提供するその他のオプションの詳細については、SQL Server 2008 Books Online の「[レポート マネージャー](http://go.microsoft.com/fwlink/p/?LinkId=224916)」を参照してください。  
 
  Configuration Manager レポートを実行するのにには、次の手順を使用します。  
 
-##### <a name="to-run-a-report-in-the-configuration-manager-console"></a>Configuration Manager コンソールでレポートを実行するには  
+##### Configuration Manager コンソールでレポートを実行するには
+<a id="to-run-a-report-in-the-configuration-manager-console" class="xliff"></a>  
 
 1.  Configuration Manager コンソールで、**[監視]** をクリックします。  
 
@@ -60,9 +67,10 @@ System Center Configuration Manager にレポートのためのインフラス�
 
 4.  必須のパラメーターがある場合は、パラメーターを指定して、**[レポートの表示]** をクリックします。  
 
-#### <a name="to-run-a-report-in-a-web-browser"></a>Web ブラウザーでレポートを実行するには  
+#### Web ブラウザーでレポートを実行するには
+<a id="to-run-a-report-in-a-web-browser" class="xliff"></a>  
 
-1.  Web ブラウザーで、レポート マネージャーの URL を入力します (例: **http:\/\/Server1\/Reports**)。 レポート マネージャーの URL を指定できます、 **レポート マネージャーの URL** ] ページで Reporting Services 構成マネージャー。  
+1.  Web ブラウザーで、レポート マネージャーの URL を入力します (例: **http:\/\/Server1\/Reports**)。 レポート マネージャーの URL を指定できます、 **レポート マネージャーの URL**  ページで Reporting Services 構成マネージャー。  
 
 2.  レポート マネージャーで、Configuration Manager の レポート フォルダー (例: **ConfigMgr\_CAS**) をクリックします。  
 
@@ -73,12 +81,13 @@ System Center Configuration Manager にレポートのためのインフラス�
 
 4.  必須のパラメーターがある場合は、パラメーターを指定して、[レポートの表示] をクリックします。 ****  
 
-###  <a name="a-namebkmkmodifyreportpropertiesa-modify-the-properties-for-a-configuration-manager-report"></a><a name="BKMK_ModifyReportProperties"></a> Configuration Manager レポートのプロパティの変更  
+###  <a name="BKMK_ModifyReportProperties"></a> Configuration Manager レポートのプロパティの変更  
  Configuration Manager コンソールでは、レポート名や説明などのレポートのプロパティを表示できますが、プロパティを変更するには、レポート マネージャーを使用します。 Configuration Manager レポートのプロパティを変更するには、次の手順に従います。  
 
-#### <a name="to-modify-report-properties-in-report-manager"></a>レポート マネージャーでレポート プロパティを変更するには  
+#### レポート マネージャーでレポート プロパティを変更するには
+<a id="to-modify-report-properties-in-report-manager" class="xliff"></a>  
 
-1.  Web ブラウザーで、レポート マネージャーの URL を入力します (例: **http:\/\/Server1\/Reports**)。 レポート マネージャーの URL を指定できます、 **レポート マネージャーの URL** ] ページで Reporting Services 構成マネージャー。  
+1.  Web ブラウザーで、レポート マネージャーの URL を入力します (例: **http:\/\/Server1\/Reports**)。 レポート マネージャーの URL を指定できます、 **レポート マネージャーの URL**  ページで Reporting Services 構成マネージャー。  
 
 2.  レポート マネージャーで、Configuration Manager の レポート フォルダー (例: **ConfigMgr\_CAS**) をクリックします。  
 
@@ -91,7 +100,7 @@ System Center Configuration Manager にレポートのためのインフラス�
 
 5.  終了したら、[適用] をクリックします。 **** レポートのプロパティがレポート サーバーに保存され、Configuration Manager コンソールはレポートの更新されたレポートのプロパティを取得します。  
 
-###  <a name="a-namebkmkeditreporta-edit-a-configuration-manager-report"></a><a name="BKMK_EditReport"></a> Configuration Manager レポートの編集  
+###  <a name="BKMK_EditReport"></a> Configuration Manager レポートの編集  
  既存の Configuration Manager レポートでは必要な情報が取得されない場合、または希望するレイアウトまたは設計ではない場合は、レポート ビルダーでレポートを編集できます。  
 
 > [!NOTE]  
@@ -105,7 +114,8 @@ System Center Configuration Manager にレポートのためのインフラス�
 
  Configuration Manager レポートのプロパティを編集するには、次の手順に従います。  
 
-#### <a name="to-edit-report-properties"></a>レポートのプロパティを編集するには  
+#### レポートのプロパティを編集するには
+<a id="to-edit-report-properties" class="xliff"></a>  
 
 1.  Configuration Manager コンソールで、[監視] をクリックします。 ****  
 
@@ -115,7 +125,7 @@ System Center Configuration Manager にレポートのためのインフラス�
 
 4.  レポート ビルダーで、該当するレポート設定を変更し、[保存] をクリックしてレポートをレポート サーバーに保存します。 ****  
 
-###  <a name="a-namebkmkcreatemodelbasedreporta-create-a-model-based-report"></a><a name="BKMK_CreateModelBasedReport"></a> モデル ベースのレポートの作成  
+###  <a name="BKMK_CreateModelBasedReport"></a> モデル ベースのレポートの作成  
  モデル ベースのレポートでは、レポートに含める項目を対話方式で選択できます。 カスタム レポート モデルの作成について詳しくは、「[SQL Server Reporting Services での System Center Configuration Manager のカスタム レポート モデルの作成](creating-custom-report-models-in-sql-server-reporting-services.md)」を参照してください。  
 
 > [!IMPORTANT]  
@@ -123,7 +133,8 @@ System Center Configuration Manager にレポートのためのインフラス�
 
  モデル ベースの Configuration Manager レポートを作成するには、次の手順のようにします。  
 
-#### <a name="to-create-a-model-based-report"></a>モデル ベースのレポートを作成するには  
+#### モデル ベースのレポートを作成するには
+<a id="to-create-a-model-based-report" class="xliff"></a>  
 
 1.  Configuration Manager コンソールで、[監視] をクリックします。 ****  
 
@@ -157,7 +168,7 @@ System Center Configuration Manager にレポートのためのインフラス�
 
 10. [保存] をクリックして、レポートをレポート サーバーに保存します。 **** 実行してで新しいレポートを変更、 **レポート** 内のノード、 **監視** ワークスペース。  
 
-###  <a name="a-namebkmkcreatesqlbasedreporta-create-a-sql-based-report"></a><a name="BKMK_CreateSQLBasedReport"></a> SQL ベースのレポートの作成  
+###  <a name="BKMK_CreateSQLBasedReport"></a> SQL ベースのレポートの作成  
  SQL ベースのレポートでは、レポートの SQL ステートメントに基づいてデータを取得できます。  
 
 > [!IMPORTANT]  
@@ -168,7 +179,8 @@ System Center Configuration Manager にレポートのためのインフラス�
 
  SQL ベースの Configuration Manager レポートを作成するには、次の手順のようにします。  
 
-#### <a name="to-create-a-sql-based-report"></a>SQL ベースのレポートを作成するには  
+#### SQL ベースのレポートを作成するには
+<a id="to-create-a-sql-based-report" class="xliff"></a>  
 
 1.  Configuration Manager コンソールで、[監視] をクリックします。 ****  
 
@@ -200,10 +212,10 @@ System Center Configuration Manager にレポートのためのインフラス�
 
 9. [保存] をクリックして、レポートをレポート サーバーに保存します。 **** [ **監視** ] ワークスペースの [ **レポート** ] ノードで、新しいレポートを実行できます。  
 
-##  <a name="a-namebkmkmanagereportsubscriptionsa-manage-report-subscriptions"></a><a name="BKMK_ManageReportSubscriptions"></a> レポートのサブスクリプションの管理  
+##  <a name="BKMK_ManageReportSubscriptions"></a> レポートのサブスクリプションの管理  
  SQL Server Reporting Services のレポートのサブスクリプションを使用すると、電子メールまたはファイル共有を介して、指定したレポートをスケジュールした間隔で自動的に配信するように構成できます。 System Center 2012 Configuration Manager の**サブスクリプションの作成ウィザード**を使用して、レポートのサブスクリプションを構成します。  
 
-###  <a name="a-namebkmkreportsubscriptionfilesharea-create-a-report-subscription-to-deliver-a-report-to-a-file-share"></a><a name="BKMK_ReportSubscriptionFileShare"></a> レポートのサブスクリプションを作成して、レポートをファイル共有に配信する  
+###  <a name="BKMK_ReportSubscriptionFileShare"></a> レポートのサブスクリプションを作成して、レポートをファイル共有に配信する  
  レポートのサブスクリプションを作成して、レポートをファイル共有に配信する場合、レポートは指定したファイル共有に指定された形式でコピーされます。 一度にサブスクライブおよび配信を要求できるレポートは 1 つのみです。  
 
  レポート サーバーでホストおよび管理されるレポートとは異なり、共有フォルダーに配信されたレポートは静的なファイルです。 レポートに定義されている対話機能は、ファイル システムにファイルとして格納されているレポートでは動作しません。 対話機能は、静的な要素として表されます。 レポートにグラフが含まれている場合は、既定の表示が使用されます。 レポートが別のレポートにリンクしている場合は、リンクは静的なテキストとして表示されます。 配信されるレポートの対話機能を維持するには、電子メールでの配信を代わりに使用します。 メールでの配信について詳しくは、このトピックの後半にある「 [レポートのサブスクリプションを作成してメールでレポートを配信する](#BKMK_ReportSubscriptionEmail) 」をご覧ください。  
@@ -214,7 +226,8 @@ System Center Configuration Manager にレポートのためのインフラス�
 
  レポートのサブスクリプションを作成してレポートをファイル共有に配信するには、次の手順に従います。  
 
-#### <a name="to-create-a-report-subscription-to-deliver-a-report-to-a-file-share"></a>レポートのサブスクリプションを作成して、レポートをファイル共有に配信するには  
+#### レポートのサブスクリプションを作成して、レポートをファイル共有に配信するには
+<a id="to-create-a-report-subscription-to-deliver-a-report-to-a-file-share" class="xliff"></a>  
 
 1.  Configuration Manager コンソールで、[監視] をクリックします。 ****  
 
@@ -284,7 +297,7 @@ System Center Configuration Manager にレポートのためのインフラス�
 
 8.  [ **完了** ] ページで [ **閉じる** ] をクリックして、ウィザードを閉じます。 レポートのサブスクリプションが正常に作成されたことを確認します。 [ **監視** ] ワークスペースの [ **レポート** ] の下にある [ **サブスクリプション** ] ノードで、レポート サブスクリプションの表示と変更を行うことができます。  
 
-###  <a name="a-namebkmkreportsubscriptionemaila-create-a-report-subscription-to-deliver-a-report-by-email"></a><a name="BKMK_ReportSubscriptionEmail"></a> レポートのサブスクリプションを作成して電子メールでレポートを配信する  
+###  <a name="BKMK_ReportSubscriptionEmail"></a> レポートのサブスクリプションを作成して電子メールでレポートを配信する  
  レポートのサブスクリプションを作成して、電子メールでレポートを配信すると、構成した受信者に電子メールが送信され、レポートは添付ファイルとして含められます。 レポート サーバーは、電子メールのアドレスを検証せず、メール サーバーから電子メールのアドレスを取得しません。 使用する電子メール アドレスを前もって知っている必要があります。 既定では、組織内または外部の有効な電子メール アカウントにレポートを電子メールで送信できます。 次のいずれか、または両方の電子メール配信オプションを選択できます。  
 
 -   通知、および生成されたレポートへのハイパーリンクの送信。  
@@ -296,7 +309,8 @@ System Center Configuration Manager にレポートのためのインフラス�
 
  レポートのサブスクリプションを作成し、電子メールを使用してレポートを配信するには、次の手順に従います。  
 
-#### <a name="to-create-a-report-subscription-to-deliver-a-report-by-email"></a>レポートのサブスクリプションを作成して、電子メールでレポートを配信するには  
+#### レポートのサブスクリプションを作成して、電子メールでレポートを配信するには
+<a id="to-create-a-report-subscription-to-deliver-a-report-by-email" class="xliff"></a>  
 
 -   Configuration Manager コンソールで、[監視] をクリックします。 ****  
 
@@ -358,9 +372,4 @@ System Center Configuration Manager にレポートのためのインフラス�
 -   [概要] ページで、レポートのサブスクリプションの設定を確認します。 **** [ **前へ** ] をクリックして設定を変更するか、[ **次へ** ] をクリックしてレポート サブスクリプションを作成します。  
 
 -   [ **完了** ] ページで [ **閉じる** ] をクリックして、ウィザードを閉じます。 レポートのサブスクリプションが正常に作成されたことを確認します。 **[監視 ]** ワークスペースの **[レポート]** の下にある **[サブスクリプション]** ノードで、レポート サブスクリプションの表示と変更を行うことができます。  
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

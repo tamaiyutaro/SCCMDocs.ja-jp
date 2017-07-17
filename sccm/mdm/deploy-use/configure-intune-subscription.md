@@ -2,7 +2,7 @@
 title: "System Center Configuration Manager を使用した Intune サブスクリプションの構成 | Microsoft Docs"
 description: "System Center Configuration Manager を使用して Intune サブスクリプションを構成します。"
 ms.custom: na
-ms.date: 03/05/2017
+ms.date: 06/02/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -17,13 +17,14 @@ author: mtillman
 ms.author: mtillman
 manager: angrobe
 ms.translationtype: Human Translation
-ms.sourcegitcommit: 2c723fe7137a95df271c3612c88805efd8fb9a77
-ms.openlocfilehash: 10cc64ae7e4d91f53201c2896b359e77ef04d32d
+ms.sourcegitcommit: 662901e850566756759fcfc61c58f3c0e56bc5aa
+ms.openlocfilehash: 22d890c972d3166f9c7b583d8d3fa917c1897880
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/17/2017
+ms.lasthandoff: 06/03/2017
 
 ---
-# <a name="configure-your-intune-subscription-with-system-center-configuration-manager-and-microsoft-intune"></a>System Center Configuration Manager と Microsoft Intune を使用した Intune サブスクリプションの構成
+# System Center Configuration Manager と Microsoft Intune を使用した Intune サブスクリプションの構成
+<a id="configure-your-intune-subscription-with-system-center-configuration-manager-and-microsoft-intune" class="xliff"></a>
 
 *適用対象: System Center Configuration Manager (Current Branch)*
 
@@ -38,7 +39,8 @@ Intune サブスクリプションは、次のことを実行します。
 > [!IMPORTANT]
 >  Configuration Manager で Microsoft Intune のサブスクリプションを作成すると、サイトのサービス接続ポイントが「オンライン モード」になります。 「[System Center Configuration Manager のサービス接続ポイントについて](../../core/servers/deploy/configure/about-the-service-connection-point.md)」を参照してください。
 
-## <a name="to-create-the-microsoft-intune-subscription"></a>Microsoft Intune サブスクリプションを作成するには
+## Microsoft Intune サブスクリプションを作成するには
+<a id="to-create-the-microsoft-intune-subscription" class="xliff"></a>
 
 1.  まだであれば、[Microsoft Intune](http://go.microsoft.com/fwlink/?LinkID=258216) で Microsoft Intune アカウントにサインアップします。  Intune アカウントを作成した後は、ユーザーを Intune アカウントに追加したり、追加の設定を構成したりする必要はありません。
 
@@ -53,7 +55,7 @@ Intune サブスクリプションは、次のことを実行します。
 5.  [ **サブスクリプション** ] ページで、[ **サインイン** ] をクリックし、職場または学校のアカウントを使用してサインインします。 **[モバイル デバイス管理機関の設定]** ダイアログで、チェック ボックスをオンにして、Configuration Manager コンソールから Configuration Manager を使用してのみモバイル デバイスを管理するようにします。 サブスクリプションを続行するには、このオプションを選択する必要があります。
 
     > [!IMPORTANT]
-    >  管理機関として Configuration Manager を選んだら、後から管理機関を Microsoft Intune に変更することはできません。
+    >  管理機関として Configuration Manager を選択すると、Configuration Manager バージョン 1610 以降の Microsoft Intune および Microsoft Intune バージョン 1705 でのみ、Microsoft サポートに問い合わせることや、既存の管理対象の登録解除と再登録を行うことなく、管理機関を変更できます。 詳細については、「[Change your MDM authority](/sccm/mdm/deploy-use/change-mdm-authority)」(MDM 機関を変更する) を参照してください。
 
 6.  プライバシー リンクを確認するには、リンクをクリックして、[次へ ****] をクリックします。
 

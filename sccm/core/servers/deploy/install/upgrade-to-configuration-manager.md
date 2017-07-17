@@ -2,7 +2,7 @@
 title: "System Center Configuration Manager へのアップグレード| Microsoft Docs"
 description: "System Center 2012 Configuration Manager を実行しているサイトおよび階層から適切に一括アップグレードを実行するための手順を説明します。"
 ms.custom: na
-ms.date: 05/02/2017
+ms.date: 6/6/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,14 +16,15 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 ms.translationtype: Human Translation
-ms.sourcegitcommit: d940fd1bbf96767d44f8c55315e814be55a83897
-ms.openlocfilehash: 9e58ab8dd892adf25429564adfd6f86849ddcbdf
+ms.sourcegitcommit: 3619a73d3a39659de927e1711a7ec81de9918064
+ms.openlocfilehash: 1166b739e1e8d667172d97883f484fdbc3a142c1
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/17/2017
+ms.lasthandoff: 06/13/2017
 
 
 ---
-# <a name="upgrade-to-system-center-configuration-manager"></a>System Center Configuration Manager へのアップグレード
+# System Center Configuration Manager へのアップグレード
+<a id="upgrade-to-system-center-configuration-manager" class="xliff"></a>
 
 *適用対象: System Center Configuration Manager (Current Branch)*
 
@@ -38,11 +39,11 @@ System Center 2012 Configuration Manager を実行しているサイトおよび
 
 **バージョン 1702 へのアップグレード**   
 バージョン 1702 基準メディアがある場合は、次のバージョンを System Center Configuration Manager バージョン 1702 の正規ライセンス版にアップグレードできます。   
--      System Center Configuration Manager バージョン 1702 の評価版のインストール
--      System Center 2012 Configuration Manager Service Pack 1
--      System Center 2012 Configuration Manager Service Pack 2
--      System Center 2012 R2 Configuration Manager
--      System Center 2012 R2 Configuration Manager Service Pack 1
+-     System Center Configuration Manager バージョン 1702 の評価版のインストール
+-     System Center 2012 Configuration Manager Service Pack 1
+-     System Center 2012 Configuration Manager Service Pack 2
+-     System Center 2012 R2 Configuration Manager
+-     System Center 2012 R2 Configuration Manager Service Pack 1
 
 **バージョン 1606 へのアップグレード**  
 2016 年 12 月 15 日に、バージョン 1606 の基準メディアが再リリースされ、追加のアップグレード シナリオのサポートが追加されました。 この新しいリリースでは、次のバージョンを System Center Configuration Manager バージョン 1606 の正規ライセンス版にアップグレードできます。  
@@ -84,7 +85,8 @@ When you have version 1511 baseline media, you can upgrade the following to a fu
 ##  <a name="bkmk_checklist"></a> アップグレードのチェックリスト  
  次のチェック リストは、System Center Configuration Manager への適切なアップグレードの計画に役立ちます。  
 
-### <a name="before-you-upgrade"></a>アップグレードする前に  
+### アップグレードする前に
+<a id="before-you-upgrade" class="xliff"></a>  
 
 **System Center 2012 Configuration Manager 環境を確認し**、問題を解決する (詳細は KB4018655 にあり): [Configuration Manager クライアントが繰り返し発生する再試行タスクに起因して 5 時間おきに再インストールし、不注意なクライアント アップグレードを引き起こす可能性があります](https://support.microsoft.com/help/4018655)。
 
@@ -115,7 +117,7 @@ Configuration Manager と一緒に Windows ADK を使用する方法の詳細に
 次のサイト システムの役割は、System Center Configuration Manager では使用されなくなったため、System Center 2012 Configuration Manager からアップグレードする前にアンインストールする必要があります。  
 
 -   帯域外管理ポイント  
--   サービス正常性検証ツール ポイント  
+-   システム正常性検証ツール ポイント  
 
 **プライマリ サイトの管理ポイントのデータベース レプリカを無効にする:**  
 Configuration Manager では、管理ポイントのデータベース レプリカが有効になっているプライマリ サイトを正常にアップグレードすることはできません。 次の操作を行う前に、データベースのレプリケーションを無効にしてください。  
@@ -216,7 +218,8 @@ Configuration Manager では、セカンダリ サイトのバックアップと
 
 アップグレードを実行する方法については、「[サイトをアップグレードする](#bkmk_upgrade)」を参照してください。  
 
-### <a name="after-you-upgrade"></a>アップグレードの後に  
+### アップグレードの後に
+<a id="after-you-upgrade" class="xliff"></a>  
 **スタンドアロンの Configuration Manager コンソールをアップグレードする**:  
 既定では、中央管理サイトまたはプライマリ サイトをアップグレードする際、インストール時にサイト サーバーにインストールされている Configuration Manager コンソールもアップグレードされます。 ただし、サイト サーバー以外のコンピューターにインストールされている各コンソールは、手動でアップグレードする必要があります。  
 
@@ -271,7 +274,7 @@ System Center Configuration Manager にアップグレードすると、自動�
      ソフトウェア更新プログラムやソフトウェア更新プログラム グループ用のカスタムの概要スケジュールは、1 時間という既定値にリセットされます。 アップグレードが完了した後に、カスタムの概要値を目的の頻度にリセットしてください。  
 
 ##  <a name="bkmk_test"></a> サイト データベースのアップグレードをテストする  
-次の情報は、System Center 2012 Configuration Manager などの以前のバージョンを System Center Configuration Manager にアップグレードする場合にのみ適用されます。 サイトで既に System Center Configuration Manager が実行されていて、新しい更新プログラムをインストールする場合は、「**コンソール内の更新プログラムをインストールする前に**」の「[手順 2: 更新プログラムをインストールする前のデータベースのアップグレードのテスト](/sccm/core/servers/manage/install-in-console-updates#bkmk_step2)」を参照してください。
+次の情報は、System Center 2012 Configuration Manager などの以前のバージョンを System Center Configuration Manager にアップグレードする場合にのみ適用されます。
 
 サイトをアップグレードする前に、そのサイトのデータベースのコピーでアップグレードをテストします。  
 
@@ -295,7 +298,8 @@ System Center Configuration Manager にアップグレードすると、自動�
 
 アップグレードを計画している各中央管理サイトとプライマリ サイトで、以下の手順に従います。  
 
-#### <a name="to-test-a-site-database-for-upgrade"></a>サイト データベースのアップグレードをテストするには  
+#### サイト データベースのアップグレードをテストするには
+<a id="to-test-a-site-database-for-upgrade" class="xliff"></a>  
 
 1.  サイト データベースのコピーを作成してから、サイト データベースと同じエディションを使用しており、Configuration Manager サイトをホストしていない SQL Server インスタンスにこのコピーを復元します。 たとえば、サイト データベースで SQL Server Enterprise Edition のインスタンスを実行している場合、同様に SQL Server Enterprise Edition を実行している SQL Server インスタンスにデータベースを復元します。  
 
@@ -326,7 +330,8 @@ System Center Configuration Manager にアップグレードすると、自動�
 
 Configuration Manager サイトをアップグレードするには、次の手順に従います。  
 
-#### <a name="to-upgrade-a-central-administration-site-or-primary-site"></a>中央管理サイトまたはプライマリ サイトをアップグレードするには  
+#### 中央管理サイトまたはプライマリ サイトをアップグレードするには
+<a id="to-upgrade-a-central-administration-site-or-primary-site" class="xliff"></a>  
 
 1.  セットアップを実行するユーザーが、次のセキュリティ権限を持っていることを確認します。  
 
@@ -377,7 +382,8 @@ Configuration Manager サイトをアップグレードするには、次の手�
 
 [アップグレード] ページに、進行状況の全体的なステータスが表示されます。 **** コア サイト サーバーとサイト システムのインストールが完了したら、ウィザードを閉じることができます。 サイトの構成がバックグラウンドで続行されます。  
 
-#### <a name="to-upgrade-a-secondary-site"></a>セカンダリ サイトをアップグレードするには  
+#### セカンダリ サイトをアップグレードするには
+<a id="to-upgrade-a-secondary-site" class="xliff"></a>  
 
 1.  セットアップを実行する管理ユーザーが、次のセキュリティ権限を持っていることを確認します。  
 

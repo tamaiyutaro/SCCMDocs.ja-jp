@@ -16,19 +16,21 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 ms.translationtype: Human Translation
-ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
-ms.openlocfilehash: fefa5f3aa12d82b66a251cf0525475496e1e35cf
+ms.sourcegitcommit: f7cd9c71287d62c9f5d36e2f032bc2a6065572ae
+ms.openlocfilehash: 8ff48b08d1abb7481592c0ea076d4efa15c3d8ee
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/17/2017
+ms.lasthandoff: 06/06/2017
 
 ---
-# <a name="use-a-command-line-to-install-system-center-configuration-manager-sites"></a>コマンド ラインを使用して System Center Configuration Manager サイトをインストールする
+# コマンド ラインを使用して System Center Configuration Manager サイトをインストールする
+<a id="use-a-command-line-to-install-system-center-configuration-manager-sites" class="xliff"></a>
 
 *適用対象: System Center Configuration Manager (Current Branch)*
 
  さまざまなサイトのインストールで、コマンド プロンプトから System Center Configuration Manager セットアップを実行できます。
 
-## <a name="supported-tasks-for-command-line-installations"></a>コマンド ラインでのインストールでサポートされているタスク
+## コマンド ラインでのインストールでサポートされているタスク
+<a id="supported-tasks-for-command-line-installations" class="xliff"></a>
  この方法でセットアップを実行する場合、次のサイト インストール タスクとサイト メンテナンス タスクがサポートされます。
 
 -   **コマンド プロンプトから中央管理サイトまたはプライマリ サイトをインストールする**  
@@ -67,11 +69,12 @@ ms.lasthandoff: 05/17/2017
     -   Identification  
     -   復元
 
-バックアップと回復について詳しくは、「[Configuration Manager のバックアップと回復](../../../../protect/understand/backup-and-recovery.md)」トピックの「[サイトの無人回復スクリプト ファイルのキー](../../../../protect/understand/backup-and-recovery.md#BKMK_UnattendedSiteRecoveryKeys)」を参照してください。  
+詳細については、「[Configuration Manager のサイトの無人回復](/sccm/protect/understand/unattended-recovery)」を参照してください。  
 
 無新インストールのスクリプト ファイルで使用するキーと値の一覧を確認するには、「[Unattended Setup script file keys](../../../../core/servers/deploy/install/command-line-options-for-setup.md#bkmk_Unattended)」(無人セットアップ スクリプト ファイルのキー) を参照してください。  
 
-## <a name="about-the-command-line-script-file"></a>コマンド ライン スクリプト ファイルについて  
+## コマンド ライン スクリプト ファイルについて
+<a id="about-the-command-line-script-file" class="xliff"></a>  
  Configuration Manager の無人インストールの場合は、コマンド ライン オプション **/SCRIPT** を使用してセットアップを実行し、インストール オプションを含むスクリプト ファイルを指定できます。 この方法では、次のタスクがサポートされています。  
 
 -   中央管理サイトをインストールする  
@@ -82,19 +85,21 @@ ms.lasthandoff: 05/17/2017
 > [!NOTE]  
 >  評価サイトを製品版の Configuration Manager にアップグレードする場合、無人スクリプト ファイルを使用することはできません。  
 
-### <a name="the-cdlatest-key-name"></a>CDLatest キー名
+### CDLatest キー名
+<a id="the-cdlatest-key-name" class="xliff"></a>
 CD.Latest フォルダーのメディアを使用して、次の 4 つのインストール オプションのスクリプト インストールを実行する場合は、値が **1** の **CDLatest** キーを含める必要があります。
 - 新しい中央管理サイトをインストールする
 - 新しいプライマリ サイトをインストールする
 - 中央管理サイトを回復する
-- プライマリ サイトを回復する 
+- プライマリ サイトを回復する
 
 この値は、Microsoft ボリューム ライセンス サイトから取得したインストール メディアでは使用できません。
 スクリプト ファイルでこのキー名を使用する方法の詳細については、[コマンド ライン オプション](/sccm/core/servers/deploy/install/command-line-options-for-setup)を参照してください。
 
 
 
-### <a name="create-the-script"></a>スクリプトを作成する
+### スクリプトを作成する
+<a id="create-the-script" class="xliff"></a>
 [サイトをインストールするためにユーザー インターフェイスを使用してセットアップを実行する](../../../../core/servers/deploy/install/use-the-setup-wizard-to-install-sites.md)と、インストール スクリプトが自動的に作成されます。  ウィザードの **[概要]** ページで設定を確認するときに、次の処理が実行されます。  
 
 -   スクリプト **%TEMP%\ConfigMgrAutoSave.ini**が作成されます。  このファイルは使用する前に名前を変更できますが、.ini ファイル拡張子は保持する必要があります。  
@@ -109,7 +114,8 @@ CD.Latest フォルダーのメディアを使用して、次の 4 つのイン�
 
 セットアップで実際のサイトのインストールが開始されると、自動的に作成されたスクリプトに再度書き込みが行われ、スクリプトのプロダクト キーの値は消去されます。 新しいサイトの無人インストールでスクリプトを使用する前に、スクリプトを編集して、正しいプロダクト キーを指定するか、評価版の Configuration Manager のインストールを指定できます。  
 
-### <a name="section-names-key-names-and-values"></a>セクション名、キー名、値
+### セクション名、キー名、値
+<a id="section-names-key-names-and-values" class="xliff"></a>
 スクリプトは、セクション名、キー名、値で構成します。 次の情報にご注意ください。
 -   セクションの必須キーは、スクリプトを記述しているインストールの種類によって異なります。
 -   セクション内でのキーの順序、およびファイル内でのセクションの順序は重要ではありません。     
@@ -119,7 +125,8 @@ CD.Latest フォルダーのメディアを使用して、次の 4 つのイン�
 > [!TIP]  
 >  すべてのオプションについては、「[Command-line options for Setup and scripts](../../../../core/servers/deploy/install/command-line-options-for-setup.md)」(セットアップのコマンド ライン オプションとスクリプト) を参照してください。  
 
-## <a name="use-the-script-setup-command-line-option"></a>/SCRIPT セットアップ コマンドライン オプションを使用する
+## /SCRIPT セットアップ コマンドライン オプションを使用する
+<a id="use-the-script-setup-command-line-option" class="xliff"></a>
 
 -   セットアップ スクリプト ファイルを使用し、**/SCRIPT** セットアップ コマンド ライン オプションの後にファイル名を指定する必要があります。 次の情報にご注意ください。   
     -   ファイルの名前には、ファイル名拡張子 **.ini** が含まれている必要があります。  
