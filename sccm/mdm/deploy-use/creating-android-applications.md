@@ -15,14 +15,15 @@ caps.latest.revision: 6
 author: robstackmsft
 ms.author: robstack
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 27a92dc1c3710ff55f0b145386319dda371533d9
-ms.openlocfilehash: d3b20a59a9147e09e58f04f83f97fd72ebfef5a1
+ms.translationtype: HT
+ms.sourcegitcommit: 344b55aecd72479b759b40e8252e64a06c5eaba0
+ms.openlocfilehash: 3bfb7364c3de5264a5fa8a684965d9aebeb84719
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/17/2017
+ms.lasthandoff: 07/13/2017
 
 ---
-# <a name="create-android-applications-with-system-center-configuration-manager"></a>System Center Configuration Manager で Android アプリケーションを作成する
+# System Center Configuration Manager で Android アプリケーションを作成する
+<a id="create-android-applications-with-system-center-configuration-manager" class="xliff"></a>
 
 *適用対象: System Center Configuration Manager (Current Branch)*
 
@@ -36,7 +37,8 @@ System Center Configuration Manager アプリケーションには、デバイ�
 
 Configuration Manager アプリケーションと展開の種類の作成に必要な手順については、「[アプリケーションの作成ウィザードを開始する](../../apps/deploy-use/create-applications.md#start-the-create-application-wizard)」を参照してください。 また、Android デバイス用アプリケーションを作成して展開するときに、以下の考慮事項について留意してください。  
 
-## <a name="general-considerations-for-android-apps"></a>Android アプリに関する一般的な考慮事項
+## Android アプリに関する一般的な考慮事項
+<a id="general-considerations-for-android-apps" class="xliff"></a>
 
 Configuration Manager では、Android 用の次のアプリの種類の展開がサポートされています。
 
@@ -48,9 +50,11 @@ Configuration Manager では、Android 用の次のアプリの種類の展開�
 
 |デバイスの種類|サポートされている操作|
 |-|-|
-|Android|**利用可能**、**必須**。 インストールとアンインストールの両方に、ユーザーが同意する必要があります。
+|Android|**利用可能**、**必須** インストールとアンインストールの両方に、ユーザーが同意する必要があります。|
+|Android for Work | **必須** |
 
-## <a name="approve-and-deploy-android-for-work-apps"></a>Android for Work アプリの承認と展開
+## Android for Work アプリの承認と展開
+<a id="approve-and-deploy-android-for-work-apps" class="xliff"></a>
 Configuration Manager の管理者は、アプリを承認して [Play for Work Web サイト](https://play.google.com/work)に展開したり、管理対象の Android for Work デバイスにそれらのアプリを展開したりすることもできます。
 
 Play for Work ストアのアプリを承認し、Configuration Manager コンソールと同期し、管理対象の Android for Work デバイスに展開するには、次の手順を実行します。 アプリをユーザーの仕事用プロファイルに展開するには、Play for Work でアプリを承認し、アプリを Configuration Manager コンソールと同期する必要があります。

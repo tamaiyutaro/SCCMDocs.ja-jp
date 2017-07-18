@@ -15,27 +15,29 @@ caps.latest.revision: 13
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 288a4c649f371d9701fe7249449356aa222bf372
-ms.openlocfilehash: 35f04e237efffbdb12893f658950a99dc0b98b85
+ms.translationtype: HT
+ms.sourcegitcommit: 1035dbbf944a3a467d637a4a948a75b0946eb711
+ms.openlocfilehash: 026d61113a918e43ac4395ef092b1931f33f16d3
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/17/2017
-
+ms.lasthandoff: 07/11/2017
 
 ---
-# <a name="upgrade-windows-to-the-latest-version-with-system-center-configuration-manager"></a>System Center Configuration Manager を使用して、Windows を最新のバージョンにアップグレードする
+# System Center Configuration Manager を使用して、Windows を最新のバージョンにアップグレードする
+<a id="upgrade-windows-to-the-latest-version-with-system-center-configuration-manager" class="xliff"></a>
 
 *適用対象: System Center Configuration Manager (Current Branch)*
 
-このトピックでは、System Center Configuration Manager でコンピューター上のオペレーティング システムを Windows 7 以降から Windows 10 にアップグレードするための手順を説明します。 スタンドアロン メディアやソフトウェア センターなどのさまざまな展開方法の中から選ぶことができます。 Windows 10 の一括アップグレード シナリオの特徴は次のとおりです。  
+このトピックでは、System Center Configuration Manager で、対象のコンピューター上のオペレーティング システムを Windows 7 以降から Windows 10 に、または Windows Server 2012 から Windows Server 2016 にアップグレードするためのステップを説明します。 スタンドアロン メディアやソフトウェア センターなどのさまざまな展開方法の中から選ぶことができます。 一括アップグレード シナリオ:  
 
--   現在 Windows 7、Windows 8、または Windows 8.1 を実行しているコンピューターでオペレーティング システムをアップグレードします。 Windows 10 のビルドからビルドへのアップグレードを実行することもできます。 たとえば、Windows 10 RTM を Windows 10 バージョン 1511 にアップグレードできます。  
+-   現在、以下を実行しているコンピューターでオペレーティング システムをアップグレードします。
+    - Windows 7、Windows 8、または Windows 8.1。 Windows 10 のビルドからビルドへのアップグレードを実行することもできます。 たとえば、Windows 10 RTM を Windows 10 バージョン 1511 にアップグレードできます。  
+    - Windows Server 2012。 Windows Server 2016 のビルドからビルドへのアップグレードを実行することもできます。 サポートされているアップグレード パスの詳細については、[サポートされているアップグレード パス](https://docs.microsoft.com/windows-server/get-started/supported-upgrade-paths#upgrading-previous-retail-versions-of-windows-server-to-windows-server-2016)に関するページを参照してください。    
 
 -   コンピューター上のアプリケーション、設定、ユーザー データは保持されます。  
 
 -   Windows ADK などの外部依存関係はありません。  
 
--   一般に従来のオペレーティング システム展開よりも高速で、回復力があります。  
+-   従来のオペレーティング システム展開よりも高速で、回復力があります。  
 
  タスク シーケンスを使用してネットワーク経由でオペレーティング システムを展開するには、次のセクションを使用します。  
 
@@ -59,7 +61,7 @@ ms.lasthandoff: 05/17/2017
 
 -   **インフラストラクチャの要件の計画と実装**  
 
-     アップグレード シナリオの唯一の前提条件は、オペレーティング システムのアップグレード パッケージとタスク シーケンスに含める他のパッケージのための利用可能な配布ポイントがあることです。 詳細については、[配布ポイントのインストールと変更に関するトピック](../../core/servers/deploy/configure/install-and-configure-distribution-points.md)を参照してください。
+     アップグレード シナリオの唯一の前提条件は、オペレーティング システムのアップグレード パッケージとタスク シーケンスに含める他のパッケージのための、利用可能な配布ポイントがあることです。 詳細については、[配布ポイントのインストールと変更に関するトピック](../../core/servers/deploy/configure/install-and-configure-distribution-points.md)を参照してください。
 
 ##  <a name="BKMK_Configure"></a> 構成  
 
@@ -71,11 +73,11 @@ ms.lasthandoff: 05/17/2017
 
      「[オペレーティング システムをアップグレードするタスク シーケンスの作成](create-a-task-sequence-to-upgrade-an-operating-system.md)」の手順に従って、オペレーティング システムのアップグレードを自動化します。  
 
-    > [重要] スタンドアロン メディアを使用するときは、タスク シーケンス メディア ウィザードから使用できるようにブート イメージをタスク シーケンスに追加する必要があります。
-
+    > [!IMPORTANT]
+    > スタンドアロン メディアを使用するときは、タスク シーケンス メディア ウィザードから使用できるように、ブート イメージをタスク シーケンスに追加する必要があります。
 
     > [!NOTE]  
-    >  オペレーティング システムを Windows 10 にアップグレードするタスク シーケンスを作成するには、通常、「[オペレーティング システムをアップグレードするタスク シーケンスの作成](create-a-task-sequence-to-upgrade-an-operating-system.md)」の手順を使用します。 タスク シーケンスには、オペレーティング システムのアップグレードの手順に加えて、エンド ツー エンドのアップグレード プロセスを処理するためのお勧めの追加ステップとグループが含まれます。 しかし、カスタム タスク シーケンスを作成し、[オペレーティング システムのアップグレード](../understand/task-sequence-steps.md#BKMK_UpgradeOS)のタスク シーケンス手順を追加して、オペレーティング システムをアップグレードすることができます。 これは、オペレーティング システムを Windows 10 にアップグレードする場合に必要な唯一の手順です。 この方法を選んだ場合は、オペレーティング システムのアップグレードの手順の後に、[コンピューターの再起動](../understand/task-sequence-steps.md#a-namebkmkrestartcomputera-restart-computer)の手順も追加してアップグレードを完了します。 必ず **[現在インストールされている既定のオペレーティング システム]** 設定を使用して、Windows PE ではなく、インストール対象のオペレーティング システムでコンピューターを再起動するようにします。  
+    > オペレーティング システムを Windows 10 にアップグレードするタスク シーケンスを作成するには、通常、「[オペレーティング システムをアップグレードするタスク シーケンスの作成](create-a-task-sequence-to-upgrade-an-operating-system.md)」のステップを使用します。 タスク シーケンスには、オペレーティング システムのアップグレードの手順に加えて、エンド ツー エンドのアップグレード プロセスを処理するためのお勧めの追加ステップとグループが含まれます。 しかし、カスタム タスク シーケンスを作成し、[オペレーティング システムのアップグレード](../understand/task-sequence-steps.md#BKMK_UpgradeOS)のタスク シーケンス手順を追加して、オペレーティング システムをアップグレードすることができます。 これは、オペレーティング システムを Windows 10 にアップグレードする場合に必要な唯一の手順です。 この方法を選んだ場合は、オペレーティング システムのアップグレードの手順の後に、[コンピューターの再起動](../understand/task-sequence-steps.md#a-namebkmkrestartcomputera-restart-computer)の手順も追加してアップグレードを完了します。 必ず **[現在インストールされている既定のオペレーティング システム]** 設定を使用して、Windows PE ではなく、インストール対象のオペレーティング システムでコンピューターを再起動するようにします。  
 
 ##  <a name="BKMK_Deploy"></a> デプロイ  
 
@@ -85,7 +87,8 @@ ms.lasthandoff: 05/17/2017
 
     -   [ネットワークではなくスタンドアロン メディアを使用した Windows の展開](use-stand-alone-media-to-deploy-windows-without-using-the-network.md)  
 
-## <a name="monitor"></a>モニター  
+## モニター
+<a id="monitor" class="xliff"></a>  
 
 -   **タスク シーケンスの展開の監視**  
 
