@@ -15,22 +15,20 @@ caps.latest.revision: 40
 author: Mtillman
 ms.author: mtillman
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 6f9e6e93fce95666503907010a5c253158c5de7c
-ms.openlocfilehash: b9777e8cfa63eda77512e4837de17b99c792a036
+ms.translationtype: HT
+ms.sourcegitcommit: 1035dbbf944a3a467d637a4a948a75b0946eb711
+ms.openlocfilehash: a9e03d4c5b290886bda87fae41e4df362eca1b71
 ms.contentlocale: ja-jp
-ms.lasthandoff: 07/07/2017
+ms.lasthandoff: 07/11/2017
 
 ---
-# System Center Configuration Manager と Microsoft Intune を使用したハイブリッド モバイル デバイス管理の新機能
-<a id="whats-new-in-hybrid-mobile-device-management-with-system-center-configuration-manager-and-microsoft-intune" class="xliff"></a>
+# <a name="whats-new-in-hybrid-mobile-device-management-with-system-center-configuration-manager-and-microsoft-intune"></a>System Center Configuration Manager と Microsoft Intune を使用したハイブリッド モバイル デバイス管理の新機能
 
 *適用対象: System Center Configuration Manager (Current Branch)*
 
 この記事では、System Center Configuration Manager と Intune のハイブリッド展開で使用できるモバイル デバイス管理 (MDM) の新機能の詳細について説明します。  
 
-##  Configuration Manager のバージョンとの互換性
-<a id="compatibility-with-configuration-manager-versions" class="xliff"></a>  
+##  <a name="compatibility-with-configuration-manager-versions"></a>Configuration Manager のバージョンとの互換性  
 
  この記事の各セクションでは、3 つの異なるカテゴリにあるハイブリッド機能を一覧表示します。 次のガイダンスを使用すると、各カテゴリの機能とさまざまなバージョンの Configuration Manager との互換性を判断できます。  
 
@@ -40,11 +38,17 @@ ms.lasthandoff: 07/07/2017
 |**Configuration Manager Technical Preview の新機能**| このカテゴリに一覧表示されたすべての機能は、指定されたバージョンの Technical Preview リリースでのみ動作します。 これらの機能を試すには、機能の説明で指定されたバージョンの Technical Preview をインストールする必要があります。 詳細については、「[System Center Configuration Manager の Technical Preview](../../core/get-started/technical-preview.md)」をご覧ください。|
 |**Configuration Manager (現在のブランチ) の新機能**| このカテゴリに一覧表示されたすべての機能は、バージョン 1511 や 1602 など、指定されたバージョンの Configuration Manager (現在のブランチ) でのみ動作します。 ハイブリッド展開に旧バージョンの Configuration Manager を使用している場合は、機能の説明で指定されたバージョンの Configuration Manager (現在の分岐) にアップグレードする必要があります。 詳細については、「[System Center Configuration Manager へのアップグレード](../../core/servers/deploy/install/upgrade-to-configuration-manager.md)」を参照してください。|
 
-## 2017 年 6 月
-<a id="june-2017" class="xliff"></a>
+## <a name="july-2017"></a>2017 年 7 月
 
-### Microsoft Intune の新機能
-<a id="new-in-microsoft-intune" class="xliff"></a>
+### <a name="new-in-microsoft-intune"></a>Microsoft Intune の新機能
+
+- **Android でサポートされるバージョンに関する通知の追加**
+
+    Android でサポートされるバージョンに関する新しい通知が追加されました。 詳細については、「[Android 4.3 以前のサポートの終了](#notices)」を参照してください。
+
+## <a name="june-2017"></a>2017 年 6 月
+
+### <a name="new-in-microsoft-intune"></a>Microsoft Intune の新機能
 
 - **MDM 機関を変更する**
 
@@ -56,7 +60,7 @@ ms.lasthandoff: 07/07/2017
 
 - **Android 用ポータル サイト アプリのアプリの保護ポリシーのエンド ユーザー エクスペリエンスが新しくなりました**
 
-  お客様のフィードバックに基づいて、Android 用ポータル サイト アプリを変更し、**[会社のコンテンツにアクセスする]** ボタンを表示しました。 目的は、エンド ユーザーがアプリの保護ポリシーをサポートするアプリ、Intune モバイル アプリケーション管理の機能にのみアクセスする必要があるときに、不要な登録プロセスを経由せずに済むようにすることです。 これらの変更は、[アプリ UI の新機能](/intune/whats-new-app-ui)ページで確認できます。
+  お客様のフィードバックに基づいて、Android 用ポータル サイト アプリを変更し、**[会社のコンテンツにアクセスする]** ボタンを表示しました。 目的は、エンド ユーザーがアプリの保護ポリシーをサポートするアプリで、Intune モバイル アプリケーション管理の機能にのみアクセスする必要があるときに、不要な登録プロセスを経由せずに済むようにすることです。 これらの変更は、[アプリ UI の新機能](/intune/whats-new-app-ui)ページで確認できます。
 
 - **ポータル サイトを簡単に削除するための新しいメニュー操作**
 
@@ -64,7 +68,7 @@ ms.lasthandoff: 07/07/2017
 
 - **アプリを Windows 10 Creators Update と同期するための機能強化**
 
-  Windows 10 用のポータル サイト アプリが、Windows 10 Creators Update (バージョン 1703) が搭載されたデバイスのアプリ インストール要求の同期を自動的に開始するようになりました。 これにより、「同期保留中」状態のときにインストールが停止する問題が減少します。 また、ユーザーは、アプリ内からの同期を手動で開始することができます。 これらの変更は、[アプリ UI の新機能](/intune/whats-new-app-ui)ページで確認できます。
+  Windows 10 用のポータル サイト アプリが、Windows 10 Creators Update (バージョン 1703) が搭載されたデバイスのアプリ インストール要求の同期を自動的に開始するようになりました。 これにより、"同期保留中" 状態のときにアプリのインストールが停止する問題が減少します。 また、ユーザーは、アプリ内からの同期を手動で開始することができます。 これらの変更は、[アプリ UI の新機能](/intune/whats-new-app-ui)ページで確認できます。
 
 - **Windows 10 ポータル サイトの新しいガイド機能** 
 
@@ -80,8 +84,7 @@ ms.lasthandoff: 07/07/2017
 
   IOS デバイスのユーザーは、職場または学校のアカウントを使用して他の Microsoft アプリにサインインしている場合に、ポータル サイトにサインインしたときに新しいアカウントの選択機能が表示されることがあります。 詳細については、[アプリ UI の新機能](/intune/whats-new-app-ui)を参照してください。
 
-### Configuration Manager Technical Preview 1706 の新機能
-<a id="new-in-configuration-manager-technical-preview-1706" class="xliff"></a>
+### <a name="new-in-configuration-manager-technical-preview-1706"></a>Configuration Manager Technical Preview 1706 の新機能
 
 - **新しいモバイル アプリケーション管理ポリシーの設定**    
 
@@ -118,11 +121,9 @@ ms.lasthandoff: 07/07/2017
   接続タイプとして Cisco (IPsec) を指定して macOS VPN プロファイルを作成できます。 詳細については、「[VPN プロファイルの作成](/sccm/mdm/deploy-use/create-vpn-profiles#create-vpn-profiles)」を参照してください。
 
 
-## 2017 年 4 月
-<a id="april-2017" class="xliff"></a>
+## <a name="april-2017"></a>2017 年 4 月
 
-### Microsoft Intune の新機能
-<a id="new-in-microsoft-intune" class="xliff"></a>
+### <a name="new-in-microsoft-intune"></a>Microsoft Intune の新機能
 
 - **管理対象ブラウザーで利用できる MyApps**
 
@@ -142,18 +143,15 @@ ms.lasthandoff: 07/07/2017
 
   アプリ基準の条件付きアクセス ポリシーを作成し、アプリ保護ポリシーが適用されていないアプリが [SharePoint Online](/InTune/deploy-use/mam-ca-for-sharepoint-online) にアクセスすることを禁止できるようになりました。 アプリ基準の条件付きアクセス シナリオでは、Azure ポータルを利用して SharePoint Online へのアクセスを与えるアプリを指定できます。
 
-### Configuration Manager Technical Preview 1704 の新機能
-<a id="new-in-configuration-manager-technical-preview-1704" class="xliff"></a>
+### <a name="new-in-configuration-manager-technical-preview-1704"></a>Configuration Manager Technical Preview 1704 の新機能
 
 - **アプリ構成ポリシーを使用した Android アプリの構成**
 
   System Center Configuration Manager (Configuration Manager) のアプリ構成ポリシーを使用して、ユーザーが Android for Work デバイス上でアプリを実行するときに事前に構成された設定を配布できます。 Android アプリ構成ポリシーは、Android for Work が動作しているデバイス上でのみ使用でき、Play for Work ストアの承認済みアプリに適用されます。 この機能を試用する方法については、「[アプリ構成ポリシーを使用した Android アプリの構成](/sccm/core/get-started/capabilities-in-technical-preview-1704#configure-android-apps-with-app-configuration-policies)」をご覧ください。
 
-## 2017 年 3 月
-<a id="march-2017" class="xliff"></a>
+## <a name="march-2017"></a>2017 年 3 月
 
-### Microsoft Intune の新機能
-<a id="new-in-microsoft-intune" class="xliff"></a>
+### <a name="new-in-microsoft-intune"></a>Microsoft Intune の新機能
 
 - **Android 用ポータル サイト アプリに関する新しいユーザー エクスペリエンス**
 
@@ -194,19 +192,17 @@ ms.lasthandoff: 07/07/2017
 
   iOS と Android 向けの Microsoft Teams アプリが Intune モバイル アプリ管理 (MAM) 機能で有効になりました。会話や会社のデータは常に保護された状態で、デバイスを問わず、自由に働く能力をチームに与えることができるようになりました。 詳細については、Enterprise Mobility and Security ブログの「[Microsoft Teams announcement](https://blogs.technet.microsoft.com/enterprisemobility/2017/03/14/microsoft-teams-is-now-generally-available-and-mam-enabled-on-ios-and-android/)」 (Microsoft Teams からの告知) を参照してください。
 
-### Configuration Manager Technical Preview 1703 の新機能
-<a id="new-in-configuration-manager-technical-preview-1703" class="xliff"></a>
+### <a name="new-in-configuration-manager-technical-preview-1703"></a>Configuration Manager Technical Preview 1703 の新機能
 
 - **Apple Volume Purchase Program シナリオのサポートの追加**
 
    テクニカル プレビュー 1703 以降、次のボリューム購入プログラム (VPP) シナリオがサポートされています。
 
-   - デバイスのライセンス - デバイスのライセンスをサポートし、デバイス コレクションに展開されるアプリは、デバイスごとに 1 つのライセンスのみを必要とします。  以前は、デバイスのユーザーごとにライセンスを使用する必要がありました。 詳細については、「[ボリューム購入した iOS アプリをデバイス コレクションに展開する](/sccm/core/get-started/capabilities-in-technical-preview-1703#deploy-volume-purchased-ios-apps-to-device-collections)」を参照してください。
+   - デバイスのライセンス - デバイスのライセンスをサポートし、デバイス コレクションに展開されるアプリで必要なライセンスは、デバイスごとに 1 つのみになりました。  以前は、デバイスのユーザーごとにライセンスを使用する必要がありました。 詳細については、「[ボリューム購入した iOS アプリをデバイス コレクションに展開する](/sccm/core/get-started/capabilities-in-technical-preview-1703#deploy-volume-purchased-ios-apps-to-device-collections)」を参照してください。
    - 1 つのハイブリッド テナントに対する複数の VPP トークンの使用。両方のトークンは VPP アプリを管理するために使用されます。
    - VPP 教育用トークンの使用。ビジネス用トークンと教育用トークンを区別できます。
 
-### Configuration Manager (現在のブランチ) の新機能
-<a id="new-in-configuration-manager-current-branch" class="xliff"></a>
+### <a name="new-in-configuration-manager-current-branch"></a>Configuration Manager (現在のブランチ) の新機能
 
 Configuration Manager Technical Preview リリースで以前に提供されていた次の機能は、Intune と Configuration Manager (Current Branch) バージョン 1702 のハイブリッド展開で使用できるようになりました。
 
@@ -238,7 +234,7 @@ Configuration Manager Technical Preview リリースで以前に提供されて�
 
   ボリューム購入した iOS アプリの詳細については、[「ボリューム購入 iOS アプリの管理」](/sccm/mdm/deploy-use/manage-volume-purchased-ios-apps) を参照してください。
 
-- **ビジネス向け Windows ストアで基幹業務アプリをサポートする**
+- **ビジネス向け Windows ストアでの基幹業務アプリのサポート**
 
   ビジネス向け Windows ストアから、カスタマイズされた基幹業務アプリを同期できるようになりました。
 
@@ -248,11 +244,9 @@ Configuration Manager Technical Preview リリースで以前に提供されて�
 
     詳細については、[「Mobile Threat Defense コンプライアンスの監視」](/sccm/mdm/deploy-use/monitor-mobile-threat-defense-compliance) を参照してください。
 
-## 2017 年 2 月
-<a id="february-2017" class="xliff"></a>
+## <a name="february-2017"></a>2017 年 2 月
 
-### Microsoft Intune の新機能
-<a id="new-in-microsoft-intune" class="xliff"></a>
+### <a name="new-in-microsoft-intune"></a>Microsoft Intune の新機能
 
 - **ポータル Web サイトのモダナイズ**
 
@@ -262,8 +256,7 @@ Configuration Manager Technical Preview リリースで以前に提供されて�
 
   Windows および Windows Phone デバイスを登録するための MDM サーバー アドレスは、manage.microsoft.com から enrollment.manage.microsoft.com に変更されました。 Windows または Windows Phone デバイスを登録するときに求められた場合は、MDM サーバー アドレスとして enrollment.manage.microsoft.com を使用するようユーザーに通知してください。 この更新では、EnterpriseEnrollment.contoso.com を manage.microsoft.com にリダイレクトする DNS 内の CNAME を、EnterpriseEnrollment.contoso.com to EnterpriseEnrollment-s.manage.microsoft.com にリダイレクトする DNS 内の CNAME に置き換える必要もあります。 この変更にについて詳しくは、http://aka.ms/intuneenrollsvrchange をご覧ください。
 
-### Configuration Manager Technical Preview 1702 の新機能
-<a id="new-in-configuration-manager-technical-preview-1702" class="xliff"></a>
+### <a name="new-in-configuration-manager-technical-preview-1702"></a>Configuration Manager Technical Preview 1702 の新機能
 
 - **Android for Work のサポート**
 
@@ -271,7 +264,7 @@ Configuration Manager Technical Preview リリースで以前に提供されて�
 
 - **非準拠アプリのコンプライアンス設定**
 
-  コンプライアンス ポリシーで、Android および iOS のアプリの非準拠アプリの規則を作成できるようになりました。 デバイスに指定されたアプリケーションがインストールされている場合、それらは "非対応" としてマークされ、適用される条件付きアクセス ポリシーに従って、会社のリソースにアクセスできなくなります。 詳細については、[「条件付きアクセス デバイス コンプライアンス ポリシーの改善」](/sccm/core/get-started/capabilities-in-technical-preview-1702#conditional-access-device-compliance-policy-improvements) を参照してください。
+  コンプライアンス ポリシーで、Android および iOS のアプリの非準拠アプリの規則を作成できるようになりました。 デバイスに指定されたアプリケーションがインストールされている場合、それらは "非準拠" としてマークされ、適用される条件付きアクセス ポリシーに従って、会社のリソースにアクセスできなくなります。 詳細については、[「条件付きアクセス デバイス コンプライアンス ポリシーの改善」](/sccm/core/get-started/capabilities-in-technical-preview-1702#conditional-access-device-compliance-policy-improvements) を参照してください。
 
 - **PFX 証明書の作成と配布および S/MIME のサポート**
 
@@ -281,11 +274,9 @@ Configuration Manager Technical Preview リリースで以前に提供されて�
    
     構成項目の一部として、構成できる 42 個の iOS 設定が追加されました。 これらの設定の大部分 (35 個) は、監視対象の iOS デバイスに対して追加されました。 詳細については、[「iOS デバイスの新しいコンプライアンス設定」](/sccm/core/get-started/capabilities-in-technical-preview-1702#new-compliance-settings-for-ios-devices) を参照してください。
 
-## 2017 年 1 月
-<a id="january-2017" class="xliff"></a>
+## <a name="january-2017"></a>2017 年 1 月
 
-### Microsoft Intune の新機能
-<a id="new-in-microsoft-intune" class="xliff"></a>
+### <a name="new-in-microsoft-intune"></a>Microsoft Intune の新機能
 
 - **Android 7.1.1 のサポート**
 
@@ -295,20 +286,23 @@ Configuration Manager Technical Preview リリースで以前に提供されて�
 
   ユーザーのデバイスと Intune との接続が切れた場合、会社のリソースへ再度アクセスできるように、新しいトラブルシューティングの手順を指定できます。 「[Devices are inactive, or the admin console cannot communicate with them](/intune/troubleshoot/troubleshoot-device-enrollment-in-intune#devices-are-inactive-or-the-admin-console-cannot-communicate-with-them)」 (デバイスがアクティブでないか、管理コンソールと通信できない) を参照してください。
 
-### Configuration Manager Technical Preview 1701 の新機能
-<a id="new-in-configuration-manager-technical-preview-1701" class="xliff"></a>
+### <a name="new-in-configuration-manager-technical-preview-1701"></a>Configuration Manager Technical Preview 1701 の新機能
 
 - **ハイブリッド MDM の作成ウィザードで Android と iOS のバージョン指定が不要に**
 
   ハイブリッド モバイル デバイス管理 (MDM) の Technical Preview 1701 から、Intune で管理されるデバイスの新しいポリシーとプロファイルを作成する場合に Android および iOS の特定のバージョンを指定する必要がなくなりました。 この変更により、新しい Configuration Manager のリリースまたは拡張機能を必要とせずに、ハイブリッド展開で新しい Android および iOS のバージョンによりすばやくサポートを提供できます。 詳細については、「[作成ウィザードで Android と iOS のバージョン指定が不要に](/sccm/core/get-started/capabilities-in-technical-preview-1701#android-and-ios-versions-are-no-longer-targetable-in-creation-wizards-for-hybrid-mdm)」を参照してください。
 
 
-## 通知
-<a id="notices" class="xliff"></a>
+## <a name="notices"></a>通知
 
-### System Center 2012 Configuration SP1 および System Center 2012 R2 Configuration Manager (RTM): 2017 年 4 月 10 日に終了するハイブリッド モバイル デバイス管理のサポート
-<a id="system-center-2012-configuration-sp1-and-system-center-2012-r2-configuration-manager-rtm-support-for-hybrid-mobile-device-management-ending-on-april-10-2017" class="xliff"></a>
+### <a name="end-of-support-for-android-43-and-lower"></a>Android 4.3 以前のサポートの終了
+<!---1171127--->
+*2017 年 7 月 6 日*
 
+Android の管理対象アプリとポータル サイト アプリから会社のリソースにアクセスするには、Android 4.4 以降が必要になりました。 10 月 1 日以前に更新されていないデバイスは、ポータル サイトまたはそのアプリにアクセスできなくなります。 登録されたすべてのデバイスが 12 月までにインベントリから強制的に削除されるため、結果的に会社のリソースにアクセスできなくなります。 MDM なしのアプリ保護ポリシーを使用している場合、アプリは更新プログラムを受信せず、時間の経過と共にアプリのエクスペリエンスの質が低下します。
+
+
+### <a name="system-center-2012-configuration-sp1-and-system-center-2012-r2-configuration-manager-rtm-support-for-hybrid-mobile-device-management-ending-on-april-10-2017"></a>System Center 2012 Configuration SP1 および System Center 2012 R2 Configuration Manager (RTM): 2017 年 4 月 10 日に終了するハイブリッド モバイル デバイス管理のサポート
 *2017 年 1 月 11 日*
 
 System Center 2012 Configuration Manager SP1 と System Center 2012 R2 Configuration Manager RTM のサポートは 2016 年 7 月 12 日に終了しました。 これに続き、2017 年 4 月 10 日にハイブリッド MDM の Microsoft Intune サービスに接続するこれらのリリースのサポートが終了します。 この日付以降、ハイブリッド MDM はこれらのリリースをもって機能を停止します。 Intune コネクタが Intune サービスに接続できなくなるため、管理対象のデバイスは実質的に非管理対象となります。 アップグレードが実施されるまで、Configuration Manager のデータ (ポリシーとアプリケーションなど) は Intune にフローアップせず、管理対象のデバイスのデータは Configuration Manager にフローダウンしません。
@@ -320,15 +314,13 @@ Configuration Manager 2012 SP1 または R2 RTM でハイブリッド展開を�
 -   [System Center 2012 R2 Configuration Manager SP1 へのアップグレードの計画](https://technet.microsoft.com/library/jj822981.aspx#BKMK_PlanningR2SP1Upgrade)
 -   [System Center 2012 Configuration Manager SP2 へのアップグレードの計画](https://technet.microsoft.com/library/jj822981.aspx#BKMK_PlanningSP2Upgrade)
 
-### Windows Phone 8 ポータル サイトのアップロードの廃止
-<a id="windows-phone-8-company-portal-upload-deprecated" class="xliff"></a>
+### <a name="windows-phone-8-company-portal-upload-deprecated"></a>Windows Phone 8 ポータル サイトのアップロードの廃止
 *2016 年 10 月 25 日*
 
 11 月に Windows 8、Windows Phone 8、および Windows RT に対する Intune サポートが廃止され、Windows Phone 8 ポータル サイトのサポートが終了するので、Configuration Manager コンソールでは、署名済みのポータル サイト アプリをアップロードする機能が廃止されました。  既に登録されている Windows 8、Windows Phone 8、および Windows RT デバイスは引き続きサポートされますが、これらのプラットフォームへの追加デバイスの登録はサポートされていません。
 
 
-### 関連項目
-<a id="see-also" class="xliff"></a>
+### <a name="see-also"></a>関連項目
 
 - [過去のハイブリッド MDM 機能](whats-new-hybrid-archive.md)
 - [System Center 2012 Configuration Manager の MDM 向け新機能](https://technet.microsoft.com/library/mt445560.aspx)
