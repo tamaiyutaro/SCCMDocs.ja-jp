@@ -1,5 +1,4 @@
 ---
-
 title: "同期する分類と製品の構成 | Microsoft Docs"
 description: "Configuration Manager コンソールで次の手順を利用し、同期させる分類と製品を構成します。"
 keywords: 
@@ -18,8 +17,6 @@ ms.sourcegitcommit: e6cf8c799b5be2f7dbb6fadadddf702ec974ae45
 ms.openlocfilehash: 6add66e625c790b65edf64216c2262a5d082f820
 ms.contentlocale: ja-jp
 ms.lasthandoff: 12/16/2016
-
-
 
 ---
 #  <a name="configure-classifications-and-products-to-synchronize"></a>同期する分類と製品の構成  
