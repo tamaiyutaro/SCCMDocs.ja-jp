@@ -22,8 +22,7 @@ ms.contentlocale: ja-jp
 ms.lasthandoff: 07/11/2017
 
 ---
-# System Center Configuration Manager を使用して、Windows を最新のバージョンにアップグレードする
-<a id="upgrade-windows-to-the-latest-version-with-system-center-configuration-manager" class="xliff"></a>
+# <a name="upgrade-windows-to-the-latest-version-with-system-center-configuration-manager"></a>System Center Configuration Manager を使用して、Windows を最新のバージョンにアップグレードする
 
 *適用対象: System Center Configuration Manager (Current Branch)*
 
@@ -87,8 +86,7 @@ ms.lasthandoff: 07/11/2017
 
     -   [ネットワークではなくスタンドアロン メディアを使用した Windows の展開](use-stand-alone-media-to-deploy-windows-without-using-the-network.md)  
 
-## モニター
-<a id="monitor" class="xliff"></a>  
+## <a name="monitor"></a>モニター  
 
 -   **タスク シーケンスの展開の監視**  
 

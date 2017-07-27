@@ -22,8 +22,7 @@ ms.contentlocale: ja-jp
 ms.lasthandoff: 07/11/2017
 
 ---
-# System Center Configuration Manager のオペレーティング システムをアップグレードするタスク シーケンスを作成する
-<a id="create-a-task-sequence-to-upgrade-an-operating-system-in-system-center-configuration-manager" class="xliff"></a>
+# <a name="create-a-task-sequence-to-upgrade-an-operating-system-in-system-center-configuration-manager"></a>System Center Configuration Manager のオペレーティング システムをアップグレードするタスク シーケンスを作成する
 
 *適用対象: System Center Configuration Manager (Current Branch)*
 
@@ -43,8 +42,7 @@ System Center Configuration Manager でタスク シーケンスを使用して�
 
     -   [アプリケーション](../../apps/deploy-use/create-applications.md)が Configuration Manager コンソールに追加されている必要があります。  
 
-#### オペレーティング システムをアップグレードするタスク シーケンスを作成するには
-<a id="to-create-a-task-sequence-that-upgrades-an-operating-system" class="xliff"></a>  
+#### <a name="to-create-a-task-sequence-that-upgrades-an-operating-system"></a>オペレーティング システムをアップグレードするタスク シーケンスを作成するには  
 
 1.  Configuration Manager コンソールで、 **[ソフトウェア ライブラリ]** をクリックします。  
 
@@ -78,8 +76,7 @@ System Center Configuration Manager でタスク シーケンスを使用して�
 
 
 
-## コンテンツの事前キャッシュを構成する
-<a id="configure-pre-cache-content" class="xliff"></a>
+## <a name="configure-pre-cache-content"></a>コンテンツの事前キャッシュを構成する
 バージョン 1702 以降では、タスク シーケンスの利用可能な展開について、事前キャッシュ機能を使うように設定できます。これにより、ユーザーがコンテンツをインストールする前に、関連するコンテンツのみをクライアントにダウンロードさせることができます。
 > [!TIP]  
 > バージョン 1702 で導入された事前キャッシュは、プレリリース機能です。 有効にするには、「[更新プログラムからのプレリリース機能の使用](/sccm/core/servers/manage/pre-release-features)」をご覧ください。
@@ -88,8 +85,7 @@ System Center Configuration Manager でタスク シーケンスを使用して�
 
 コンテンツの事前キャッシュ機能には、クライアントが展開を受信してすぐに適用可能なコンテンツのみをダウンロードできるようにするオプションが用意されています。 したがって、ユーザーがソフトウェア センターで [**インストール**] をクリックすると、コンテンツはローカルのハード ドライブ上にあるため、コンテンツは準備完了の状態にあり、インストールが迅速に開始されます。
 
-### 事前キャッシュ機能を構成するには
-<a id="to-configure-the-pre-cache-feature" class="xliff"></a>
+### <a name="to-configure-the-pre-cache-feature"></a>事前キャッシュ機能を構成するには
 
 1. 特定のアーキテクチャおよび言語に対応したオペレーティング システム アップグレード パッケージを作成します。 パッケージの [**データ ソース**] タブでアーキテクチャと言語を指定します。 言語については、10 進数変換を使用します (たとえば、1033 は英語を表す 10 進数です。これを 16 進数で表すと 0x0409 となります)。 詳細については、「[オペレーティング システムをアップグレードするタスク シーケンスの作成](/sccm/osd/deploy-use/create-a-task-sequence-to-upgrade-an-operating-system)」を参照してください。
 
@@ -107,16 +103,14 @@ System Center Configuration Manager でタスク シーケンスを使用して�
     - [**配布ポイント**] タブで、[**展開オプション**] 設定を構成します。 ユーザーがインストールを開始する前にコンテンツを事前キャッシュしない場合は、これらの設定を使用します。
 
 
-### ユーザー側の表示と操作
-<a id="user-experience" class="xliff"></a>
+### <a name="user-experience"></a>ユーザー側の表示と操作
 - クライアントは、展開ポリシーを受け取ると、コンテンツの事前キャッシュを開始します。 これには、参照されるすべてのコンテンツ (他のパッケージの種類) と、オペレーティング システム アップグレード パッケージのうち、タスク シーケンスで設定した条件に基づいてクライアントと一致したものが含まれます。
 - ユーザーが展開を利用可能になると (展開の [**スケジュール**] タブの設定)、新しい展開に関する情報をユーザーに提供する通知が表示され、展開がソフトウェア センターで確認可能な状態になります。 ユーザーはソフトウェア センターに移動し、[**インストール**] をクリックしてインストールを開始します。
 - コンテンツが完全に事前キャッシュされていない場合は、展開の [**展開オプション**] タブで指定した設定が使用されます。 展開を作成した時間と、展開をクライアントが利用できるようにする時間との間隔を適切な長さに設定して、コンテンツを事前キャッシュするのに十分な時間をクライアントに与えることをお勧めします。
 
 
 
-## パッケージ コンテンツのダウンロードのタスク シーケンスのステップ
-<a id="download-package-content-task-sequence-step" class="xliff"></a>  
+## <a name="download-package-content-task-sequence-step"></a>パッケージ コンテンツのダウンロードのタスク シーケンスのステップ  
  以下のシナリオでは、**オペレーティング システムのアップグレード**のステップの前に、[パッケージ コンテンツのダウンロード](../understand/task-sequence-steps.md#BKMK_DownloadPackageContent)のステップを使用できます。  
 
 -   X86 と x64 の両方のプラットフォームで動作する 1 つのアップグレード タスク シーケンスを使用します。 これを行うには、クライアント アーキテクチャを検出して、該当するオペレーティング システム アップグレード パッケージのみをダウンロードする条件を含む **[アップグレードの準備]** グループに、2 つの **[パッケージ コンテンツのダウンロード]** ステップを追加します。 同じ変数を使用するようにそれぞれの **[パッケージ コンテンツのダウンロード]** ステップを構成して、 **[オペレーティング システムのアップグレード]** ステップ上のメディア パスにその変数を使用します。  
@@ -126,18 +120,15 @@ System Center Configuration Manager でタスク シーケンスを使用して�
    > [!NOTE]
    > 複数のパッケージがある場合は、Configuration Manager によって、数字のサフィックスが変数名に追加されます。 たとえば、%mycontent% という変数をカスタム変数として指定した場合に、この変数名は、参照コンテンツがすべて格納されているルートになります (複数のパッケージを指定できます)。 これは、オペレーティング システムのアップグレードなどのサブシーケンス ステップで変数を参照するときに、数字のサフィックスと共に使用されます。 この例では、%mycontent01% または %mycontent02% のようになります。各変数の数字は、このステップのパッケージの表示順序に対応しています。
 
-## オプションの後処理のタスク シーケンスのステップ
-<a id="optional-post-processing-task-sequence-steps" class="xliff"></a>  
+## <a name="optional-post-processing-task-sequence-steps"></a>オプションの後処理のタスク シーケンスのステップ  
  タスク シーケンスが作成されたら、互換性の問題があることがわかっているアプリケーションをアンインストールするステップを追加するか、コンピューターが再起動して Windows 10 へのアップグレードが成功した後に実行する後処理操作を追加することができます。 これらの追加ステップを、後処理のタスク シーケンスのグループに追加します。  
 
 > [!NOTE]  
 >  このタスク シーケンスは線形ではないため、クライアント コンピューターを正常にアップグレードできるかどうかや、クライアント コンピューターを起動時のオペレーティング システムのバージョンにロールバックする必要があるかどうかに応じて、ステップには条件が課され、それらはタスク シーケンスの結果に影響を与える可能性があります。  
 
-## オプションのロールバックのタスク シーケンスのステップ
-<a id="optional-rollback-task-sequence-steps" class="xliff"></a>  
+## <a name="optional-rollback-task-sequence-steps"></a>オプションのロールバックのタスク シーケンスのステップ  
  コンピューターの再起動後にアップグレード プロセスで問題が生じると、セットアップはアップグレードを前のオペレーティング システムにロールバックし、タスク シーケンスはロールバック グループのステップを続行します。 タスク シーケンスの作成後、ロールバック グループにオプションのステップを追加することができます。  
 
-## コンピューターの再起動後に削除されるフォルダーとファイル
-<a id="folder-and-files-removed-after-computer-restart" class="xliff"></a>  
+## <a name="folder-and-files-removed-after-computer-restart"></a>コンピューターの再起動後に削除されるフォルダーとファイル  
  オペレーティング システムを Windows 10 にアップグレードするタスク シーケンスとタスク シーケンス内の他のすべてのステップが完了すると、後処理およびロールバックのスクリプトはコンピューターを再起動するまで削除されません。  これらのスクリプト ファイルには、機密情報は含めないでください。  
 
