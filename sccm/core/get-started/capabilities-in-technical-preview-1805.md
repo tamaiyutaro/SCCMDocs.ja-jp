@@ -166,9 +166,9 @@ Windows LEDBAT の詳細については、「[New transport advancements](https:
 
 
 ### <a name="prerequisites"></a>[前提条件]
-- Windows Server、バージョン 1709 での配布ポイント。  
+- Windows Server、バージョン 1709 で構成された配布ポイント。
 
-- Windows 10 以降、バージョン 1607 で実行されるクライアント デバイス。
+- Windows 10 バージョン 1607 以降で実行されるクライアント デバイス。
 
 
 ### <a name="try-it-out"></a>試してみましょう。
